@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <label></label>
+        <name>copado__Copado_Header_Fields</name>
+    </fieldSets>
+    <layouts>
+        <layout>Release Layout</layout>
+        <sections>
+            <label></label>
+            <section>Advanced</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label></label>
+        <name>copado__Set_Release_Version</name>
+    </quickActions>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>copado__Validate_spaces_in_version</name>
+    </validationRules>
+    <webLinks>
+        <label></label>
+        <name>copado__Mass_add_to_Release</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>copado__Select_Base_Branch</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>copado__Switch_to_previous_UI</name>
+    </webLinks>
+</CustomObjectTranslation>

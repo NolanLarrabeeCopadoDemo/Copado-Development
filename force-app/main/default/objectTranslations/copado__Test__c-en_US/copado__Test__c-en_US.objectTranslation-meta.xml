@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <quickActions>
+        <label></label>
+        <name>copadoQuality__Open_CRT</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>copado__Mark_as_Ready</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>copado__Run</name>
+    </quickActions>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>copado__PreventUpdatingToolConfiguration</name>
+    </validationRules>
+</CustomObjectTranslation>

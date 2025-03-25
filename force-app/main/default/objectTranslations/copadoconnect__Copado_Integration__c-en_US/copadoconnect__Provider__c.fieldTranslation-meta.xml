@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>copadoconnect__Provider__c</name>
+    <picklistValues>
+        <masterLabel>JIRA</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ServiceNow</masterLabel>
+        <translation></translation>
+    </picklistValues>
+</CustomFieldTranslation>

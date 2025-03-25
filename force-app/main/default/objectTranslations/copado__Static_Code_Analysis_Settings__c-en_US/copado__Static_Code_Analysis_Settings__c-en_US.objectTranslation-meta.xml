@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <quickActions>
+        <label></label>
+        <name>copado__Generate_Default_Rule_Set</name>
+    </quickActions>
+    <recordTypes>
+        <description></description>
+        <label></label>
+        <name>copado__CodeScan</name>
+    </recordTypes>
+    <recordTypes>
+        <description></description>
+        <label></label>
+        <name>copado__PMD</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>copado__CodeScan_Required_Fields</name>
+    </validationRules>
+    <webLinks>
+        <label></label>
+        <name>copado__Generate_Default_RuleSet</name>
+    </webLinks>
+</CustomObjectTranslation>

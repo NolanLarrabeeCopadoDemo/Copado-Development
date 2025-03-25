@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>cml_Severity__c</name>
+    <picklistValues>
+        <masterLabel>P0 - Blocker - Business Disruption</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>P1 - Critical - No Workaround</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>P2 - Major</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>P3 - Minor</masterLabel>
+        <translation></translation>
+    </picklistValues>
+</CustomFieldTranslation>

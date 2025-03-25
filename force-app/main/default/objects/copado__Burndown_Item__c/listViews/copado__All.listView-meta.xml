@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>copado__All</fullName>
+    <columns>NAME</columns>
+    <columns>copado__Sprint__c</columns>
+    <columns>copado__Date__c</columns>
+    <columns>copado__Snapshot_Date__c</columns>
+    <columns>copado__Expected_Story_Point__c</columns>
+    <columns>copado__Total_Story_Point__c</columns>
+    <columns>copado__Planned_Velocity__c</columns>
+    <columns>copado__Actual_Velocity__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

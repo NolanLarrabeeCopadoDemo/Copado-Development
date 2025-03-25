@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <label></label>
+        <name>cmcSf__SFDX_Environment_Extension_Fields</name>
+    </fieldSets>
+    <layouts>
+        <layout>Environment Layout</layout>
+        <sections>
+            <label></label>
+            <section>Compliance</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Page Messages</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Rollback</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label></label>
+        <name>cmcMule__Create_System_Properties</name>
+    </quickActions>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>cmcSf__Prevent_RunSpecifiedTest_For_Environment</name>
+    </validationRules>
+    <webLinks>
+        <label></label>
+        <name>Install_2G_Package</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>copado__Find_Replace_Rule_Editor</name>
+    </webLinks>
+</CustomObjectTranslation>

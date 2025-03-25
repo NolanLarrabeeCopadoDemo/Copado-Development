@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Connection Behavior Layout</layout>
+        <sections>
+            <label></label>
+            <section>Back-Promotion Details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Post-deployment Actions</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Promotion Details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Usage Information</section>
+        </sections>
+    </layouts>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>copado__Batch_Size_Valid_Interval</name>
+    </validationRules>
+</CustomObjectTranslation>

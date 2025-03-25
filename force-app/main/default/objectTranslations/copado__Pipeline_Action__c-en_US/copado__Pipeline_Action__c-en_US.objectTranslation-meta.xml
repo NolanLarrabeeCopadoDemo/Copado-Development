@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Pipeline Action Layout</layout>
+        <sections>
+            <label></label>
+            <section>Environment Override</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Pipeline</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Settings</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

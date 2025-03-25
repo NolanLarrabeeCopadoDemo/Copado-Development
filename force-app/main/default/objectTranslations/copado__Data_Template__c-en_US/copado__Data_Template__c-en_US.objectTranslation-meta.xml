@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <quickActions>
+        <label></label>
+        <name>copado__Activate</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>copado__Clone</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>copado__Deactivate</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>copado__Export_Template</name>
+    </quickActions>
+    <webLinks>
+        <label></label>
+        <name>copado__Import_Templates</name>
+    </webLinks>
+</CustomObjectTranslation>

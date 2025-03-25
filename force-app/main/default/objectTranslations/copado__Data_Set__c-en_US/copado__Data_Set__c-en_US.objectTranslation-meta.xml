@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Data Set Layout</layout>
+        <sections>
+            <label></label>
+            <section>Last File Generation</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label></label>
+        <name>copado__Deploy_Data_Set</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>copado__Deploy_Data_Set_MC</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>copado__Generate_Data_Set</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>copado__Generate_Data_Set_MC</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>copado__Remove_File_Versions</name>
+    </quickActions>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>copado__Prevent_change_Data_Template</name>
+    </validationRules>
+</CustomObjectTranslation>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>User Story Dependency Layout</layout>
+        <sections>
+            <label></label>
+            <section>Deliverable</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Notes</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Team Dependency (Optional)</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

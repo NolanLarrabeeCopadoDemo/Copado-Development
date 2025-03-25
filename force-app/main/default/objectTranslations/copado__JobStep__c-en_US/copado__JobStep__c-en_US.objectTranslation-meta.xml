@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Job Step Layout</layout>
+        <sections>
+            <label></label>
+            <section>JSON</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label></label>
+        <name>copado__Complete_Manual_Task</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>copado__ExecuteManualStep</name>
+    </quickActions>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>copado__Execution_Sequence_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>copado__Template_OR_Execution_Is_Required</name>
+    </validationRules>
+</CustomObjectTranslation>

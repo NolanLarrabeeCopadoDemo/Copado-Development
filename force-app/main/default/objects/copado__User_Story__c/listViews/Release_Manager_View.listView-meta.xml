@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Release_Manager_View</fullName>
+    <columns>NAME</columns>
+    <columns>copado__User_Story_Title__c</columns>
+    <columns>copado__Status__c</columns>
+    <columns>copado__Org_Credential__c</columns>
+    <columns>copado__Project__c</columns>
+    <columns>copado__US_Feature__c</columns>
+    <columns>copado__Sprint__c</columns>
+    <columns>copado__Release__c</columns>
+    <columns>copado__Promote_Change__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>copado__Project__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>copado__User_Story__c.copado__User_Story</value>
+    </filters>
+    <filters>
+        <field>copado__Promote_Change__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Release Manager View</label>
+</ListView>

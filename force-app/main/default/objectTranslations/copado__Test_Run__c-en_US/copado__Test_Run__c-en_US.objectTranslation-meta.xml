@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <label></label>
+        <name>copado__InputFields</name>
+    </fieldSets>
+    <fieldSets>
+        <label></label>
+        <name>copado__OutputFields</name>
+    </fieldSets>
+    <layouts>
+        <layout>Test Execution Layout</layout>
+        <sections>
+            <label></label>
+            <section>Test Run Results</section>
+        </sections>
+    </layouts>
+    <webLinks>
+        <label></label>
+        <name>copado__Copado_DX</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>copado__Create_Test_Scratch_Org</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>copado__Execute_Test_Run</name>
+    </webLinks>
+</CustomObjectTranslation>

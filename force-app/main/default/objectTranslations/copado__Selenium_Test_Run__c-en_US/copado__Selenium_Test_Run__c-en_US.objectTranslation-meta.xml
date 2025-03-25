@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <recordTypes>
+        <description></description>
+        <label></label>
+        <name>copado__Generic_Web_Application</name>
+    </recordTypes>
+    <recordTypes>
+        <description></description>
+        <label></label>
+        <name>copado__Salesforce</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>copado__Credentials_or_BaseURL</name>
+    </validationRules>
+    <webLinks>
+        <label></label>
+        <name>copado__Add_Selection_to_a_Test_Group</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>copado__Quick_Run</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>copado__Refresh_Results</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>copado__Show_Hook_URL</name>
+    </webLinks>
+</CustomObjectTranslation>
