@@ -8,16 +8,16 @@
         <locationX>176</locationX>
         <locationY>323</locationY>
         <assignmentItems>
-            <assignToReference>$Record.Services_Amount__c</assignToReference>
+            <assignToReference>$Record.Implementation_Cost__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <numberValue>25000.0</numberValue>
+                <numberValue>50000.0</numberValue>
             </value>
         </assignmentItems>
     </assignments>
     <environments>Default</environments>
-    <interviewLabel>OpportunityServicesAmountValue {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>OpportunityServicesAmountValue</label>
+    <interviewLabel>OpportunityImplementationCost {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>OpportunityImplementationCost</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>

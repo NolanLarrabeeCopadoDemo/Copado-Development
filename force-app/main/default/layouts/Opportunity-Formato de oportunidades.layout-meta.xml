@@ -33,7 +33,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Services_Amount__c</field>
+                <field>Implementation_Cost__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
