@@ -17,6 +17,10 @@
     <picklistValues>
         <picklist>Type__c</picklist>
         <values>
+            <fullName>Equities</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Retirement Plans</fullName>
             <default>false</default>
         </values>
