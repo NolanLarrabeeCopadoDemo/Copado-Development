@@ -35,6 +35,10 @@
                 <behavior>Edit</behavior>
                 <field>Implementation_Cost__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Discount__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
