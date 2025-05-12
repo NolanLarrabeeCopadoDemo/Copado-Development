@@ -91,4 +91,13 @@
         <probability>0</probability>
         <won>false</won>
     </standardValue>
+    <standardValue>
+        <fullName>Closed Duplicate</fullName>
+        <default>false</default>
+        <label>Closed Duplicate</label>
+        <closed>true</closed>
+        <forecastCategory>Omitted</forecastCategory>
+        <probability>0</probability>
+        <won>false</won>
+    </standardValue>
 </StandardValueSet>
