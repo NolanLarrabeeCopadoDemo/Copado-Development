@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Care</fullName>
+    <active>true</active>
+    <label>Primary Care</label>
+    <picklistValues>
+        <picklist>Care_Type__c</picklist>
+        <values>
+            <fullName>Primary Care</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>
