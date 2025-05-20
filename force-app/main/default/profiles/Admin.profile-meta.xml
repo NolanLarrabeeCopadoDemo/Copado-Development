@@ -57,6 +57,11 @@
         <field>Patient_Service__c.Care_Type__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>SutterHealth__c.Active__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <layoutAssignments>
         <layout>API_Endpoint__mdt-API Endpoint Layout</layout>
     </layoutAssignments>
@@ -85,6 +90,9 @@
         <layout>Patient_Service__c-Patient Service Layout</layout>
         <recordType>Patient_Service__c.Primary_Care</recordType>
     </layoutAssignments>
+    <layoutAssignments>
+        <layout>SutterHealth__c-SutterHealth Layout</layout>
+    </layoutAssignments>
     <loginHours n1:nil="true" />
     <loginIpRanges>
         <description>All</description>
@@ -107,6 +115,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>Patient_Service__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>SutterHealth__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <recordTypeVisibilities>
