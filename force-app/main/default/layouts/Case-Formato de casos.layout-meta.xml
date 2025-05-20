@@ -74,6 +74,10 @@
                 <behavior>Edit</behavior>
                 <field>Date_Opened__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Product_Line__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
