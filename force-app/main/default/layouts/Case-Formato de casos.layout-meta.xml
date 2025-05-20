@@ -76,7 +76,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Product_Line__c</field>
+                <field>Active__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
