@@ -85,6 +85,9 @@
         <recordType>Finance__c.Individual</recordType>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Health_Plan__c-Health Plan Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Opportunity-Formato de oportunidades</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -111,6 +114,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>Finance__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Health_Plan__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
