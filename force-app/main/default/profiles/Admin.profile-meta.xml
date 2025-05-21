@@ -4,6 +4,11 @@
     <custom>false</custom>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.Active__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Case.Date_Opened__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -17,6 +22,9 @@
         <field>Opportunity.Services_Amount__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <layoutAssignments>
+        <layout>Account-Formato de cuentas</layout>
+    </layoutAssignments>
     <layoutAssignments>
         <layout>Case-Formato de casos</layout>
     </layoutAssignments>
