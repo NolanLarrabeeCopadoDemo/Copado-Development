@@ -119,6 +119,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Recruitment__c.Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>SutterHealth__c.Active__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -174,6 +179,9 @@
         <recordType>Performance_Management__c.Reviews</recordType>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Recruitment__c-Recruitment Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>SutterHealth__c-SutterHealth Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -219,6 +227,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>Performance_Management__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Recruitment__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
