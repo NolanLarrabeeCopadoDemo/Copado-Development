@@ -14,6 +14,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Lead.Lead_Source_Detail__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.Services_Amount__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -30,6 +35,9 @@
     <layoutAssignments>
         <layout>Finance__c-Finance Layout</layout>
         <recordType>Finance__c.Individual</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Lead-Formato de candidatos</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Opportunity-Formato de oportunidades</layout>
@@ -87,6 +95,14 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ApiEnabled</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>AppFrameworkManageApp</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>AppFrameworkManageTemplate</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
