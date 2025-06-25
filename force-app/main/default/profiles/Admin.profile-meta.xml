@@ -34,6 +34,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Diagnostic_Services__c.Medical_Specialty__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Finance__c.Size__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -178,6 +183,9 @@
         <layout>Deal_Review__c-Deal Review Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Diagnostic_Services__c-Diagnostic Service Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Finance__c-Finance Layout</layout>
         <recordType>Finance__c.Business</recordType>
     </layoutAssignments>
@@ -239,6 +247,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>Deal_Review__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Diagnostic_Services__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
