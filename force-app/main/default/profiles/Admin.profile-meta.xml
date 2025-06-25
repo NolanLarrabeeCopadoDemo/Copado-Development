@@ -3,6 +3,11 @@
       xmlns:n1="http://www.w3.org/2001/XMLSchema-instance">
     <custom>false</custom>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>API_Endpoint__mdt.Endpoint_URL__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Case.Date_Opened__c</field>
         <readable>true</readable>
@@ -42,6 +47,9 @@
         <field>Opportunity.Services_Amount__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <layoutAssignments>
+        <layout>API_Endpoint__mdt-API Endpoint Layout</layout>
+    </layoutAssignments>
     <layoutAssignments>
         <layout>Case-Formato de casos</layout>
     </layoutAssignments>
