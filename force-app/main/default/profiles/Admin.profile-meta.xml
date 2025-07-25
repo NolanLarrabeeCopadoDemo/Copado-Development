@@ -14,6 +14,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Analyst__c.Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Case.Active__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -109,6 +114,9 @@
         <layout>Account-Formato de cuentas</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Analyst__c-Analyst Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Case-Formato de casos</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -158,6 +166,15 @@
         <endAddress>255.255.255.255</endAddress>
         <startAddress>0.0.0.0</startAddress>
     </loginIpRanges>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Analyst__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
