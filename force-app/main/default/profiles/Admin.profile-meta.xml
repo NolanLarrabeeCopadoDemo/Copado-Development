@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Profile xmlns="http://soap.sforce.com/2006/04/metadata"
-      xmlns:n1="http://www.w3.org/2001/XMLSchema-instance">
+<Profile xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:n1="http://www.w3.org/2001/XMLSchema-instance">
     <custom>false</custom>
     <fieldPermissions>
         <editable>false</editable>
@@ -159,26 +158,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Route__c.End_Location__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Route__c.Shipping_Value__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Route__c.Start_Location__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Route__c.Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>SutterHealth__c.Active__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -249,15 +228,12 @@
         <layout>Recruitment__c-Recruitment Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Route__c-Route Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>SutterHealth__c-SutterHealth Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Window__c-Window Layout</layout>
     </layoutAssignments>
-    <loginHours n1:nil="true" />
+    <loginHours n1:nil="true"></loginHours>
     <loginIpRanges>
         <description>All</description>
         <endAddress>255.255.255.255</endAddress>
@@ -333,15 +309,6 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>Recruitment__c</object>
-        <viewAllRecords>true</viewAllRecords>
-    </objectPermissions>
-    <objectPermissions>
-        <allowCreate>true</allowCreate>
-        <allowDelete>true</allowDelete>
-        <allowEdit>true</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>true</modifyAllRecords>
-        <object>Route__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
