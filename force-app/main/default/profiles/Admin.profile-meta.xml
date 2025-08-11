@@ -150,6 +150,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Finance__c-Finance Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Finance__c-Finance Layout</layout>
         <recordType>Finance__c.Business</recordType>
     </layoutAssignments>
     <layoutAssignments>
