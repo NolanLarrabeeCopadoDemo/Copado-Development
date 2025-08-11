@@ -67,6 +67,12 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <inputAssignments>
+            <field>IsEscalated</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Priority</field>
             <value>
                 <stringValue>High</stringValue>
