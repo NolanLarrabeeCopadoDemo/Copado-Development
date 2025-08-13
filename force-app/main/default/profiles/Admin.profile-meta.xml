@@ -54,6 +54,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Delivery__c.Test__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Diagnostic_Services__c.Medical_Specialty__c</field>
         <readable>true</readable>
     </fieldPermissions>
