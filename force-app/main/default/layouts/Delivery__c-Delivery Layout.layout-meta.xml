@@ -26,6 +26,10 @@
                 <behavior>Edit</behavior>
                 <field>Expected_Value__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Test__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
