@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Profile xmlns="http://soap.sforce.com/2006/04/metadata"
-      xmlns:n1="http://www.w3.org/2001/XMLSchema-instance">
+<Profile xmlns="http://soap.sforce.com/2006/04/metadata">
+    <classAccesses>
+        <apexClass>ObjectRenameUtility_Standalone</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
     <custom>false</custom>
     <fieldPermissions>
         <editable>false</editable>
@@ -210,6 +213,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Finance__c-Finance Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Finance__c-Finance Layout</layout>
         <recordType>Finance__c.Business</recordType>
     </layoutAssignments>
     <layoutAssignments>
@@ -230,11 +236,17 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Patient_Service__c-Patient Service Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Patient_Service__c-Patient Service Layout</layout>
         <recordType>Patient_Service__c.Health_Services</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Patient_Service__c-Patient Service Layout</layout>
         <recordType>Patient_Service__c.Primary_Care</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Performance_Management__c-Performance Management Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Performance_Management__c-Performance Management Layout</layout>
@@ -257,7 +269,6 @@
     <layoutAssignments>
         <layout>Window__c-Window Layout</layout>
     </layoutAssignments>
-    <loginHours n1:nil="true" />
     <loginIpRanges>
         <description>All</description>
         <endAddress>255.255.255.255</endAddress>
@@ -396,6 +407,11 @@
         <default>false</default>
         <recordType>Performance_Management__c.Reviews</recordType>
         <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>copado__Compliance_Rule__c.copado__Other</recordType>
+        <visible>false</visible>
     </recordTypeVisibilities>
     <tabVisibilities>
         <tab>Delivery__c</tab>
