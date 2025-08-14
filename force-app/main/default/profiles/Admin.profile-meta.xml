@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Profile xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:n1="http://www.w3.org/2001/XMLSchema-instance">
+<Profile xmlns="http://soap.sforce.com/2006/04/metadata"
+      xmlns:n1="http://www.w3.org/2001/XMLSchema-instance">
     <custom>false</custom>
     <fieldPermissions>
         <editable>false</editable>
@@ -48,6 +49,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>TestObject_OldTest__c.test__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>TestObject_Old__c.test__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -75,9 +81,12 @@
         <layout>Opportunity-Formato de oportunidades</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>TestObject_OldTest__c-TestObject Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>TestObject_Old__c-TestObject Layout</layout>
     </layoutAssignments>
-    <loginHours n1:nil="true"></loginHours>
+    <loginHours n1:nil="true" />
     <loginIpRanges>
         <description>All</description>
         <endAddress>255.255.255.255</endAddress>
@@ -107,6 +116,15 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
+        <object>TestObject_OldTest__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
         <object>TestObject_Old__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
@@ -120,6 +138,10 @@
         <recordType>Finance__c.Individual</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
+    <tabVisibilities>
+        <tab>TestObject_OldTest__c</tab>
+        <visibility>DefaultOff</visibility>
+    </tabVisibilities>
     <userLicense>Salesforce</userLicense>
     <userPermissions>
         <enabled>true</enabled>
