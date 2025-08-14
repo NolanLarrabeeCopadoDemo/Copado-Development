@@ -199,6 +199,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>TestObject_Old__c.Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>TestObject_Old__c.test__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -286,7 +291,7 @@
         <layout>TestObject_OldTest__c-TestObject Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>TestObject_Old__c-TestObject Layout</layout>
+        <layout>TestObject_Old__c-TestObject_Old Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>TestObject__c-TestObject Layout</layout>
