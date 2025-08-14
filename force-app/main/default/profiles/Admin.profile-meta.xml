@@ -112,6 +112,10 @@
         <tab>Delivery__c</tab>
         <visibility>DefaultOff</visibility>
     </tabVisibilities>
+    <tabVisibilities>
+        <tab>TestObject__c</tab>
+        <visibility>DefaultOff</visibility>
+    </tabVisibilities>
     <userLicense>Salesforce</userLicense>
     <userPermissions>
         <enabled>true</enabled>
