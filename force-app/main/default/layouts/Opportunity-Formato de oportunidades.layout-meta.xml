@@ -35,10 +35,6 @@
                 <behavior>Required</behavior>
                 <field>Oppty_Ext_Id__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Implementation_Start_Date__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
