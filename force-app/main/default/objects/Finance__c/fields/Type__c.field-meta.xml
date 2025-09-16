@@ -30,6 +30,16 @@
                 <default>false</default>
                 <label>Fixed Income</label>
             </value>
+            <value>
+                <fullName>IRA</fullName>
+                <default>false</default>
+                <label>IRA</label>
+            </value>
+            <value>
+                <fullName>Pension Plan</fullName>
+                <default>false</default>
+                <label>Pension Plan</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>
