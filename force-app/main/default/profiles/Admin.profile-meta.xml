@@ -34,6 +34,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Gaming_Performance__c.Active__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.Services_Amount__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -58,6 +63,9 @@
     <layoutAssignments>
         <layout>Finance__c-Finance Layout</layout>
         <recordType>Finance__c.Individual</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Gaming_Performance__c-Gaming Performance Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Opportunity-Formato de oportunidades</layout>
@@ -87,6 +95,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>Finance__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Gaming_Performance__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
