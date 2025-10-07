@@ -139,6 +139,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Service_Outage_Tracker__c.Signal_Strength_Level__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>SutterHealth__c.Active__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -174,15 +179,15 @@
         <layout>Diagnostic_Services__c-Diagnostic Service Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Finance__c-Finance Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>Equipment_Certification__c-Equipment Certification Layout</layout>
         <recordType>Equipment_Certification__c.Custom</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Equipment_Certification__c-Equipment Certification Layout</layout>
         <recordType>Equipment_Certification__c.Standard</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Finance__c-Finance Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Finance__c-Finance Layout</layout>
@@ -218,6 +223,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Route__c-Route Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Service_Outage_Tracker__c-Service Outage Tracker Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>SutterHealth__c-SutterHealth Layout</layout>
@@ -313,6 +321,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>Route__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Service_Outage_Tracker__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
