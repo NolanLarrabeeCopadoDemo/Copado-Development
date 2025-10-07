@@ -44,6 +44,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Equipment_Certification__c.Active__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Equipment_Certification__c.Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Finance__c.Type__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -248,6 +258,14 @@
         <layout>Deal_Review__c-Deal Review Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Equipment_Certification__c-Equipment Certification Layout</layout>
+        <recordType>Equipment_Certification__c.Custom</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Equipment_Certification__c-Equipment Certification Layout</layout>
+        <recordType>Equipment_Certification__c.Standard</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Finance__c-Finance Layout</layout>
         <recordType>Finance__c.Business</recordType>
     </layoutAssignments>
@@ -333,6 +351,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>Deal_Review__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Equipment_Certification__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -481,6 +508,16 @@
     </objectPermissions>
     <recordTypeVisibilities>
         <default>false</default>
+        <recordType>Equipment_Certification__c.Custom</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>true</default>
+        <recordType>Equipment_Certification__c.Standard</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
         <recordType>Finance__c.Business</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
@@ -528,6 +565,10 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>TestObject_OldTest__c</tab>
+        <visibility>DefaultOff</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>Equipment_Certification__c</tab>
         <visibility>DefaultOff</visibility>
     </tabVisibilities>
     <userLicense>Salesforce</userLicense>
