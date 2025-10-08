@@ -149,6 +149,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Service_Outage_Tracker__c.Account__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Service_Outage_Tracker__c.Signal_Strength_Level__c</field>
         <readable>true</readable>
     </fieldPermissions>
