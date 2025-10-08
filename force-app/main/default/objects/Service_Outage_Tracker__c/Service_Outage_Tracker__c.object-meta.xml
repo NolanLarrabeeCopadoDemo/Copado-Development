@@ -160,7 +160,7 @@
         <type>Text</type>
     </nameField>
     <pluralLabel>Service Outage Trackers</pluralLabel>
-    <searchLayouts />
+    <searchLayouts></searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>
