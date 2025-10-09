@@ -39,6 +39,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Railway_Component__c.Component_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Railway_Component__c.Install_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Service_Outage_Tracker__c.Signal_Strength_Level__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -68,6 +78,9 @@
         <layout>Opportunity-Formato de oportunidades</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Railway_Component__c-Railway Component Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Service_Outage_Tracker__c-Service Outage Tracker Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -95,6 +108,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>Finance__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Railway_Component__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
