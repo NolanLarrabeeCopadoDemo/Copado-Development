@@ -64,6 +64,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Health_Plan__c.Active__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Lead.Lead_Source_Detail__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -164,6 +169,9 @@
         <recordType>Finance__c.Individual</recordType>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Health_Plan__c-Health Plan Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Lead-Formato de candidatos</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -227,6 +235,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>Finance__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Health_Plan__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -343,14 +360,6 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ApiEnabled</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>AppFrameworkManageApp</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>AppFrameworkManageTemplate</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
