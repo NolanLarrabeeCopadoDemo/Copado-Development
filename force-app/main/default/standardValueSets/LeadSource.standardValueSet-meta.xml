@@ -7,9 +7,9 @@
         <label>Advertisement</label>
     </standardValue>
     <standardValue>
-        <fullName>Community</fullName>
+        <fullName>Email Marketing</fullName>
         <default>false</default>
-        <label>Community</label>
+        <label>Email Marketing</label>
     </standardValue>
     <standardValue>
         <fullName>Employee Referral</fullName>
