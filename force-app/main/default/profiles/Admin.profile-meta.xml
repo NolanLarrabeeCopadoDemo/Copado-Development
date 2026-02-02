@@ -234,6 +234,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>TestObject_OldTestObject__c.test__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>TestObject_OldTest__c.test__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -327,6 +332,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>SutterHealth__c-SutterHealth Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>TestObject_OldTestObject__c-TestObject Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>TestObject_OldTest__c-TestObject Layout</layout>
@@ -469,6 +477,15 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
+        <object>TestObject_OldTestObject__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
         <object>TestObject_OldTest__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
@@ -544,6 +561,10 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>Performance_Management__c</tab>
+        <visibility>DefaultOff</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>TestObject_OldTestObject__c</tab>
         <visibility>DefaultOff</visibility>
     </tabVisibilities>
     <tabVisibilities>
