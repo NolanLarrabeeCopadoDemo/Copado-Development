@@ -307,6 +307,11 @@
         <field>Threat_Intelligence_Report__c.Risk_Severity_Score__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Window__c.Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <layoutAssignments>
         <layout>API_Endpoint__mdt-API Endpoint Layout</layout>
     </layoutAssignments>
@@ -399,6 +404,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Threat_Intelligence_Report__c-Threat Intelligence Report Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Window__c-Window Layout</layout>
     </layoutAssignments>
     <loginHours n1:nil="true" />
     <loginIpRanges>
@@ -550,6 +558,15 @@
         <object>Threat_Intelligence_Report__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Window__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Equipment_Certification__c.Custom</recordType>
@@ -639,6 +656,14 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ApiEnabled</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>AppFrameworkManageApp</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>AppFrameworkManageTemplate</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
