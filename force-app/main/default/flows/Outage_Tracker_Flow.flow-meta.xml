@@ -35,6 +35,12 @@
             <operator>NotEqualTo</operator>
         </filters>
         <inputAssignments>
+            <field>Account__c</field>
+            <value>
+                <elementReference>$Record.Case__r.AccountId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Outage_Start__c</field>
             <value>
                 <elementReference>$Flow.CurrentDateTime</elementReference>
