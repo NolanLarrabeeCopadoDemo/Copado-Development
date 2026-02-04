@@ -34,6 +34,111 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Instrument_Service_Contract__c.Annual_Maintenance_Visits__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Instrument_Service_Contract__c.Compliance_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Instrument_Service_Contract__c.Contract_End_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Instrument_Service_Contract__c.Contract_Number__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Instrument_Service_Contract__c.Contract_Start_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Instrument_Service_Contract__c.Contract_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Instrument_Service_Contract__c.Contract_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Instrument_Service_Contract__c.Contract_Value__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Instrument_Service_Contract__c.Installation_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Instrument_Service_Contract__c.Instrument_Location__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Instrument_Service_Contract__c.Instrument_Model__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Instrument_Service_Contract__c.Instrument_Serial_Number__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Instrument_Service_Contract__c.Last_Calibration_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Instrument_Service_Contract__c.Next_Calibration_Due__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Instrument_Service_Contract__c.Notes__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Instrument_Service_Contract__c.Primary_Use_Case__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Instrument_Service_Contract__c.Regulatory_Compliance_Required__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Instrument_Service_Contract__c.Renewal_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Instrument_Service_Contract__c.Response_Time_SLA__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Instrument_Service_Contract__c.Service_Level__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Instrument_Service_Contract__c.Service_Territory__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.Services_Amount__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -63,6 +168,22 @@
     <layoutAssignments>
         <layout>Finance__c-Finance Layout</layout>
         <recordType>Finance__c.Individual</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Instrument_Service_Contract__c-Instrument Service Contract Layout</layout>
+        <recordType>Instrument_Service_Contract__c.Calibration_Only</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Instrument_Service_Contract__c-Instrument Service Contract Layout</layout>
+        <recordType>Instrument_Service_Contract__c.Full_Service_Agreement</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Instrument_Service_Contract__c-Instrument Service Contract Layout</layout>
+        <recordType>Instrument_Service_Contract__c.Gold_Support</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Instrument_Service_Contract__c-Instrument Service Contract Layout</layout>
+        <recordType>Instrument_Service_Contract__c.Preventive_Maintenance</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Opportunity-Formato de oportunidades</layout>
@@ -103,6 +224,15 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
+        <object>Instrument_Service_Contract__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
         <object>Service_Outage_Tracker__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
@@ -123,6 +253,27 @@
     <recordTypeVisibilities>
         <default>true</default>
         <recordType>Finance__c.Individual</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>true</default>
+        <personAccountDefault>true</personAccountDefault>
+        <recordType>Instrument_Service_Contract__c.Calibration_Only</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Instrument_Service_Contract__c.Full_Service_Agreement</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Instrument_Service_Contract__c.Gold_Support</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Instrument_Service_Contract__c.Preventive_Maintenance</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <tabVisibilities>
@@ -453,6 +604,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ManageAnalyticSnapshots</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ManageApiNamedQueries</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -845,6 +1000,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ViewAllUsers</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewApiNamedQueries</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
