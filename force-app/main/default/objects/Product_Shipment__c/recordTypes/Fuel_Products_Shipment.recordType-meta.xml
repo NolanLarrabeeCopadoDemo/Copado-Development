@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fuel_Products_Shipment</fullName>
+    <active>true</active>
+    <description>For shipments of fuel products</description>
+    <label>Fuel Products Shipment</label>
+    <picklistValues>
+        <picklist>Business_Segment__c</picklist>
+        <values>
+            <fullName>Construction %26 Real Estate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Energy %26 Specialty Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integrated Services %26 Logistics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pavement %26 Coating Resources</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Carrier_Type__c</picklist>
+        <values>
+            <fullName>Marine Vessel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pipeline</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Truck</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Hazmat_Class__c</picklist>
+        <values>
+            <fullName>Class 1 - Explosives</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Class 2 - Gases</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Class 3 - Flammable Liquids</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Class 4 - Flammable Solids</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Class 5 - Oxidizing Substances</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Class 6 - Toxic Substances</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Class 7 - Radioactive Material</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Class 8 - Corrosives</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Class 9 - Miscellaneous</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-Hazardous</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_Type__c</picklist>
+        <values>
+            <fullName>Asphalt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fuel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Naphthenic Oil</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paraffinic Oil</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Specialty Chemical</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Shipment_Status__c</picklist>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Delayed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Delivered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Transit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scheduled</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Unit_of_Measure__c</picklist>
+        <values>
+            <fullName>Barrels</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gallons</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kilograms</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Liters</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pounds</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tons</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>
