@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Credits_Earned_Positive</fullName>
+    <active>true</active>
+    <description>Ensures Credits Earned is a positive number</description>
+    <errorConditionFormula>Credits_Earned__c &lt;= 0</errorConditionFormula>
+    <errorDisplayField>Credits_Earned__c</errorDisplayField>
+    <errorMessage>Credits Earned must be greater than zero</errorMessage>
+</ValidationRule>
