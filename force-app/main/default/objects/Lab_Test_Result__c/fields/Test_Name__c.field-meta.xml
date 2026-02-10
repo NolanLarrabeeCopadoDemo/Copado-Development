@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Test_Name__c</fullName>
+    <label>Test Name</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Glucose QC</fullName>
+                <default>false</default>
+                <label>Glucose QC</label>
+            </value>
+            <value>
+                <fullName>Hemoglobin QC</fullName>
+                <default>false</default>
+                <label>Hemoglobin QC</label>
+            </value>
+            <value>
+                <fullName>Troponin I QC</fullName>
+                <default>false</default>
+                <label>Troponin I QC</label>
+            </value>
+            <value>
+                <fullName>Creatinine QC</fullName>
+                <default>false</default>
+                <label>Creatinine QC</label>
+            </value>
+            <value>
+                <fullName>Complete Blood Count QC</fullName>
+                <default>false</default>
+                <label>Complete Blood Count QC</label>
+            </value>
+            <value>
+                <fullName>Potassium QC</fullName>
+                <default>false</default>
+                <label>Potassium QC</label>
+            </value>
+            <value>
+                <fullName>Sodium QC</fullName>
+                <default>false</default>
+                <label>Sodium QC</label>
+            </value>
+            <value>
+                <fullName>Cholesterol QC</fullName>
+                <default>false</default>
+                <label>Cholesterol QC</label>
+            </value>
+            <value>
+                <fullName>HbA1c QC</fullName>
+                <default>false</default>
+                <label>HbA1c QC</label>
+            </value>
+            <value>
+                <fullName>Platelet Count QC</fullName>
+                <default>false</default>
+                <label>Platelet Count QC</label>
+            </value>
+            <value>
+                <fullName>White Blood Cell QC</fullName>
+                <default>false</default>
+                <label>White Blood Cell QC</label>
+            </value>
+            <value>
+                <fullName>TSH QC</fullName>
+                <default>false</default>
+                <label>TSH QC</label>
+            </value>
+            <value>
+                <fullName>PSA QC</fullName>
+                <default>false</default>
+                <label>PSA QC</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
