@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Issue_Date_Before_Expiration</fullName>
+    <active>true</active>
+    <description>Ensures Issue Date is before Expiration Date</description>
+    <errorConditionFormula>Issue_Date__c &gt;= Expiration_Date__c</errorConditionFormula>
+    <errorDisplayField>Expiration_Date__c</errorDisplayField>
+    <errorMessage>Expiration Date must be after Issue Date</errorMessage>
+</ValidationRule>
