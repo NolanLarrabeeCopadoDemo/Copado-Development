@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Asset_Allocation_Total</fullName>
+    <active>true</active>
+    <description>Ensures asset allocation percentages total 100% when all three are populated</description>
+    <errorConditionFormula>AND(
+  NOT(ISBLANK(Asset_Allocation_Stocks__c)),
+  NOT(ISBLANK(Asset_Allocation_Bonds__c)),
+  NOT(ISBLANK(Asset_Allocation_Cash__c)),
+  (Asset_Allocation_Stocks__c + Asset_Allocation_Bonds__c + Asset_Allocation_Cash__c) &lt;&gt; 1.0
+)</errorConditionFormula>
+    <errorDisplayField>Asset_Allocation_Stocks__c</errorDisplayField>
+    <errorMessage>Total asset allocation must equal 100%</errorMessage>
+</ValidationRule>
