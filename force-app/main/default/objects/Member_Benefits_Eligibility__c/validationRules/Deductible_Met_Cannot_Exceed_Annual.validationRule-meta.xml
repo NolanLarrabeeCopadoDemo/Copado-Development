@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deductible_Met_Cannot_Exceed_Annual</fullName>
+    <active>true</active>
+    <description>Deductible Met cannot exceed Annual Deductible</description>
+    <errorConditionFormula>AND(
+    NOT(ISBLANK(Deductible_Met__c)),
+    NOT(ISBLANK(Annual_Deductible__c)),
+    Deductible_Met__c &gt; Annual_Deductible__c
+)</errorConditionFormula>
+    <errorDisplayField>Deductible_Met__c</errorDisplayField>
+    <errorMessage>Deductible Met cannot exceed Annual Deductible amount.</errorMessage>
+</ValidationRule>
