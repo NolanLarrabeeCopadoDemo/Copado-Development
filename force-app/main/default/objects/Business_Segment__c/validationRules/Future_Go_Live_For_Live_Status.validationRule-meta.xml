@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Future_Go_Live_For_Live_Status</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISPICKVAL(Implementation_Status__c, &quot;Live&quot;), Go_Live_Date__c &gt; TODAY())</errorConditionFormula>
+    <errorDisplayField>Go_Live_Date__c</errorDisplayField>
+    <errorMessage>Go-Live Date cannot be in the future for Live implementations</errorMessage>
+</ValidationRule>
