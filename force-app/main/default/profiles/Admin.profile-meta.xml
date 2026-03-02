@@ -204,6 +204,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Member_Benefits_Eligibility__c.New_Picklist__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Movie__c.Title__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -622,6 +627,10 @@
         <layout>Medical_Device_Complaint__c-Medical Device Complaint Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Member_Benefits_Eligibility__c-Member Benefits Eligibility Layout</layout>
+        <recordType>Member_Benefits_Eligibility__c.Standard</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Movie__c-Movie Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -939,6 +948,11 @@
     <recordTypeVisibilities>
         <default>true</default>
         <recordType>Finance__c.Individual</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>true</default>
+        <recordType>Member_Benefits_Eligibility__c.Standard</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
