@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Status_Dates_Valid</fullName>
+    <active>true</active>
+    <description>If Eligibility Status = Active, coverage dates must be valid for today</description>
+    <errorConditionFormula>AND(
+    TEXT(Eligibility_Status__c) = &quot;Active&quot;,
+    OR(
+        Coverage_Effective_Date__c &gt; TODAY(),
+        AND(
+            NOT(ISBLANK(Coverage_Termination_Date__c)),
+            Coverage_Termination_Date__c &lt; TODAY()
+        )
+    )
+)</errorConditionFormula>
+    <errorDisplayField>Eligibility_Status__c</errorDisplayField>
+    <errorMessage>Active eligibility requires Coverage Effective Date to be today or earlier, and Coverage Termination Date to be today or later (or blank).</errorMessage>
+</ValidationRule>
