@@ -64,6 +64,26 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Package_Tracking__c.Current_Location__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Package_Tracking__c.Estimated_Delivery_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Package_Tracking__c.Shipping_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Package_Tracking__c.Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Recruitment__c.Type__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -100,6 +120,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Opportunity-Formato de oportunidades</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Package_Tracking__c-Package Tracking Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Recruitment__c-Recruitment Layout</layout>
@@ -146,6 +169,15 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
+        <object>Package_Tracking__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
         <object>Recruitment__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
@@ -168,6 +200,10 @@
         <recordType>Finance__c.Individual</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
+    <tabVisibilities>
+        <tab>Package_Tracking__c</tab>
+        <visibility>DefaultOff</visibility>
+    </tabVisibilities>
     <userLicense>Salesforce</userLicense>
     <userPermissions>
         <enabled>true</enabled>
