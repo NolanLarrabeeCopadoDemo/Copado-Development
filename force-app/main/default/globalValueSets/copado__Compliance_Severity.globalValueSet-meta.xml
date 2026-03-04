@@ -20,6 +20,11 @@
         <default>false</default>
         <label>Medium</label>
     </customValue>
+    <customValue>
+        <fullName>Observe</fullName>
+        <default>false</default>
+        <label>Observe</label>
+    </customValue>
     <masterLabel>Compliance Severity</masterLabel>
     <sorted>false</sorted>
 </GlobalValueSet>
