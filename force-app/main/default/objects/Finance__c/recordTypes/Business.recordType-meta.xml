@@ -4,6 +4,17 @@
     <active>true</active>
     <label>Business</label>
     <picklistValues>
+        <picklist>Size__c</picklist>
+        <values>
+            <fullName>Commercial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enterprise</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Type__c</picklist>
         <values>
             <fullName>Equities</fullName>
