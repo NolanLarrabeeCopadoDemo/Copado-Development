@@ -34,6 +34,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Lead.Lead_Source_Detail__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.Discount__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -84,6 +89,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Health_Plan__c-Health Plan Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Lead-Formato de candidatos</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Opportunity-Formato de oportunidades</layout>
