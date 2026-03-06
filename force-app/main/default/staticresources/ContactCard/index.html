@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Card</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h1>Contact Information</h1>
+            </div>
+            <div class="card-body">
+                <div class="info-section">
+                    <label>Name:</label>
+                    <span id="contact-name">John Doe</span>
+                </div>
+                <div class="info-section">
+                    <label>Email:</label>
+                    <span id="contact-email">john.doe@example.com</span>
+                </div>
+                <div class="info-section">
+                    <label>Phone:</label>
+                    <span id="contact-phone">(555) 123-4567</span>
+                </div>
+                <div class="info-section">
+                    <label>Status:</label>
+                    <span id="contact-status" class="status-badge">Active</span>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button id="update-btn" class="btn-primary">Update Contact</button>
+                <button id="toggle-btn" class="btn-secondary">Toggle Status</button>
+            </div>
+            <div id="message" class="message"></div>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
