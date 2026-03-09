@@ -67,12 +67,12 @@ body {
 .info-section label {
     font-weight: 600;
     color: #555;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .info-section span {
     color: #333;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 /* Status Badge */
