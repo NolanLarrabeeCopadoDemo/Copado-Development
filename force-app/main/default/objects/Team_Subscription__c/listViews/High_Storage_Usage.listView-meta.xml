@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>High_Storage_Usage</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Team_Name__c</columns>
+    <columns>Current_Storage_Usage__c</columns>
+    <columns>Video_Storage_Quota__c</columns>
+    <columns>Usage_Percentage__c</columns>
+    <columns>Status_Health_Indicator__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Usage_Percentage__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>80</value>
+    </filters>
+    <label>High Storage Usage</label>
+</ListView>
