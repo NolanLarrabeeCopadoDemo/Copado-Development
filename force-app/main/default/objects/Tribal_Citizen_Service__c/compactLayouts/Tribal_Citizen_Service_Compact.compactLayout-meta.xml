@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tribal_Citizen_Service_Compact</fullName>
+    <fields>Name</fields>
+    <fields>Service_Name__c</fields>
+    <fields>Service_Category__c</fields>
+    <fields>Service_Status__c</fields>
+    <fields>Enrollment_Date__c</fields>
+    <label>Tribal Citizen Service Compact</label>
+</CompactLayout>
