@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enrollment_Date_Not_Future</fullName>
+    <active>true</active>
+    <description>Prevents enrollment date from being set in the future</description>
+    <errorConditionFormula>Enrollment_Date__c &gt; TODAY()</errorConditionFormula>
+    <errorDisplayField>Enrollment_Date__c</errorDisplayField>
+    <errorMessage>Enrollment Date cannot be in the future.</errorMessage>
+</ValidationRule>
