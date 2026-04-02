@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Milestone_Type__c</fullName>
+    <label>Milestone Type</label>
+    <required>true</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Enrollment</fullName>
+                <default>false</default>
+                <label>Enrollment</label>
+            </value>
+            <value>
+                <fullName>Benefits Verification</fullName>
+                <default>false</default>
+                <label>Benefits Verification</label>
+            </value>
+            <value>
+                <fullName>Prior Authorization</fullName>
+                <default>false</default>
+                <label>Prior Authorization</label>
+            </value>
+            <value>
+                <fullName>First Dose</fullName>
+                <default>false</default>
+                <label>First Dose</label>
+            </value>
+            <value>
+                <fullName>Follow-up Call</fullName>
+                <default>false</default>
+                <label>Follow-up Call</label>
+            </value>
+            <value>
+                <fullName>Refill Reminder</fullName>
+                <default>false</default>
+                <label>Refill Reminder</label>
+            </value>
+            <value>
+                <fullName>Adherence Check</fullName>
+                <default>false</default>
+                <label>Adherence Check</label>
+            </value>
+            <value>
+                <fullName>Program Review</fullName>
+                <default>false</default>
+                <label>Program Review</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
