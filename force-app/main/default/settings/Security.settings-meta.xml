@@ -128,11 +128,11 @@
     </networkAccess>
     <passwordPolicies>
         <complexity>AlphaNumeric</complexity>
-        <expiration>NinetyDays</expiration>
-        <historyRestriction>3</historyRestriction>
+        <expiration>SixMonths</expiration>
+        <historyRestriction>1</historyRestriction>
         <lockoutInterval>FifteenMinutes</lockoutInterval>
         <maxLoginAttempts>TenAttempts</maxLoginAttempts>
-        <minimumPasswordLength>8</minimumPasswordLength>
+        <minimumPasswordLength>12</minimumPasswordLength>
         <minimumPasswordLifetime>false</minimumPasswordLifetime>
         <obscureSecretAnswer>false</obscureSecretAnswer>
         <questionRestriction>DoesNotContainPassword</questionRestriction>
@@ -142,6 +142,7 @@
     <sessionSettings>
         <allowUserAuthenticationByCertificate>false</allowUserAuthenticationByCertificate>
         <allowUserCertBasedAuthenticationWithOcspValidation>false</allowUserCertBasedAuthenticationWithOcspValidation>
+        <auraBoxcarReductionPref>false</auraBoxcarReductionPref>
         <canConfirmEmailChangeInLightningCommunities>true</canConfirmEmailChangeInLightningCommunities>
         <canConfirmIdentityBySmsOnly>true</canConfirmIdentityBySmsOnly>
         <disableTimeoutWarning>false</disableTimeoutWarning>
@@ -180,17 +181,19 @@
         <lockerServiceCSP>true</lockerServiceCSP>
         <lockerServiceNext>true</lockerServiceNext>
         <lockerServiceNextControl>true</lockerServiceNextControl>
+        <lockerTrustedMode>false</lockerTrustedMode>
         <logoutURL>https://mccopado.cloudforce.com/</logoutURL>
         <redirectBlockModeEnabled>false</redirectBlockModeEnabled>
         <redirectionWarning>true</redirectionWarning>
         <referrerPolicy>true</referrerPolicy>
-        <referrerPolicyDirective>origin-when-cross-origin</referrerPolicyDirective>
+        <referrerPolicyDirective>strict-origin-when-cross-origin</referrerPolicyDirective>
         <requireHttpOnly>false</requireHttpOnly>
         <sendCspForUncommonClients>false</sendCspForUncommonClients>
         <sessionTimeout>TwoHours</sessionTimeout>
         <sidToken3rdPartyAuraApp>false</sidToken3rdPartyAuraApp>
         <skipSFAWhenMFADirectUILogin>false</skipSFAWhenMFADirectUILogin>
         <terminateUserSessionsWhenAdminResetsPassword>false</terminateUserSessionsWhenAdminResetsPassword>
+        <untrustedRedirect>AlwaysAllowed</untrustedRedirect>
         <useEAPIRateLimitForConnectAPI>false</useEAPIRateLimitForConnectAPI>
         <useLocalStorageForLogoutUrl>true</useLocalStorageForLogoutUrl>
     </sessionSettings>
