@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Single_Family_Housing</fullName>
+    <active>true</active>
+    <description>For residential and housing loan programs such as Section 502 Direct, Section 504 Repair, Section 523/524</description>
+    <label>Single Family Housing</label>
+    <picklistValues>
+        <picklist>Application_Status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Denied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Funded</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Received</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Under Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Withdrawn</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Program_Type__c</picklist>
+        <values>
+            <fullName>Rural Energy for America</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Single Family Direct</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Single Family Guaranteed</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>
