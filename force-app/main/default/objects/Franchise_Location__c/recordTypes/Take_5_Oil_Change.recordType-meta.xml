@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Take_5_Oil_Change</fullName>
+    <active>true</active>
+    <description>Record type for Take 5 Oil Change locations, covering company-owned and franchised quick-lube service centers.</description>
+    <label>Take 5 Oil Change</label>
+    <picklistValues>
+        <picklist>Brand_Name__c</picklist>
+        <values>
+            <fullName>1-800-Radiator and A%2FC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ABRA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Auto Glass Now</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CARSTAR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fix Auto USA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maaco</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meineke</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Take 5 Oil Change</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Country__c</picklist>
+        <values>
+            <fullName>Canada</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>USA</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Location_Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Pending Opening</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Permanently Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Temporarily Closed</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Ownership_Type__c</picklist>
+        <values>
+            <fullName>Co-Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Company-Owned</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Franchised</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Service_Category__c</picklist>
+        <values>
+            <fullName>Collision Repair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Glass Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oil Change and Maintenance</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Paint and Body</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Parts Distribution</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>
