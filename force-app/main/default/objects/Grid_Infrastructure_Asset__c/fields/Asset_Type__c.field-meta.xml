@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Asset_Type__c</fullName>
+    <label>Asset Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Transformer</fullName>
+                <default>false</default>
+                <label>Transformer</label>
+            </value>
+            <value>
+                <fullName>Substation</fullName>
+                <default>false</default>
+                <label>Substation</label>
+            </value>
+            <value>
+                <fullName>Power Line</fullName>
+                <default>false</default>
+                <label>Power Line</label>
+            </value>
+            <value>
+                <fullName>Gas Main</fullName>
+                <default>false</default>
+                <label>Gas Main</label>
+            </value>
+            <value>
+                <fullName>Meter</fullName>
+                <default>false</default>
+                <label>Meter</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
