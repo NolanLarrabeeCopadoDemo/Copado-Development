@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_Negative_Annual_Contract_Value</fullName>
+    <active>true</active>
+    <description>Annual Contract Value cannot be a negative number</description>
+    <errorConditionFormula>Annual_Contract_Value__c &lt; 0</errorConditionFormula>
+    <errorMessage>Annual Contract Value cannot be a negative number.</errorMessage>
+</ValidationRule>
