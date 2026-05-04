@@ -239,6 +239,26 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Route__c.End_Location__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Route__c.Shipping_Value__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Route__c.Start_Location__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Route__c.Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Service_Outage_Tracker__c.Case__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -324,6 +344,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Recruitment__c-Recruitment Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Route__c-Route Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Service_Outage_Tracker__c-Service Outage Tracker Layout</layout>
@@ -448,6 +471,15 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
+        <object>Route__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
         <object>Service_Outage_Tracker__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
@@ -542,6 +574,14 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ApiEnabled</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>AppFrameworkManageApp</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>AppFrameworkManageTemplate</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
