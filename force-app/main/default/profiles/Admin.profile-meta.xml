@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Profile xmlns="http://soap.sforce.com/2006/04/metadata"
-      xmlns:n1="http://www.w3.org/2001/XMLSchema-instance">
+<Profile xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:n1="http://www.w3.org/2001/XMLSchema-instance">
     <custom>false</custom>
     <fieldPermissions>
         <editable>false</editable>
         <field>API_Endpoint__mdt.Endpoint_URL__c</field>
         <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Account.Active__c</field>
-        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -20,11 +14,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Case.Date_Opened__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Case.Product_Line__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -79,22 +68,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Gaming_Performance__c.Active__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Health_Plan__c.Active__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Health_Plan__c.End_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Health_Plan__c.Start_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -249,51 +223,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Patient_Service__c.Active__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Patient_Service__c.Care_Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Performance_Management__c.Active__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Performance_Management__c.Compensation_Analysis__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Performance_Management__c.Current_Salary__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Performance_Management__c.Employee_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Performance_Management__c.Employee_Sentiment__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Performance_Management__c.Goals__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Performance_Management__c.Review__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Railway_Component__c.Component_Type__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -305,11 +234,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Recruitment__c.Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Risk_Assessment__c.Type__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -362,11 +286,6 @@
         <field>Threat_Intelligence_Report__c.Risk_Severity_Score__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Window__c.Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
     <layoutAssignments>
         <layout>API_Endpoint__mdt-API Endpoint Layout</layout>
     </layoutAssignments>
@@ -402,9 +321,6 @@
         <recordType>Finance__c.Individual</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Gaming_Performance__c-Gaming Performance Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>Health_Plan__c-Health Plan Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -426,33 +342,10 @@
         <layout>Package_Tracking__c-Package Tracking Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Patient_Service__c-Patient Service Layout</layout>
-        <recordType>Patient_Service__c.Health_Services</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Patient_Service__c-Patient Service Layout</layout>
-        <recordType>Patient_Service__c.Primary_Care</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Performance_Management__c-Performance Management Layout</layout>
-        <recordType>Performance_Management__c.Compensation</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Performance_Management__c-Performance Management Layout</layout>
-        <recordType>Performance_Management__c.Goals</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Performance_Management__c-Performance Management Layout</layout>
-        <recordType>Performance_Management__c.Reviews</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>Railway_Component__c-Railway Component Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Recruitment__c-Recruitment Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Risk_Assessment__c-Risk Assessment Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Route__c-Route Layout</layout>
@@ -469,10 +362,7 @@
     <layoutAssignments>
         <layout>Threat_Intelligence_Report__c-Threat Intelligence Report Layout</layout>
     </layoutAssignments>
-    <layoutAssignments>
-        <layout>Window__c-Window Layout</layout>
-    </layoutAssignments>
-    <loginHours n1:nil="true" />
+    <loginHours n1:nil="true"></loginHours>
     <loginIpRanges>
         <description>All</description>
         <endAddress>255.255.255.255</endAddress>
@@ -512,15 +402,6 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>Finance__c</object>
-        <viewAllRecords>true</viewAllRecords>
-    </objectPermissions>
-    <objectPermissions>
-        <allowCreate>true</allowCreate>
-        <allowDelete>true</allowDelete>
-        <allowEdit>true</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>true</modifyAllRecords>
-        <object>Gaming_Performance__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -574,24 +455,6 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
-        <object>Patient_Service__c</object>
-        <viewAllRecords>true</viewAllRecords>
-    </objectPermissions>
-    <objectPermissions>
-        <allowCreate>true</allowCreate>
-        <allowDelete>true</allowDelete>
-        <allowEdit>true</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>true</modifyAllRecords>
-        <object>Performance_Management__c</object>
-        <viewAllRecords>true</viewAllRecords>
-    </objectPermissions>
-    <objectPermissions>
-        <allowCreate>true</allowCreate>
-        <allowDelete>true</allowDelete>
-        <allowEdit>true</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>true</modifyAllRecords>
         <object>Railway_Component__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
@@ -602,15 +465,6 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>Recruitment__c</object>
-        <viewAllRecords>true</viewAllRecords>
-    </objectPermissions>
-    <objectPermissions>
-        <allowCreate>true</allowCreate>
-        <allowDelete>true</allowDelete>
-        <allowEdit>true</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>true</modifyAllRecords>
-        <object>Risk_Assessment__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -658,15 +512,6 @@
         <object>Threat_Intelligence_Report__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
-    <objectPermissions>
-        <allowCreate>true</allowCreate>
-        <allowDelete>true</allowDelete>
-        <allowEdit>true</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>true</modifyAllRecords>
-        <object>Window__c</object>
-        <viewAllRecords>true</viewAllRecords>
-    </objectPermissions>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Equipment_Certification__c.Custom</recordType>
@@ -687,31 +532,6 @@
         <recordType>Finance__c.Individual</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>Patient_Service__c.Health_Services</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>true</default>
-        <recordType>Patient_Service__c.Primary_Care</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>Performance_Management__c.Compensation</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>true</default>
-        <recordType>Performance_Management__c.Goals</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>Performance_Management__c.Reviews</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
     <tabVisibilities>
         <tab>Delivery__c</tab>
         <visibility>DefaultOff</visibility>
@@ -726,10 +546,6 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>Package_Tracking__c</tab>
-        <visibility>DefaultOff</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>Performance_Management__c</tab>
         <visibility>DefaultOff</visibility>
     </tabVisibilities>
     <userLicense>Salesforce</userLicense>
@@ -1056,6 +872,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ManageAnalyticSnapshots</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ManageApiNamedQueries</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -1448,6 +1268,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ViewAllUsers</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewApiNamedQueries</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
