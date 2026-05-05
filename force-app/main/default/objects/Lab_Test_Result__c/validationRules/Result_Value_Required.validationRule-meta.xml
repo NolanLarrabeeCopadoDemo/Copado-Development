@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Result_Value_Required</fullName>
+    <active>true</active>
+    <description>Ensures result value is populated</description>
+    <errorConditionFormula>ISBLANK(Result_Value__c)</errorConditionFormula>
+    <errorDisplayField>Result_Value__c</errorDisplayField>
+    <errorMessage>Result Value is required.</errorMessage>
+</ValidationRule>
