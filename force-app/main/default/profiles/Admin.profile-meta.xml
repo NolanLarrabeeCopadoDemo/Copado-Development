@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Profile xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:n1="http://www.w3.org/2001/XMLSchema-instance">
+<Profile xmlns="http://soap.sforce.com/2006/04/metadata">
+    <classAccesses>
+        <apexClass>SimpleGreeting</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SimpleGreetingTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
     <custom>false</custom>
     <fieldPermissions>
         <editable>false</editable>
@@ -167,6 +175,116 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.Annual_Deductible__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.Authorization_Limit__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.Authorization_Number__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.Authorization_Remaining__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.Authorization_Used__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.Authorized_Services__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.Benefit_Category__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.Coverage_Termination_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.Deductible_Met__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.Deductible_Percentage_Met__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.Eligibility_Verified_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.Emergency_Room_Copay__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.External_System_ID__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.HIPAA_Compliance_Notes__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.Out_of_Pocket_Maximum__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.Out_of_Pocket_Met__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.Pre_Authorization_Required__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.Prescription_Tier_Structure__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.Primary_Care_Copay__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.Provider_Network__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.Specialist_Copay__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.Verified_By__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Movie__c.Title__c</field>
         <readable>true</readable>
@@ -306,11 +424,17 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Equipment_Certification__c-Equipment Certification Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Equipment_Certification__c-Equipment Certification Layout</layout>
         <recordType>Equipment_Certification__c.Custom</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Equipment_Certification__c-Equipment Certification Layout</layout>
         <recordType>Equipment_Certification__c.Standard</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Finance__c-Finance Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Finance__c-Finance Layout</layout>
@@ -327,7 +451,7 @@
         <layout>Lead-Formato de candidatos</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Medical_Device_Complaint__c-Medical Device Complaint Layout</layout>
+        <layout>Member_Benefits_Eligibility__c-Member Benefits Eligibility Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Movie__c-Movie Layout</layout>
@@ -362,7 +486,6 @@
     <layoutAssignments>
         <layout>Threat_Intelligence_Report__c-Threat Intelligence Report Layout</layout>
     </layoutAssignments>
-    <loginHours n1:nil="true"></loginHours>
     <loginIpRanges>
         <description>All</description>
         <endAddress>255.255.255.255</endAddress>
@@ -420,6 +543,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>Medical_Device_Complaint__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Member_Benefits_Eligibility__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -531,6 +663,11 @@
         <default>true</default>
         <recordType>Finance__c.Individual</recordType>
         <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>copado__Compliance_Rule__c.copado__Other</recordType>
+        <visible>false</visible>
     </recordTypeVisibilities>
     <tabVisibilities>
         <tab>Delivery__c</tab>
