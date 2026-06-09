@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Rating_for_Credit_Rating</fullName>
+    <active>true</active>
+    <description>Rating field must not be blank when the record type is Credit Rating.</description>
+    <errorConditionFormula>AND(
+  ISPICKVAL(Rating__c, &quot;&quot;),
+  $RecordType.Name = &quot;Credit Rating&quot;
+)</errorConditionFormula>
+    <errorMessage>Rating is required for Credit Rating records. Please select a valid S&amp;P rating value.</errorMessage>
+</ValidationRule>
