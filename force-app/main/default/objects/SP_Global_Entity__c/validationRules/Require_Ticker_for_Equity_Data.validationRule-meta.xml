@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Ticker_for_Equity_Data</fullName>
+    <active>true</active>
+    <description>Ticker Symbol must not be blank when the record type is Equity Data.</description>
+    <errorConditionFormula>AND(
+  ISBLANK(Ticker_Symbol__c),
+  $RecordType.Name = &quot;Equity Data&quot;
+)</errorConditionFormula>
+    <errorMessage>Ticker Symbol is required for Equity Data records. Please enter the entity&apos;s market ticker symbol.</errorMessage>
+</ValidationRule>
