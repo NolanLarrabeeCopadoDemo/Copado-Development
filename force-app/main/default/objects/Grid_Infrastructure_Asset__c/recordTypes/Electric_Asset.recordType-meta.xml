@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Electric_Asset</fullName>
+    <active>true</active>
+    <description>Record type for transmission and distribution electrical assets such as transformers, substations, and power lines.</description>
+    <label>Electric Asset</label>
+    <picklistValues>
+        <picklist>Asset_Type__c</picklist>
+        <values>
+            <fullName>Power Line</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Substation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transformer</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Operational_Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Decommissioned</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inactive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Under Maintenance</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Region__c</picklist>
+        <values>
+            <fullName>Kentucky</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pennsylvania</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>United Kingdom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Virginia</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>
