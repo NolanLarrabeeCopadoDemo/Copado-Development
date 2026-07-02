@@ -94,6 +94,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Movie__c.Budget__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>NPS__c.Date_Logged__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -226,6 +231,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Lead-Formato de candidatos</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Movie__c-Movie Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>NPS__c-NPS Layout</layout>
