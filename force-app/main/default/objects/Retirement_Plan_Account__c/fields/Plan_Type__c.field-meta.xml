@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Plan_Type__c</fullName>
+    <label>Plan Type</label>
+    <required>true</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>403(b)</fullName>
+                <default>false</default>
+                <label>403(b)</label>
+            </value>
+            <value>
+                <fullName>401(k)</fullName>
+                <default>false</default>
+                <label>401(k)</label>
+            </value>
+            <value>
+                <fullName>Traditional IRA</fullName>
+                <default>false</default>
+                <label>Traditional IRA</label>
+            </value>
+            <value>
+                <fullName>Roth IRA</fullName>
+                <default>false</default>
+                <label>Roth IRA</label>
+            </value>
+            <value>
+                <fullName>Pension</fullName>
+                <default>false</default>
+                <label>Pension</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
