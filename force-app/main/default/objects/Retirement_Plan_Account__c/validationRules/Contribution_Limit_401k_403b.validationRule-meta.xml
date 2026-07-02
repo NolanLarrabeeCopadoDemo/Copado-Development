@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contribution_Limit_401k_403b</fullName>
+    <active>true</active>
+    <description>Validates that employee contributions for 401(k) and 403(b) plans do not exceed the annual IRS limit of $23,000 (or $30,500 with catch-up)</description>
+    <errorConditionFormula>AND(
+  OR(TEXT(Plan_Type__c) = &quot;401(k)&quot;, TEXT(Plan_Type__c) = &quot;403(b)&quot;),
+  OR(
+    AND(Catch_Up_Eligible__c = false, Employee_Contributions_YTD__c &gt; 23000),
+    AND(Catch_Up_Eligible__c = true, Employee_Contributions_YTD__c &gt; 30500)
+  )
+)</errorConditionFormula>
+    <errorDisplayField>Employee_Contributions_YTD__c</errorDisplayField>
+    <errorMessage>Employee contribution exceeds annual IRS limit. For 2024: $23,000 (standard) or $30,500 (with catch-up for age 50+)</errorMessage>
+</ValidationRule>
