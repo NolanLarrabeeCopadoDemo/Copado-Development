@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Delivery_Date_Cannot_Be_In_Past</fullName>
+    <active>true</active>
+    <description>Prevents Estimated Delivery Date from being set to a past date when status is not Delivered or Cancelled. Business Purpose: Ensures the estimated delivery date is always a future date for active shipments.</description>
+    <errorConditionFormula>AND(
+    NOT(OR(
+        ISPICKVAL(Shipment_Status__c, &apos;Delivered&apos;),
+        ISPICKVAL(Shipment_Status__c, &apos;Cancelled&apos;)
+    )),
+    NOT(ISBLANK(Estimated_Delivery_Date__c)),
+    Estimated_Delivery_Date__c &lt; TODAY()
+)</errorConditionFormula>
+    <errorMessage>Estimated Delivery Date cannot be set to a past date for active shipments.</errorMessage>
+</ValidationRule>
