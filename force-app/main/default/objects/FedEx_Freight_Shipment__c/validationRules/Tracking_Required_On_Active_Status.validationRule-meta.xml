@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tracking_Required_On_Active_Status</fullName>
+    <active>true</active>
+    <description>Prevents saving a record with Shipment Status = In Transit if Tracking Number is blank. Business Purpose: Ensures a tracking number is provided before a shipment can be marked as In Transit.</description>
+    <errorConditionFormula>AND(
+    ISPICKVAL(Shipment_Status__c, &apos;In Transit&apos;),
+    ISBLANK(Tracking_Number__c)
+)</errorConditionFormula>
+    <errorMessage>A Tracking Number is required when the Shipment Status is set to In Transit.</errorMessage>
+</ValidationRule>
