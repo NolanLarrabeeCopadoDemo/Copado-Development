@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Status_Requires_Salary</fullName>
+    <active>true</active>
+    <description>Enforces that any record with an Employment Status of Active must have an Annual Salary greater than zero.</description>
+    <errorConditionFormula>AND(ISPICKVAL(Employment_Status__c, &quot;Active&quot;), OR(ISBLANK(Annual_Salary__c), Annual_Salary__c &lt;= 0))</errorConditionFormula>
+    <errorDisplayField>Annual_Salary__c</errorDisplayField>
+    <errorMessage>Annual Salary must be greater than zero when Employment Status is Active. Please enter a valid salary amount.</errorMessage>
+</ValidationRule>
