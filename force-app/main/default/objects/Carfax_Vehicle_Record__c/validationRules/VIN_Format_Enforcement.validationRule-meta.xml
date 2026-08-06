@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VIN_Format_Enforcement</fullName>
+    <active>true</active>
+    <description>Validates that the VIN field, when populated, matches the standard 17-character alphanumeric VIN format excluding I, O, and Q.</description>
+    <errorConditionFormula>NOT(ISBLANK(VIN__c)) &amp;&amp;
+            NOT(REGEX(VIN__c, &quot;[A-HJ-NPR-Z0-9]{17}&quot;))</errorConditionFormula>
+    <errorDisplayField>VIN__c</errorDisplayField>
+    <errorMessage>VIN must be exactly 17 characters and contain only valid alphanumeric characters (letters A-H, J-N, P-R, Z and digits 0-9).</errorMessage>
+</ValidationRule>
