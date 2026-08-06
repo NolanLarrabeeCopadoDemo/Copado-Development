@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Required_Fields_When_Active</fullName>
+    <active>true</active>
+    <description>Enforces that VIN, Make, Model, and Year are all populated when the record Status is Active.</description>
+    <errorConditionFormula>ISPICKVAL(Status__c, &quot;Active&quot;) &amp;&amp;
+            (ISBLANK(VIN__c) || ISBLANK(Make__c) || ISBLANK(Model__c) || ISBLANK(Year__c))</errorConditionFormula>
+    <errorDisplayField>Status__c</errorDisplayField>
+    <errorMessage>VIN, Make, Model, and Year are all required when Status is set to Active.</errorMessage>
+</ValidationRule>
