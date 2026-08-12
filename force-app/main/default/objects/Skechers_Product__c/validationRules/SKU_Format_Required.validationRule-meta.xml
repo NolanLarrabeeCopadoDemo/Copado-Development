@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SKU_Format_Required</fullName>
+    <active>true</active>
+    <description>Enforces that the SKU field follows the required alphanumeric format. Only uppercase letters, numbers, and hyphens are allowed, max 20 characters.</description>
+    <errorConditionFormula>NOT(ISBLANK(SKU__c)) &amp;&amp; NOT(REGEX(SKU__c, &quot;^[A-Z0-9\\-]{1,20}$&quot;))</errorConditionFormula>
+    <errorDisplayField>SKU__c</errorDisplayField>
+    <errorMessage>SKU must contain only uppercase letters, numbers, and hyphens, with a maximum of 20 characters (e.g., SKU-12345).</errorMessage>
+</ValidationRule>

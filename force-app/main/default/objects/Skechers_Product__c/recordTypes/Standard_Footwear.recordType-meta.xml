@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Standard_Footwear</fullName>
+    <active>true</active>
+    <description>Record type for everyday consumer footwear products.</description>
+    <label>Standard Footwear</label>
+    <picklistValues>
+        <picklist>Product_Line__c</picklist>
+        <values>
+            <fullName>Casual</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kids</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sport</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Work</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Discontinued</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Seasonal</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

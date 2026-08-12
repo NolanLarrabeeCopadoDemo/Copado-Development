@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Size_Range_Validation</fullName>
+    <active>true</active>
+    <description>Ensures that the shoe size entered is within the valid range of 1 to 20.</description>
+    <errorConditionFormula>NOT(ISBLANK(Size__c)) &amp;&amp; (Size__c &lt; 1 || Size__c &gt; 20)</errorConditionFormula>
+    <errorDisplayField>Size__c</errorDisplayField>
+    <errorMessage>Size must be between 1 and 20.</errorMessage>
+</ValidationRule>
