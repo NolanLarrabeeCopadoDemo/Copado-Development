@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Status_Requires_Price</fullName>
+    <active>true</active>
+    <description>Ensures that a Retail Price is entered whenever the product Status is set to Active.</description>
+    <errorConditionFormula>ISPICKVAL(Status__c, &quot;Active&quot;) &amp;&amp; ISBLANK(Retail_Price__c)</errorConditionFormula>
+    <errorDisplayField>Retail_Price__c</errorDisplayField>
+    <errorMessage>Retail Price is required when the product Status is Active.</errorMessage>
+</ValidationRule>

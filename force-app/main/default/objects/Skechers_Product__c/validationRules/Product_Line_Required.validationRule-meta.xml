@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Line_Required</fullName>
+    <active>true</active>
+    <description>Ensures that the Product Line field is populated on all Skechers Product records.</description>
+    <errorConditionFormula>ISBLANK(TEXT(Product_Line__c))</errorConditionFormula>
+    <errorDisplayField>Product_Line__c</errorDisplayField>
+    <errorMessage>Product Line is required for all Skechers Product records.</errorMessage>
+</ValidationRule>
