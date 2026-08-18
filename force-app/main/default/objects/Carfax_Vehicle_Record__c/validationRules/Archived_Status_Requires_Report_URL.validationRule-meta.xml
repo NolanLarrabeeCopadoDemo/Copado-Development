@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Archived_Status_Requires_Report_URL</fullName>
+    <active>true</active>
+    <description>Enforces that the Report URL field must be populated before a vehicle record can be archived.</description>
+    <errorConditionFormula>ISPICKVAL(Status__c, &quot;Archived&quot;) &amp;&amp;
+            ISBLANK(Report_URL__c)</errorConditionFormula>
+    <errorDisplayField>Report_URL__c</errorDisplayField>
+    <errorMessage>A Carfax Report URL is required before a vehicle record can be set to Archived status.</errorMessage>
+</ValidationRule>

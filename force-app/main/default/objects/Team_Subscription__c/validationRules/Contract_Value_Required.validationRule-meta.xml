@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_Value_Required</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISBLANK(Contract_Value__c),
+    ISPICKVAL(Subscription_Status__c, &quot;Active&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>Contract_Value__c</errorDisplayField>
+    <errorMessage>Contract value required for active subscriptions</errorMessage>
+</ValidationRule>
