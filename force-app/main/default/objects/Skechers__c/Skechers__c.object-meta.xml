@@ -145,23 +145,23 @@
     <deploymentStatus>Deployed</deploymentStatus>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
-    <enableFeeds>false</enableFeeds>
-    <enableHistory>true</enableHistory>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>false</enableHistory>
     <enableLicensing>false</enableLicensing>
     <enableReports>true</enableReports>
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
-    <label>Ultragaz</label>
+    <label>Skechers</label>
     <nameField>
-        <displayFormat>UG-{00000}</displayFormat>
-        <label>Record Name</label>
-        <trackHistory>false</trackHistory>
-        <type>AutoNumber</type>
+        <label>Skechers Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
     </nameField>
-    <pluralLabel>Ultragazes</pluralLabel>
+    <pluralLabel>Skechers</pluralLabel>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
     <searchLayouts />
-    <sharingModel>ReadWrite</sharingModel>
+    <sharingModel>Private</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>

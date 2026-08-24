@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Services_Amount__c</fullName>
-    <label>Services Amount</label>
-    <precision>11</precision>
+    <fullName>Effective_Date__c</fullName>
+    <label>Effective Date</label>
     <required>false</required>
-    <scale>2</scale>
     <trackFeedHistory>false</trackFeedHistory>
     <trackTrending>false</trackTrending>
-    <type>Currency</type>
+    <type>Date</type>
 </CustomField>

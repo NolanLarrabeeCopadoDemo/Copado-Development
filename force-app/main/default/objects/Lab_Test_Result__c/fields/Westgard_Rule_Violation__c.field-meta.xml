@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Status__c</fullName>
-    <label>Status</label>
+    <fullName>Westgard_Rule_Violation__c</fullName>
+    <label>Westgard Rule Violation</label>
     <required>false</required>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
@@ -11,39 +11,39 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Planned</fullName>
-                <default>false</default>
-                <label>Planned</label>
+                <fullName>None</fullName>
+                <default>true</default>
+                <label>None</label>
             </value>
             <value>
-                <fullName>Approved</fullName>
+                <fullName>1-2s (Warning)</fullName>
                 <default>false</default>
-                <label>Approved</label>
+                <label>1-2s (Warning)</label>
             </value>
             <value>
-                <fullName>Scheduled</fullName>
+                <fullName>1-3s (Reject)</fullName>
                 <default>false</default>
-                <label>Scheduled</label>
+                <label>1-3s (Reject)</label>
             </value>
             <value>
-                <fullName>In Transit</fullName>
+                <fullName>2-2s (Reject)</fullName>
                 <default>false</default>
-                <label>In Transit</label>
+                <label>2-2s (Reject)</label>
             </value>
             <value>
-                <fullName>Completed</fullName>
+                <fullName>R-4s (Reject)</fullName>
                 <default>false</default>
-                <label>Completed</label>
+                <label>R-4s (Reject)</label>
             </value>
             <value>
-                <fullName>Cancelled</fullName>
+                <fullName>4-1s (Reject)</fullName>
                 <default>false</default>
-                <label>Cancelled</label>
+                <label>4-1s (Reject)</label>
             </value>
             <value>
-                <fullName>Problem</fullName>
+                <fullName>10x (Reject)</fullName>
                 <default>false</default>
-                <label>Problem</label>
+                <label>10x (Reject)</label>
             </value>
         </valueSetDefinition>
     </valueSet>

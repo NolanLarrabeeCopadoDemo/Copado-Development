@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Shipping_Value__c</fullName>
-    <label>Shipping Value</label>
+    <fullName>Acceptable_Range_High__c</fullName>
+    <externalId>false</externalId>
+    <label>Acceptable Range (High)</label>
     <precision>18</precision>
     <required>false</required>
-    <scale>2</scale>
+    <scale>4</scale>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
-    <type>Currency</type>
+    <type>Number</type>
+    <unique>false</unique>
 </CustomField>

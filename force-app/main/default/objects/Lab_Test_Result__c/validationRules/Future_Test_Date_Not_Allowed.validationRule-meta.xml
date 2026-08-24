@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Future_Test_Date_Not_Allowed</fullName>
+    <active>true</active>
+    <description>Prevents test date/time from being in the future</description>
+    <errorConditionFormula>Test_Date_Time__c &gt; NOW()</errorConditionFormula>
+    <errorDisplayField>Test_Date_Time__c</errorDisplayField>
+    <errorMessage>Test Date/Time cannot be in the future. Please enter a valid date/time.</errorMessage>
+</ValidationRule>

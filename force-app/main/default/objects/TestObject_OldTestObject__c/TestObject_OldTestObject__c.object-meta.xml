@@ -149,18 +149,17 @@
     <enableHistory>true</enableHistory>
     <enableLicensing>false</enableLicensing>
     <enableReports>true</enableReports>
-    <enableSearch>true</enableSearch>
+    <enableSearch>false</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
-    <label>Ultragaz</label>
+    <label>TestObject_OldTestObject</label>
     <nameField>
-        <displayFormat>UG-{00000}</displayFormat>
-        <label>Record Name</label>
+        <label>TestObject_OldTestObject Name</label>
         <trackHistory>false</trackHistory>
-        <type>AutoNumber</type>
+        <type>Text</type>
     </nameField>
-    <pluralLabel>Ultragazes</pluralLabel>
+    <pluralLabel>TestObject_OldTestObject</pluralLabel>
     <searchLayouts />
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
