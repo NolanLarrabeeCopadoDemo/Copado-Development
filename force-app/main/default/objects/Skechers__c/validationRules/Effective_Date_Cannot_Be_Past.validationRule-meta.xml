@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Effective_Date_Cannot_Be_Past</fullName>
+    <active>true</active>
+    <description>Prevents the Effective Date from being set to a date prior to today on record creation.</description>
+    <errorConditionFormula>AND(ISNEW(), NOT(ISBLANK(Effective_Date__c)), Effective_Date__c &lt; TODAY())</errorConditionFormula>
+    <errorMessage>Effective Date cannot be set to a date in the past.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Brand_Name__c</fullName>
+    <label>Brand Name</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Take 5 Oil Change</fullName>
+                <default>false</default>
+                <label>Take 5 Oil Change</label>
+            </value>
+            <value>
+                <fullName>Meineke</fullName>
+                <default>false</default>
+                <label>Meineke</label>
+            </value>
+            <value>
+                <fullName>Maaco</fullName>
+                <default>false</default>
+                <label>Maaco</label>
+            </value>
+            <value>
+                <fullName>CARSTAR</fullName>
+                <default>false</default>
+                <label>CARSTAR</label>
+            </value>
+            <value>
+                <fullName>Auto Glass Now</fullName>
+                <default>false</default>
+                <label>Auto Glass Now</label>
+            </value>
+            <value>
+                <fullName>ABRA</fullName>
+                <default>false</default>
+                <label>ABRA</label>
+            </value>
+            <value>
+                <fullName>Fix Auto USA</fullName>
+                <default>false</default>
+                <label>Fix Auto USA</label>
+            </value>
+            <value>
+                <fullName>1-800-Radiator and A/C</fullName>
+                <default>false</default>
+                <label>1-800-Radiator &amp; A/C</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

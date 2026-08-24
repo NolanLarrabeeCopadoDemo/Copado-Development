@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lab_Test_Result_Compact</fullName>
+    <fields>Name</fields>
+    <fields>Test_Name__c</fields>
+    <fields>Instrument_Model__c</fields>
+    <fields>Result_Value__c</fields>
+    <fields>Test_Status__c</fields>
+    <fields>Test_Date_Time__c</fields>
+    <label>Lab Test Result Compact</label>
+</CompactLayout>

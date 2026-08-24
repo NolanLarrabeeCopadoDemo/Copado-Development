@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Location_Status__c</fullName>
+    <label>Location Status</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Active</fullName>
+                <default>true</default>
+                <label>Active</label>
+            </value>
+            <value>
+                <fullName>Pending Opening</fullName>
+                <default>false</default>
+                <label>Pending Opening</label>
+            </value>
+            <value>
+                <fullName>Temporarily Closed</fullName>
+                <default>false</default>
+                <label>Temporarily Closed</label>
+            </value>
+            <value>
+                <fullName>Permanently Closed</fullName>
+                <default>false</default>
+                <label>Permanently Closed</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

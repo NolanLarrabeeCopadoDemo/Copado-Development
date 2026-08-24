@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Instrument_Model__c</fullName>
+    <label>Instrument Model</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AU680 Chemistry Analyzer</fullName>
+                <default>false</default>
+                <label>AU680 Chemistry Analyzer</label>
+            </value>
+            <value>
+                <fullName>DxH 900 Hematology Analyzer</fullName>
+                <default>false</default>
+                <label>DxH 900 Hematology Analyzer</label>
+            </value>
+            <value>
+                <fullName>Access 2 Immunoassay System</fullName>
+                <default>false</default>
+                <label>Access 2 Immunoassay System</label>
+            </value>
+            <value>
+                <fullName>DxC 700 AU Chemistry Analyzer</fullName>
+                <default>false</default>
+                <label>DxC 700 AU Chemistry Analyzer</label>
+            </value>
+            <value>
+                <fullName>UniCel DxI 800 Immunoassay System</fullName>
+                <default>false</default>
+                <label>UniCel DxI 800 Immunoassay System</label>
+            </value>
+            <value>
+                <fullName>DxH 520 Hematology Analyzer</fullName>
+                <default>false</default>
+                <label>DxH 520 Hematology Analyzer</label>
+            </value>
+            <value>
+                <fullName>AU5800 Chemistry Analyzer</fullName>
+                <default>false</default>
+                <label>AU5800 Chemistry Analyzer</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

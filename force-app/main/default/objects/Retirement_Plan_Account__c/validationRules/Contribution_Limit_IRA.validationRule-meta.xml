@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contribution_Limit_IRA</fullName>
+    <active>true</active>
+    <description>Validates that IRA contributions do not exceed the annual IRS limit of $7,000 (or $8,000 with catch-up)</description>
+    <errorConditionFormula>AND(
+  OR(TEXT(Plan_Type__c) = &quot;Traditional IRA&quot;, TEXT(Plan_Type__c) = &quot;Roth IRA&quot;),
+  OR(
+    AND(Catch_Up_Eligible__c = false, Employee_Contributions_YTD__c &gt; 7000),
+    AND(Catch_Up_Eligible__c = true, Employee_Contributions_YTD__c &gt; 8000)
+  )
+)</errorConditionFormula>
+    <errorDisplayField>Employee_Contributions_YTD__c</errorDisplayField>
+    <errorMessage>IRA contribution exceeds annual IRS limit. For 2024: $7,000 (standard) or $8,000 (with catch-up for age 50+)</errorMessage>
+</ValidationRule>
