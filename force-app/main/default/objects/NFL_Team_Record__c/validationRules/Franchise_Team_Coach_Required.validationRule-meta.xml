@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Franchise_Team_Coach_Required</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(RecordType.DeveloperName = &quot;Franchise_Team&quot;, ISBLANK(Head_Coach__c))</errorConditionFormula>
+    <errorDisplayField>Head_Coach__c</errorDisplayField>
+    <errorMessage>Head Coach is required for Franchise Team record type.</errorMessage>
+</ValidationRule>
