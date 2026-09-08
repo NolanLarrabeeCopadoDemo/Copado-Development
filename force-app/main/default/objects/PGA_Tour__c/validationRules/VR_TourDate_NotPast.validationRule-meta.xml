@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_TourDate_NotPast</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT(ISNULL(Tour_Date__c)) &amp;&amp; Tour_Date__c &lt; TODAY()</errorConditionFormula>
+    <errorMessage>Tour Date cannot be a past date.</errorMessage>
+</ValidationRule>
