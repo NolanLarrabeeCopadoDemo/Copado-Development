@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_Player_Name_Required</fullName>
+    <active>true</active>
+    <description>Player Name is required on Standard Player record type.</description>
+    <errorConditionFormula>AND(
+    RecordType.DeveloperName = &quot;Standard_Player&quot;,
+    ISBLANK(Player_Name__c)
+)</errorConditionFormula>
+    <errorDisplayField>Player_Name__c</errorDisplayField>
+    <errorMessage>Player Name is required for Standard Player records.</errorMessage>
+</ValidationRule>

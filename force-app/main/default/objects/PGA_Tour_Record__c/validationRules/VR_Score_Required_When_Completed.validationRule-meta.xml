@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_Score_Required_When_Completed</fullName>
+    <active>true</active>
+    <description>Score is required on Tournament Event records once Status is Completed.</description>
+    <errorConditionFormula>AND(
+    RecordType.DeveloperName = &quot;Tournament_Event&quot;,
+    ISPICKVAL(Status__c, &quot;Completed&quot;),
+    ISBLANK(Score__c)
+)</errorConditionFormula>
+    <errorDisplayField>Score__c</errorDisplayField>
+    <errorMessage>Score is required when Tournament Event status is Completed.</errorMessage>
+</ValidationRule>
