@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Family_Category__c</fullName>
+    <description>Categorizes products using the Product Family Category global value set, enabling sales reps to filter and report on product lines.</description>
+    <label>Product Family Category</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Product_Family_Category_GVS</valueSetName>
+    </valueSet>
+</CustomField>
