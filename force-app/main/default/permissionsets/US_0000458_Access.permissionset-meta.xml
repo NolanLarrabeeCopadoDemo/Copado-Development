@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <classAccesses>
+        <apexClass>LeadConversionTriggerHandler</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>LeadConversionTriggerHandlerTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <description>Grants Apex class access to the Lead conversion trigger handler and test classes, and Lead object CRUD, for US-0000458 (Fix Null Pointer Exception in Lead Conversion Trigger).</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>US-0000458_Access</label>
+</PermissionSet>
