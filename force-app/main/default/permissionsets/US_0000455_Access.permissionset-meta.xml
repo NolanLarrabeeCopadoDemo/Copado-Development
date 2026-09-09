@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <classAccesses>
+        <apexClass>AccountService</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>AccountServiceTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <description>Grants Account CRUD, FLS on Description and Account_Ext_Id__c, and Apex class access for AccountService/AccountServiceTest (US-0000455).</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>US-0000455_Access</label>
+</PermissionSet>
