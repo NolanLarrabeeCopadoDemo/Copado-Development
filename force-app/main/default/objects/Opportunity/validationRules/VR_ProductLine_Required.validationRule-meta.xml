@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_ProductLine_Required</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISPICKVAL(Product_Line__c, &quot;&quot;) &amp;&amp;
+(ISPICKVAL(StageName,&apos;Proposal&apos;) ||
+ ISPICKVAL(StageName,&apos;Negotiation/Review&apos;) ||
+ ISPICKVAL(StageName,&apos;Closed Won&apos;))</errorConditionFormula>
+    <errorMessage>Product Line is required once the Opportunity reaches Proposal, Negotiation/Review, or Closed Won.</errorMessage>
+</ValidationRule>
