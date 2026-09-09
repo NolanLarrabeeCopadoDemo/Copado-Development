@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_Account_Merge_Completeness</fullName>
+    <active>true</active>
+    <description>Prevents saving an Account record when data required for merge completeness (Region, Segment, Account External Id) is missing.</description>
+    <errorConditionFormula>/* VR_Account_Merge_Completeness
+   Fires when the Account is missing any of the three fields required for
+   merge completeness. Each scenario is evaluated independently and the
+   results are combined with OR so that a single missing field is enough
+   to block the save (any-of logic across the three scenarios). */
+OR(
+   /* Scenario 1 (Region): Region is required so the surviving merged
+      record can be routed correctly within regional reporting and
+      ownership hierarchies. */
+   AND( true, ISBLANK( Region__c ) ),
+
+   /* Scenario 2 (Segment): Segment is required to preserve customer
+      segmentation classification through the merge. Segment__c is a
+      restricted picklist, so TEXT() + ISBLANK() is used to reliably
+      detect an unselected value on both insert and update. */
+   AND( true, ISBLANK( TEXT( Segment__c ) ) ),
+
+   /* Scenario 3 (Account External Id): Account_Ext_Id__c is required so
+      downstream systems and Copado ADD can continue to trace and
+      reconcile the surviving record after the merge completes. */
+   AND( true, ISBLANK( Account_Ext_Id__c ) )
+)</errorConditionFormula>
+    <errorMessage>Account cannot be saved: Region (Region__c), Segment (Segment__c), and Account External Id (Account_Ext_Id__c) are required for merge completeness. Please complete any blank field(s) above and save again.</errorMessage>
+</ValidationRule>
