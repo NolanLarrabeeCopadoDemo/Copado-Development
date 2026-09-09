@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Grants Read/Edit field-level security on Opportunity.Product_Line__c</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Product_Line__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>OpportunityProductLine_PS</label>
+</PermissionSet>
