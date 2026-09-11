@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_Safety_Score_Range</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ NOT(ISBLANK(Safety_Score__c)),
+ OR(
+  Safety_Score__c &lt; 0,
+  Safety_Score__c &gt; 100
+ )
+)</errorConditionFormula>
+    <errorDisplayField>Safety_Score__c</errorDisplayField>
+    <errorMessage>Safety Score must be between 0 and 100.</errorMessage>
+</ValidationRule>
