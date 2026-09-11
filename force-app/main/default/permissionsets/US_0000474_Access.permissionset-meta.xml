@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
-    <description>Grants CRUD, field-level security, and record type visibility on Route__c for the US-0000474 Route object and configuration.</description>
+    <description>Grants Route__c object CRUD, field-level access on all custom fields, and Standard_Route record type visibility for US-0000474.</description>
     <fieldPermissions>
         <editable>true</editable>
         <field>Route__c.API_Last_Error__c</field>
@@ -102,7 +102,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
-    <label>US-0000474_Access</label>
+    <label>US_0000474_Access</label>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
