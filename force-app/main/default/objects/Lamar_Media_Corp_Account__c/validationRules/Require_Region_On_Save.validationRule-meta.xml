@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Region_On_Save</fullName>
+    <active>true</active>
+    <description>Ensures Region is populated on every save of a Lamar Media Corp Account record.</description>
+    <errorConditionFormula>ISBLANK(TEXT(Region__c))</errorConditionFormula>
+    <errorDisplayField>Region__c</errorDisplayField>
+    <errorMessage>Region is required.</errorMessage>
+</ValidationRule>
