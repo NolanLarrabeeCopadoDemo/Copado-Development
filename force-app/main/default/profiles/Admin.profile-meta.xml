@@ -214,6 +214,41 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Lamar_Media_Corp_Account__c.Account_Category__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Lamar_Media_Corp_Account__c.Client_Account__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Lamar_Media_Corp_Account__c.Contract_Value__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Lamar_Media_Corp_Account__c.Industry_Segment__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Lamar_Media_Corp_Account__c.Onboarding_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Lamar_Media_Corp_Account__c.Region__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Lamar_Media_Corp_Account__c.Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Lead.Lead_Source_Detail__c</field>
         <readable>true</readable>
@@ -748,6 +783,14 @@
         <recordType>Instrument_Service_Contract__c.Preventive_Maintenance</recordType>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Lamar_Media_Corp_Account__c-Lamar_Media_Corp_Account_Layout</layout>
+        <recordType>Lamar_Media_Corp_Account__c.Agency_Partner</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Lamar_Media_Corp_Account__c-Lamar_Media_Corp_Account_Layout</layout>
+        <recordType>Lamar_Media_Corp_Account__c.Direct_Client</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Lead-Formato de candidatos</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -911,6 +954,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>Instrument_Service_Contract__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Lamar_Media_Corp_Account__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -1106,6 +1158,16 @@
         <default>false</default>
         <recordType>Instrument_Service_Contract__c.Preventive_Maintenance</recordType>
         <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Lamar_Media_Corp_Account__c.Agency_Partner</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Lamar_Media_Corp_Account__c.Direct_Client</recordType>
+        <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>true</default>
