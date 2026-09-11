@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Access required to support the Account Welcome Notification flow (US-0000461): read access to Account and the fields referenced by the flow, plus flow run access.</description>
+    <flowAccesses>
+        <enabled>true</enabled>
+        <flow>Account_Welcome_Notification</flow>
+    </flowAccesses>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>US-0000461 Access</label>
+</PermissionSet>
