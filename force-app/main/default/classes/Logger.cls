@@ -1,5 +1,9 @@
 public with sharing class Logger {
 
+    public static void info(String context, String message) {
+        System.debug(LoggingLevel.INFO, buildLogLine(context, message));
+    }
+
     public static void error(String context, Exception ex) {
         String exceptionDetail = ex == null ? 'null' : ex.getMessage() + ' | ' + ex.getStackTraceString();
         System.debug(LoggingLevel.ERROR, buildLogLine(context, exceptionDetail));
