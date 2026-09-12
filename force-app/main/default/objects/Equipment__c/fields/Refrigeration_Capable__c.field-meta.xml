@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Refrigeration_Capable__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Indicates whether this equipment has refrigeration capability. Used for equipment matching against Shipment__c.Cargo_Type__c (US-0000472, Phase 2).</description>
+    <label>Refrigeration Capable</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>
