@@ -21,10 +21,6 @@ trigger ShipmentAssignment on Shipment__c (before insert, before update) {
             WHERE Id IN :equipmentIds
         ]);
 
-    // ShipmentAssignmentService.validateAssignments returns a Map<Id, String> keyed by
-    // Shipment__c Id. Before insert, new records have no Id yet, so each shipment is
-    // validated with its own single-element list to keep per-record results distinct
-    // while all SOQL stays outside this loop (no DML/SOQL in loop).
     for (Shipment__c shipment : Trigger.new) {
         Map<Id, String> errorsByShipmentId = ShipmentAssignmentService.validateAssignments(
             new List<Shipment__c>{ shipment },

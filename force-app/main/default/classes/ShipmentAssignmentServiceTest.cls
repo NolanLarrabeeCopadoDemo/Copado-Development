@@ -131,9 +131,6 @@ private class ShipmentAssignmentServiceTest {
 
     @IsTest
     static void testCancelledStatus_SkipsValidation() {
-        // Weight/volume intentionally kept within the org's standing VR_Cargo_Fits_Truck
-        // validation rule threshold so this test isolates the trigger's own cancelled-status
-        // bypass rather than the pre-existing field-level validation rule.
         Equipment__c equipment = LogisticsTestFactory.buildEquipment(new Map<String, Object>{
             'Payload_Capacity_lbs__c' => 100,
             'Cargo_Capacity_Lbs__c' => 50
