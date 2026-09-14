@@ -1,0 +1,63 @@
+<template>
+    <lightning-card title="Fleet Availability" icon-name="standard:vehicle">
+        <div class="slds-grid slds-gutters slds-wrap slds-p-horizontal_medium slds-p-bottom_small">
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+                <lightning-combobox
+                    label="Truck Size Class"
+                    value={truckSizeClassFilter}
+                    options={truckSizeClassOptions}
+                    onchange={handleTruckSizeClassChange}
+                ></lightning-combobox>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+                <lightning-combobox
+                    label="Operational Status"
+                    value={operationalStatusFilter}
+                    options={operationalStatusOptions}
+                    onchange={handleOperationalStatusChange}
+                ></lightning-combobox>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+                <lightning-input
+                    type="number"
+                    label="Min Payload Capacity (lbs)"
+                    onchange={handleMinPayloadCapacityChange}
+                ></lightning-input>
+            </div>
+        </div>
+
+        <template if:true={hasError}>
+            <div class="slds-p-horizontal_medium slds-text-color_error">
+                Unable to load fleet availability data.
+            </div>
+        </template>
+
+        <template if:false={hasError}>
+            <template if:true={hasEquipment}>
+                <div class="slds-grid slds-gutters slds-wrap slds-p-horizontal_medium">
+                    <template for:each={filteredEquipment} for:item="equipment">
+                        <div key={equipment.Id} class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-p-bottom_medium">
+                            <div class={equipment.statusCssClass}>
+                                <div class="slds-card__header slds-grid">
+                                    <h3 class="slds-card__header-title">{equipment.Truck_ID__c}</h3>
+                                </div>
+                                <div class="slds-card__body slds-card__body_inner">
+                                    <p><strong>Truck Size Class:</strong> {equipment.Truck_Size_Class__c}</p>
+                                    <p><strong>Status:</strong> {equipment.Operational_Status__c}</p>
+                                    <p><strong>Payload Capacity:</strong> {equipment.Payload_Capacity_lbs__c} lbs</p>
+                                    <p><strong>Cargo Volume:</strong> {equipment.Cargo_Volume_Cu_Ft__c} cu ft</p>
+                                    <template if:true={equipment.isInTransit}>
+                                        <p><strong>Active Shipment:</strong> {equipment.activeShipmentName}</p>
+                                    </template>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </template>
+            <template if:false={hasEquipment}>
+                <div class="slds-p-horizontal_medium">No trucks match the selected filters.</div>
+            </template>
+        </template>
+    </lightning-card>
+</template>
