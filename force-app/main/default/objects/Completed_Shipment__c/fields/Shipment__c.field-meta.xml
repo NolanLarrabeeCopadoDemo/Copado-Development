@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Shipment__c</fullName>
+    <description>Master-Detail link to the parent Shipment this completed-trip record reports on.</description>
+    <label>Shipment</label>
+    <referenceTo>Shipment__c</referenceTo>
+    <relationshipLabel>Completed Shipments</relationshipLabel>
+    <relationshipName>Completed_Shipments</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>
