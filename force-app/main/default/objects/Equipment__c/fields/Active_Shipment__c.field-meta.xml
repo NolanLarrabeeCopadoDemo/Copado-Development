@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Shipment__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>PLACEHOLDER: temporarily self-referencing until Shipment__c is created in a future phase. Will be repointed to Shipment__c and populated by the equipment availability automation trigger built in Phase 2. Remains blank until then.</description>
+    <label>Active Shipment (Placeholder)</label>
+    <referenceTo>Equipment__c</referenceTo>
+    <relationshipLabel>Equipment (Active Shipment Placeholder)</relationshipLabel>
+    <relationshipName>Active_Shipment_Placeholder</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

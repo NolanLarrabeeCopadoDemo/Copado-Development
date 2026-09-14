@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Operational_Status__c</fullName>
+    <label>Operational Status</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Available</fullName>
+                <default>true</default>
+                <label>Available</label>
+            </value>
+            <value>
+                <fullName>In_Transit</fullName>
+                <default>false</default>
+                <label>In Transit</label>
+            </value>
+            <value>
+                <fullName>In_Maintenance</fullName>
+                <default>false</default>
+                <label>In Maintenance</label>
+            </value>
+            <value>
+                <fullName>Out_of_Service</fullName>
+                <default>false</default>
+                <label>Out of Service</label>
+            </value>
+            <value>
+                <fullName>Retired</fullName>
+                <default>false</default>
+                <label>Retired</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
