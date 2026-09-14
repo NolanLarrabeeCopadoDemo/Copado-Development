@@ -1,0 +1,30 @@
+<template>
+    <div class="slds-box slds-theme_default shipment-tracker-copado">
+        <div class="slds-grid slds-grid_align-spread slds-m-bottom_small">
+            <h2 class="slds-text-heading_small">Shipment Status Timeline</h2>
+            <template if:true={isDelayed}>
+                <span class="slds-badge slds-theme_warning delayed-badge">Delayed</span>
+            </template>
+        </div>
+
+        <ol class="slds-progress slds-progress_horizontal" aria-label="Shipment progress">
+            <template for:each={stages} for:item="stage">
+                <li key={stage.key} class={stage.itemClass}>
+                    <div class="slds-progress__marker"></div>
+                    <div class="slds-progress__item_content slds-grid slds-grid_align-center">
+                        {stage.label}
+                    </div>
+                    <div class="slds-text-body_small slds-text-align_center stage-date">
+                        <template if:true={stage.dateValue}>
+                            <span>{stage.dateLabel}: {stage.dateValue}</span>
+                        </template>
+                    </div>
+                </li>
+            </template>
+        </ol>
+
+        <template if:true={error}>
+            <p class="slds-text-color_error slds-m-top_small">Unable to load shipment data.</p>
+        </template>
+    </div>
+</template>
