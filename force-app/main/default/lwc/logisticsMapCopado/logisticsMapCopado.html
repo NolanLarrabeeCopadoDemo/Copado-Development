@@ -1,0 +1,63 @@
+<template>
+    <lightning-card title="Route Map" icon-name="standard:location">
+        <div class="slds-var-p-around_small">
+
+            <!-- Loading spinner -->
+            <template lwc:if={isLoading}>
+                <lightning-spinner alternative-text="Loading map..." size="medium"></lightning-spinner>
+            </template>
+
+            <!-- Error state -->
+            <template lwc:if={hasError}>
+                <div class="slds-notify slds-notify_alert slds-alert_error" role="alert">
+                    <span class="slds-assistive-text">error</span>
+                    <lightning-icon
+                        icon-name="utility:error"
+                        alternative-text="Error"
+                        size="x-small"
+                        class="slds-var-m-right_x-small"
+                    ></lightning-icon>
+                    <p>{errorMessage}</p>
+                </div>
+            </template>
+
+            <!-- Weather severity badge -->
+            <template lwc:if={hasSeverity}>
+                <div class="slds-var-m-bottom_small">
+                    <lightning-badge
+                        label={weatherSeverityLabel}
+                        class={severityBadgeClass}
+                    ></lightning-badge>
+                </div>
+            </template>
+
+            <!-- Leaflet map container -->
+            <template lwc:if={showLeafletMap}>
+                <div
+                    id="map-container"
+                    class="map-container"
+                    lwc:ref="mapDiv"
+                ></div>
+            </template>
+
+            <!-- Fallback static map iframe -->
+            <template lwc:if={showFallbackMap}>
+                <div class="map-container">
+                    <iframe
+                        title="Route Map"
+                        src={mapEmbedUrl}
+                        class="fallback-iframe"
+                        allowfullscreen
+                    ></iframe>
+                </div>
+            </template>
+
+            <!-- No data state -->
+            <template lwc:if={showNoData}>
+                <div class="slds-align_absolute-center slds-var-p-around_large">
+                    <p class="slds-text-color_weak">No map data available for this route.</p>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>
