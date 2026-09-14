@@ -11,6 +11,19 @@ private class RouteCalculationQueueableTest_copado {
         }
     }
 
+    private class MultiPointSuccessMock implements HttpCalloutMock {
+        public HttpResponse respond(HttpRequest request) {
+            HttpResponse response = new HttpResponse();
+            response.setStatusCode(200);
+            response.setHeader('Content-Type', 'application/json');
+            response.setBody(
+                '{"routes":[{"summary":{"distance":16093.44,"duration":3600},'
+                + '"geometry":"okynEnuvpUoh\\\\oxtI_ry@_brJ~hbE_yzN~oR_pR~bmA_awS~ugC_q~I~qy@_vgC"}]}'
+            );
+            return response;
+        }
+    }
+
     private class ErrorMock implements HttpCalloutMock {
         public HttpResponse respond(HttpRequest request) {
             HttpResponse response = new HttpResponse();
@@ -121,5 +134,24 @@ private class RouteCalculationQueueableTest_copado {
             successCount,
             'Exactly one batch worth of routes should be processed within the test-context job run.'
         );
+    }
+
+    @isTest
+    static void testQueueablePersistsWaypointsAndStatesInSameDmlUpdate() {
+        Test.setMock(HttpCalloutMock.class, new MultiPointSuccessMock());
+        Route__c route = buildRoute(4);
+
+        Test.startTest();
+        insert route;
+        Test.stopTest();
+
+        Route__c result = [
+            SELECT API_Status__c, Waypoints_JSON__c, States_Traversed__c, Map_Embed_URL__c
+            FROM Route__c
+            WHERE Id = :route.Id
+        ];
+        System.assertEquals('Success', result.API_Status__c);
+        System.assertNotEquals(null, result.Waypoints_JSON__c);
+        System.assertNotEquals(null, result.Map_Embed_URL__c);
     }
 }
