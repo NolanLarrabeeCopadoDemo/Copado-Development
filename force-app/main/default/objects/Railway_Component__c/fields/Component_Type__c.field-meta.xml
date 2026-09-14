@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Component_Type__c</fullName>
+    <label>Component Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Locomotive</fullName>
+                <default>false</default>
+                <label>Locomotive</label>
+            </value>
+            <value>
+                <fullName>Freight Car</fullName>
+                <default>false</default>
+                <label>Freight Car</label>
+            </value>
+            <value>
+                <fullName>Brake System</fullName>
+                <default>false</default>
+                <label>Brake System</label>
+            </value>
+            <value>
+                <fullName>Coupler</fullName>
+                <default>false</default>
+                <label>Coupler</label>
+            </value>
+            <value>
+                <fullName>Digital System</fullName>
+                <default>false</default>
+                <label>Digital System</label>
+            </value>
+            <value>
+                <fullName>Traction Motor</fullName>
+                <default>false</default>
+                <label>Traction Motor</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
