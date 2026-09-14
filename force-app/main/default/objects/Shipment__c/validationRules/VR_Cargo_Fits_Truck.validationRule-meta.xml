@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_Cargo_Fits_Truck</fullName>
+    <active>true</active>
+    <description>US-0000472: Blocks save when cargo weight exceeds the assigned equipment&apos;s payload capacity. Only evaluated once Equipment__c is populated.</description>
+    <errorConditionFormula>AND(
+    NOT(ISBLANK(Equipment__c)),
+    Cargo_Weight_lbs__c &gt; Equipment__r.Payload_Capacity_lbs__c
+)</errorConditionFormula>
+    <errorDisplayField>Cargo_Weight_lbs__c</errorDisplayField>
+    <errorMessage>Cargo weight exceeds the assigned equipment&apos;s payload capacity. Select a different equipment or reduce the cargo weight.</errorMessage>
+</ValidationRule>
