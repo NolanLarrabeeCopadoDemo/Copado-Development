@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_License_Not_Expired</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(
+ AND(
+  NOT(ISBLANK(License_Expiry__c)),
+  NOT(ISBLANK(Hire_Date__c)),
+  License_Expiry__c &lt;= Hire_Date__c
+ ),
+ AND(
+  ISNEW(),
+  NOT(ISBLANK(License_Expiry__c)),
+  License_Expiry__c &lt; TODAY()
+ )
+)</errorConditionFormula>
+    <errorDisplayField>License_Expiry__c</errorDisplayField>
+    <errorMessage>License Expiry must be after Hire Date, and cannot be in the past when creating the driver.</errorMessage>
+</ValidationRule>
