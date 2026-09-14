@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_Driver_Rating_Range</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(Driver_Rating__c &lt; 1, Driver_Rating__c &gt; 5)</errorConditionFormula>
+    <errorDisplayField>Driver_Rating__c</errorDisplayField>
+    <errorMessage>Driver rating must be between 1 and 5.</errorMessage>
+</ValidationRule>
