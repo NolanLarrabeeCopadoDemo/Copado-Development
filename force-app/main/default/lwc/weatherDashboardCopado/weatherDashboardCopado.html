@@ -1,0 +1,62 @@
+<template>
+    <lightning-card title="Weather Dashboard" icon-name="utility:sun">
+        <div class="slds-p-horizontal_small">
+
+            <!-- Severe Alert banner -->
+            <template lwc:if={showSevereAlertBanner}>
+                <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error"
+                     role="alert"
+                     aria-live="assertive">
+                    <span class="slds-assistive-text">Severe weather alert</span>
+                    <lightning-icon icon-name="utility:warning"
+                                    size="x-small"
+                                    variant="inverse"
+                                    class="slds-m-right_x-small">
+                    </lightning-icon>
+                    <h2>Severe Alert: hazardous weather conditions detected along this route.</h2>
+                </div>
+            </template>
+
+            <!-- Wire error message -->
+            <template lwc:if={errorMessage}>
+                <div class="slds-text-color_error slds-m-vertical_small"
+                     role="alert"
+                     aria-live="polite">
+                    {errorMessage}
+                </div>
+            </template>
+
+            <!-- Last updated timestamp -->
+            <p class="slds-text-body_small slds-text-color_weak slds-m-vertical_small">
+                Last updated: {lastUpdatedDisplay}
+            </p>
+
+            <!-- Waypoint cards grid -->
+            <template lwc:if={hasWaypoints}>
+                <div class="slds-grid slds-wrap slds-gutters">
+                    <template for:each={waypointCards} for:item="card">
+                        <div key={card.key}
+                             class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-p-bottom_small">
+                            <div class="slds-box slds-box_x-small">
+                                <div class="slds-grid slds-grid_align-spread slds-m-bottom_x-small">
+                                    <h3 class="slds-text-heading_small">{card.waypointName}</h3>
+                                    <span class={card.severityBadgeClass}>{card.severity}</span>
+                                </div>
+                                <p><strong>Temperature:</strong> {card.temperature}</p>
+                                <p><strong>Precipitation:</strong> {card.precipitation}</p>
+                                <p><strong>Wind Speed:</strong> {card.windSpeed}</p>
+                                <p><strong>Conditions:</strong> {card.weatherCodeDescription}</p>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </template>
+            <template lwc:else>
+                <p class="slds-text-body_small slds-text-color_weak">
+                    No waypoint weather data available.
+                </p>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>
