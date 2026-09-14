@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_Equipment_Required_In_Transit</fullName>
+    <active>true</active>
+    <description>US-0000472: Requires Equipment__c to be populated whenever Status__c is set to &apos;In Transit&apos;.</description>
+    <errorConditionFormula>AND(
+    ISPICKVAL(Status__c, &apos;In Transit&apos;),
+    ISBLANK(Equipment__c)
+)</errorConditionFormula>
+    <errorDisplayField>Equipment__c</errorDisplayField>
+    <errorMessage>Equipment must be assigned before this shipment can be set to In Transit.</errorMessage>
+</ValidationRule>
