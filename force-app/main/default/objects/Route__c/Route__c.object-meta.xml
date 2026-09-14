@@ -160,7 +160,8 @@
         <type>Text</type>
     </nameField>
     <pluralLabel>Routes</pluralLabel>
-    <searchLayouts />
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <searchLayouts></searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>
