@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RefrigeratedShipment</fullName>
+    <active>true</active>
+    <description>Shipment requiring refrigerated equipment (US-0000472).</description>
+    <label>Refrigerated Shipment</label>
+</RecordType>
