@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>States_Traversed__c</fullName>
+    <description>Deduplicated, route-ordered list of US state abbreviations traversed by this route, derived from waypoint sampling against State_Boundary__mdt (US-0000486).</description>
+    <label>States Traversed</label>
+    <length>32768</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>5</visibleLines>
+</CustomField>

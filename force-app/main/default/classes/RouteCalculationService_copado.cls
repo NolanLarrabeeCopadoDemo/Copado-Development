@@ -1,12 +1,13 @@
 /**
  * Service class responsible for calling the OpenRouteService directions API and
- * populating Route__c records with the resulting distance, duration, and encoded
- * polyline geometry.
+ * populating Route__c records with the resulting distance, duration, encoded
+ * polyline geometry, sampled waypoints, traversed states, and a map embed URL
+ * (US-0000485, US-0000486).
  *
- * NOTE (US-0000485 known gap): Nebula Logger is not installed in this org, so
- * INFO/ERROR logging calls specified in the technical spec are intentionally
- * omitted here. TODO: wire up Nebula Logger (or an equivalent) once the package
- * is installed, using Route__c.Id as the log context as specified.
+ * NOTE: Nebula Logger is not installed in this org (documented gap from
+ * US-0000485). INFO/ERROR logging around waypoint extraction uses the org's
+ * existing lightweight `Logger` utility (a System.debug wrapper) as the closest
+ * available substitute until Nebula Logger is installed.
  */
 public with sharing class RouteCalculationService_copado {
 
@@ -15,6 +16,11 @@ public with sharing class RouteCalculationService_copado {
 
     private static final Decimal METERS_PER_MILE = 1609.344;
     private static final Decimal SECONDS_PER_HOUR = 3600;
+    private static final Integer TARGET_WAYPOINT_DIVISOR = 6;
+    private static final Integer MIN_WAYPOINTS = 6;
+    private static final Integer MAX_WAYPOINTS = 8;
+    private static final String MAP_EMBED_URL_TEMPLATE =
+        'https://www.google.com/maps/dir/?api=1&origin={0},{1}&destination={2},{3}';
 
     /** Thrown when the OpenRouteService response cannot be parsed as expected. */
     public class RouteCalculationException extends Exception {}
@@ -58,6 +64,7 @@ public with sharing class RouteCalculationService_copado {
                 parseResponse(route, response.getBody());
                 route.API_Status__c = 'Success';
                 route.API_Last_Error__c = null;
+                route.Map_Embed_URL__c = buildMapEmbedUrl(route);
             } else {
                 handleError(route, 'HTTP ' + response.getStatusCode() + ': ' + response.getBody());
             }
@@ -100,6 +107,81 @@ public with sharing class RouteCalculationService_copado {
         route.Total_Mileage__c = (distanceMeters / METERS_PER_MILE).setScale(1, System.RoundingMode.HALF_UP);
         route.Estimated_Duration_Hours__c = (durationSeconds / SECONDS_PER_HOUR).setScale(2, System.RoundingMode.HALF_UP);
         route.Encoded_Polyline__c = geometry;
+
+        extractWaypointsAndStates(route, geometry);
+    }
+
+    /**
+     * Decodes the encoded polyline, samples 6-8 evenly distributed waypoints,
+     * serializes them onto Route__c.Waypoints_JSON__c, and derives the
+     * deduplicated, route-ordered list of traversed states onto
+     * Route__c.States_Traversed__c. Decode failures are logged and swallowed so
+     * that a waypoint extraction problem does not fail the whole route
+     * calculation, since distance/duration have already been parsed.
+     */
+    private static void extractWaypointsAndStates(Route__c route, String geometry) {
+        try {
+            List<Map<String, Decimal>> decodedPoints = PolylineDecoderUtil_copado.decode(geometry);
+            if (decodedPoints.isEmpty()) {
+                return;
+            }
+
+            List<Map<String, Decimal>> sampledWaypoints = sampleWaypoints(decodedPoints);
+            route.Waypoints_JSON__c = JSON.serialize(sampledWaypoints);
+
+            List<String> statesTraversed = StateBoundaryService_copado.getStatesTraversed(sampledWaypoints);
+            route.States_Traversed__c = String.join(statesTraversed, ', ');
+
+            Logger.info(String.valueOf(route.Id), 'Waypoints extracted successfully: ' + sampledWaypoints.size() + ' points.');
+        } catch (Exception ex) {
+            Logger.error(String.valueOf(route.Id), ex);
+        }
+    }
+
+    /**
+     * Samples evenly distributed waypoints from the full decoded point list.
+     * Step interval is totalPoints / TARGET_WAYPOINT_DIVISOR; points are taken
+     * at each interval index, the final point is always included, and the
+     * result is padded or trimmed to guarantee 6-8 points regardless of the
+     * total decoded point count.
+     */
+    private static List<Map<String, Decimal>> sampleWaypoints(List<Map<String, Decimal>> allPoints) {
+        List<Map<String, Decimal>> sampled = new List<Map<String, Decimal>>();
+        Integer totalPoints = allPoints.size();
+        Integer step = Math.max(1, totalPoints / TARGET_WAYPOINT_DIVISOR);
+        Integer lastIndex = totalPoints - 1;
+        Integer lastSampledIndex = -1;
+
+        for (Integer index = 0; index < totalPoints; index += step) {
+            sampled.add(allPoints[index]);
+            lastSampledIndex = index;
+        }
+
+        if (lastSampledIndex != lastIndex) {
+            sampled.add(allPoints[lastIndex]);
+        }
+
+        Map<String, Decimal> lastPoint = allPoints[lastIndex];
+        while (sampled.size() < MIN_WAYPOINTS) {
+            sampled.add(lastPoint);
+        }
+        while (sampled.size() > MAX_WAYPOINTS) {
+            sampled.remove(sampled.size() - 2);
+        }
+
+        return sampled;
+    }
+
+    private static String buildMapEmbedUrl(Route__c route) {
+        return String.format(
+            MAP_EMBED_URL_TEMPLATE,
+            new List<String>{
+                String.valueOf(route.Origin_Latitude__c),
+                String.valueOf(route.Origin_Longitude__c),
+                String.valueOf(route.Destination_Latitude__c),
+                String.valueOf(route.Destination_Longitude__c)
+            }
+        );
     }
 
     private static void handleError(Route__c route, String errorMessage) {
