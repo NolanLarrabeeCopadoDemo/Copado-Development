@@ -155,9 +155,8 @@
     <externalSharingModel>ControlledByParent</externalSharingModel>
     <label>Trip Expense</label>
     <nameField>
-        <displayFormat>TE-{0000}</displayFormat>
-        <label>Trip Expense Number</label>
-        <type>AutoNumber</type>
+        <label>Trip Expense Name</label>
+        <type>Text</type>
     </nameField>
     <pluralLabel>Trip Expenses</pluralLabel>
     <searchLayouts />
