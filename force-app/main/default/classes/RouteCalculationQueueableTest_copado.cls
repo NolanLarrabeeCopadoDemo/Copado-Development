@@ -44,24 +44,30 @@ private class RouteCalculationQueueableTest_copado {
     }
 
     // -------------------------------------------------------------------------
-    // Helper - creates a sysadmin test user to bypass FLS in with-sharing context.
-    // LogisticsTestFactory.buildRoute() is excluded due to duplicate method
-    // compilation errors tracked separately (P00521).
+    // Helper - creates a sysadmin test user with US_0000486_Access permission set
+    // so FLS on all Route__c fields is fully granted inside System.runAs context.
     // -------------------------------------------------------------------------
 
-    private static User buildSysAdminUser() {
+    private static User buildAndInsertSysAdminUser() {
         Profile p = [SELECT Id FROM Profile WHERE Name = 'System Administrator' LIMIT 1];
-        return new User(
-            LastName       = 'RouteTestUser',
-            Email          = 'routetestuser@test.logistics.example.com',
-            Username       = 'routetestuser_' + DateTime.now().getTime() + '@test.logistics.example.com',
-            Alias          = 'rtuser',
-            TimeZoneSidKey = 'America/Los_Angeles',
-            LocaleSidKey   = 'en_US',
-            EmailEncodingKey = 'UTF-8',
+        User u = new User(
+            LastName          = 'RouteTestUser',
+            Email             = 'routetestuser@test.logistics.example.com',
+            Username          = 'routetestuser_' + DateTime.now().getTime() + '@test.logistics.example.com',
+            Alias             = 'rtuser',
+            TimeZoneSidKey    = 'America/Los_Angeles',
+            LocaleSidKey      = 'en_US',
+            EmailEncodingKey  = 'UTF-8',
             LanguageLocaleKey = 'en_US',
-            ProfileId      = p.Id
+            ProfileId         = p.Id
         );
+        insert u;
+
+        // Assign the Route__c FLS permission set before entering System.runAs
+        PermissionSet ps = [SELECT Id FROM PermissionSet WHERE Name = 'US_0000486_Access' LIMIT 1];
+        insert new PermissionSetAssignment(AssigneeId = u.Id, PermissionSetId = ps.Id);
+
+        return u;
     }
 
     private static Route__c buildRoute(Integer index) {
@@ -80,8 +86,7 @@ private class RouteCalculationQueueableTest_copado {
 
     @isTest
     static void testTriggerEnqueuesAndQueueableUpdatesOnInsertSuccess() {
-        User sysAdmin = buildSysAdminUser();
-        insert sysAdmin;
+        User sysAdmin = buildAndInsertSysAdminUser();
         Test.setMock(HttpCalloutMock.class, new SuccessMock());
 
         System.runAs(sysAdmin) {
@@ -107,8 +112,7 @@ private class RouteCalculationQueueableTest_copado {
 
     @isTest
     static void testTriggerEnqueuesOnUpdateWhenCoordinatesChange() {
-        User sysAdmin = buildSysAdminUser();
-        insert sysAdmin;
+        User sysAdmin = buildAndInsertSysAdminUser();
         Test.setMock(HttpCalloutMock.class, new SuccessMock());
 
         System.runAs(sysAdmin) {
@@ -134,8 +138,7 @@ private class RouteCalculationQueueableTest_copado {
 
     @isTest
     static void testQueueableHandlesApiErrorGracefully() {
-        User sysAdmin = buildSysAdminUser();
-        insert sysAdmin;
+        User sysAdmin = buildAndInsertSysAdminUser();
         Test.setMock(HttpCalloutMock.class, new ErrorMock());
 
         System.runAs(sysAdmin) {
@@ -152,7 +155,7 @@ private class RouteCalculationQueueableTest_copado {
     }
 
     // -------------------------------------------------------------------------
-    // Guard conditions
+    // Guard conditions - no FLS user needed, no DML on Route__c fields
     // -------------------------------------------------------------------------
 
     @isTest
@@ -170,8 +173,7 @@ private class RouteCalculationQueueableTest_copado {
 
     @isTest
     static void testBulkInsertEnqueuesOnceAndProcessesFirstBatch() {
-        User sysAdmin = buildSysAdminUser();
-        insert sysAdmin;
+        User sysAdmin = buildAndInsertSysAdminUser();
         Test.setMock(HttpCalloutMock.class, new SuccessMock());
 
         System.runAs(sysAdmin) {
@@ -208,8 +210,7 @@ private class RouteCalculationQueueableTest_copado {
 
     @isTest
     static void testQueueablePersistsWaypointsAndStatesInSameDmlUpdate() {
-        User sysAdmin = buildSysAdminUser();
-        insert sysAdmin;
+        User sysAdmin = buildAndInsertSysAdminUser();
         Test.setMock(HttpCalloutMock.class, new MultiPointSuccessMock());
 
         System.runAs(sysAdmin) {
