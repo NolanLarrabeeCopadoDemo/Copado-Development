@@ -4,10 +4,6 @@
         <apexClass>WeatherService</apexClass>
         <enabled>true</enabled>
     </classAccesses>
-    <classAccesses>
-        <apexClass>WeatherServiceTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
     <description>Grants access to WeatherService/WeatherServiceTest Apex classes and Route__c weather fields for US-0000489 Weather Severity Classification and Alert Flagging.</description>
     <fieldPermissions>
         <editable>true</editable>
