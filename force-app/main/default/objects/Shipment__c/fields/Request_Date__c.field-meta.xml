@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Request_Date__c</fullName>
+    <description>Date the shipment was originally requested by the customer/dispatcher. Used as the first stage date in the Shipment Status Tracker timeline (US-0000492).</description>
+    <label>Request Date</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>
