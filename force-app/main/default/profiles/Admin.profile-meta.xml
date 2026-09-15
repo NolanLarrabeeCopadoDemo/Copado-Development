@@ -1204,10 +1204,16 @@
         <layout>CaseClose-Formato de Cerrar caso</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Completed_Shipment__c-Completed Shipment Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Deal_Review__c-Deal Review Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Delivery__c-Delivery Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Driver__c-Driver Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Equipment_Certification__c-Equipment Certification Layout</layout>
@@ -1216,6 +1222,9 @@
     <layoutAssignments>
         <layout>Equipment_Certification__c-Equipment Certification Layout</layout>
         <recordType>Equipment_Certification__c.Standard</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Equipment__c-Equipment Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Finance__c-Finance Layout</layout>
@@ -1332,6 +1341,9 @@
         <layout>Service_Outage_Tracker__c-Service Outage Tracker Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Shipment__c-Shipment Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>SutterHealth__c-SutterHealth Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -1339,6 +1351,12 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Threat_Intelligence_Report__c-Threat Intelligence Report Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Trip_Expense__c-Trip Expense Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Vehicle__c-Vehicle Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Window__c-Window Layout</layout>
