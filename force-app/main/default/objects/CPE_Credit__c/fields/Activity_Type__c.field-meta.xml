@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Activity_Type__c</fullName>
+    <label>Activity Type</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Group A - Education Courses, Seminars</fullName>
+                <default>false</default>
+                <label>Group A - Education Courses, Seminars</label>
+            </value>
+            <value>
+                <fullName>Group A - Vendor Presentations</fullName>
+                <default>false</default>
+                <label>Group A - Vendor Presentations</label>
+            </value>
+            <value>
+                <fullName>Group A - Professional Development Courses</fullName>
+                <default>false</default>
+                <label>Group A - Professional Development Courses</label>
+            </value>
+            <value>
+                <fullName>Group B - Work Experience</fullName>
+                <default>false</default>
+                <label>Group B - Work Experience</label>
+            </value>
+            <value>
+                <fullName>Group B - Publishing Articles or Books</fullName>
+                <default>false</default>
+                <label>Group B - Publishing Articles or Books</label>
+            </value>
+            <value>
+                <fullName>Group B - Speaking at Events</fullName>
+                <default>false</default>
+                <label>Group B - Speaking at Events</label>
+            </value>
+            <value>
+                <fullName>Group B - Volunteer Work</fullName>
+                <default>false</default>
+                <label>Group B - Volunteer Work</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

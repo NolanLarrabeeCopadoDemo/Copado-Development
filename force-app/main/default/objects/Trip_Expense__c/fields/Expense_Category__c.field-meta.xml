@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Status__c</fullName>
-    <label>Status</label>
+    <fullName>Expense_Category__c</fullName>
+    <label>Expense Category</label>
     <required>false</required>
-    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
@@ -11,39 +10,39 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Planned</fullName>
+                <fullName>Fuel</fullName>
+                <default>false</default>
+                <label>Fuel</label>
+            </value>
+            <value>
+                <fullName>Toll</fullName>
+                <default>false</default>
+                <label>Toll</label>
+            </value>
+            <value>
+                <fullName>Maintenance</fullName>
+                <default>false</default>
+                <label>Maintenance</label>
+            </value>
+            <value>
+                <fullName>Lodging</fullName>
+                <default>false</default>
+                <label>Lodging</label>
+            </value>
+            <value>
+                <fullName>Meals</fullName>
+                <default>false</default>
+                <label>Meals</label>
+            </value>
+            <value>
+                <fullName>Permits</fullName>
+                <default>false</default>
+                <label>Permits</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
                 <default>true</default>
-                <label>Planned</label>
-            </value>
-            <value>
-                <fullName>Approved</fullName>
-                <default>false</default>
-                <label>Approved</label>
-            </value>
-            <value>
-                <fullName>Scheduled</fullName>
-                <default>false</default>
-                <label>Scheduled</label>
-            </value>
-            <value>
-                <fullName>In Transit</fullName>
-                <default>false</default>
-                <label>In Transit</label>
-            </value>
-            <value>
-                <fullName>Completed</fullName>
-                <default>false</default>
-                <label>Completed</label>
-            </value>
-            <value>
-                <fullName>Cancelled</fullName>
-                <default>false</default>
-                <label>Cancelled</label>
-            </value>
-            <value>
-                <fullName>Problem</fullName>
-                <default>false</default>
-                <label>Problem</label>
+                <label>Other</label>
             </value>
         </valueSetDefinition>
     </valueSet>

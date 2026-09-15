@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Certification_Number__c</fullName>
+    <caseSensitive>true</caseSensitive>
+    <description>Unique identifier for each certification issued by ISC²</description>
+    <externalId>true</externalId>
+    <label>Certification Number</label>
+    <length>50</length>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

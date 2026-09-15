@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_Hazmat_Expiry_Required</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ Hazmat_Certified__c = true,
+ OR(
+  ISBLANK(Hazmat_Cert_Expiry__c),
+  Hazmat_Cert_Expiry__c &lt;= TODAY()
+ )
+)</errorConditionFormula>
+    <errorDisplayField>Hazmat_Cert_Expiry__c</errorDisplayField>
+    <errorMessage>Hazmat Cert Expiry is required and must be a future date when Hazmat Certified is checked.</errorMessage>
+</ValidationRule>

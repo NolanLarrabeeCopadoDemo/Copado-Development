@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Status__c</fullName>
+    <description>Current lifecycle status of the shipment. &apos;In Transit&apos; requires Equipment__c to be populated, enforced by VR_Equipment_Required_In_Transit (US-0000472).</description>
     <label>Status</label>
-    <required>false</required>
-    <trackHistory>false</trackHistory>
+    <required>true</required>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
@@ -11,14 +11,9 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Planned</fullName>
+                <fullName>Draft</fullName>
                 <default>true</default>
-                <label>Planned</label>
-            </value>
-            <value>
-                <fullName>Approved</fullName>
-                <default>false</default>
-                <label>Approved</label>
+                <label>Draft</label>
             </value>
             <value>
                 <fullName>Scheduled</fullName>
@@ -31,19 +26,14 @@
                 <label>In Transit</label>
             </value>
             <value>
-                <fullName>Completed</fullName>
+                <fullName>Delivered</fullName>
                 <default>false</default>
-                <label>Completed</label>
+                <label>Delivered</label>
             </value>
             <value>
                 <fullName>Cancelled</fullName>
                 <default>false</default>
                 <label>Cancelled</label>
-            </value>
-            <value>
-                <fullName>Problem</fullName>
-                <default>false</default>
-                <label>Problem</label>
             </value>
         </valueSetDefinition>
     </valueSet>

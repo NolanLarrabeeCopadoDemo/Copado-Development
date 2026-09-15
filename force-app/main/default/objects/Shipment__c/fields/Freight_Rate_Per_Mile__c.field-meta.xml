@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Freight_Rate_Per_Mile__c</fullName>
+    <description>Contracted freight rate charged per mile. Used by Estimated_Revenue__c formula (US-0000472).</description>
+    <label>Freight Rate Per Mile</label>
+    <precision>16</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

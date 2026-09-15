@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_Fuel_Price_Positive</fullName>
+    <active>true</active>
+    <errorConditionFormula>Fuel_Price_Per_Gallon__c &lt;= 0</errorConditionFormula>
+    <errorDisplayField>Fuel_Price_Per_Gallon__c</errorDisplayField>
+    <errorMessage>Fuel price per gallon must be a positive value.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_Model_Year_Range</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT(ISBLANK(Model_Year__c)),
+OR(
+Model_Year__c &lt; 1980,
+Model_Year__c &gt; (YEAR(TODAY()) + 1)
+)
+)</errorConditionFormula>
+    <errorDisplayField>Model_Year__c</errorDisplayField>
+    <errorMessage>Model Year must be between 1980 and one year beyond the current year.</errorMessage>
+</ValidationRule>

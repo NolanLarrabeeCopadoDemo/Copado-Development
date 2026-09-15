@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Status__c</fullName>
-    <label>Status</label>
+    <fullName>Cargo_Type__c</fullName>
+    <description>Type of cargo being shipped. Drives equipment matching logic against Equipment__c.Refrigeration_Capable__c / Hazmat_Certified__c in Phase 2 (US-0000472).</description>
+    <label>Cargo Type</label>
     <required>false</required>
-    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
@@ -11,39 +11,39 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Planned</fullName>
+                <fullName>General Freight</fullName>
                 <default>true</default>
-                <label>Planned</label>
+                <label>General Freight</label>
             </value>
             <value>
-                <fullName>Approved</fullName>
+                <fullName>Refrigerated</fullName>
                 <default>false</default>
-                <label>Approved</label>
+                <label>Refrigerated</label>
             </value>
             <value>
-                <fullName>Scheduled</fullName>
+                <fullName>Hazmat</fullName>
                 <default>false</default>
-                <label>Scheduled</label>
+                <label>Hazmat</label>
             </value>
             <value>
-                <fullName>In Transit</fullName>
+                <fullName>Oversized</fullName>
                 <default>false</default>
-                <label>In Transit</label>
+                <label>Oversized</label>
             </value>
             <value>
-                <fullName>Completed</fullName>
+                <fullName>Liquid Bulk</fullName>
                 <default>false</default>
-                <label>Completed</label>
+                <label>Liquid Bulk</label>
             </value>
             <value>
-                <fullName>Cancelled</fullName>
+                <fullName>Dry Bulk</fullName>
                 <default>false</default>
-                <label>Cancelled</label>
+                <label>Dry Bulk</label>
             </value>
             <value>
-                <fullName>Problem</fullName>
+                <fullName>Other</fullName>
                 <default>false</default>
-                <label>Problem</label>
+                <label>Other</label>
             </value>
         </valueSetDefinition>
     </valueSet>
