@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <classAccesses>
+        <apexClass>PolylineDecoderUtil_copado</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>StateBoundaryService_copado</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <description>Grants CRUD on Route__c, read on State_Boundary__mdt, FLS on all Route__c fields used by RouteCalculationQueueable and tests, and Apex access to waypoint/state-traversal classes (US-0000486).</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Route__c.States_Traversed__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>US-0000486 Access</label>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>Route__c</object>
+        <viewAllFields>false</viewAllFields>
+        <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+</PermissionSet>
