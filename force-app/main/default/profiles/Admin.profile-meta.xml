@@ -1,16 +1,150 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Profile xmlns="http://soap.sforce.com/2006/04/metadata"
-      xmlns:n1="http://www.w3.org/2001/XMLSchema-instance">
+<Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <applicationVisibilities>
         <application>Logistics_Operations</application>
         <default>false</default>
         <visible>true</visible>
     </applicationVisibilities>
+    <classAccesses>
+        <apexClass>AccountService</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>AccountServiceTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>CompletedShipmentService</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>CompletedShipmentServiceTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>EquipmentAvailabilityServiceTest_copado</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>EquipmentAvailabilityService_copado</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Logger</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>LogisticsTestFactory</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>PolylineDecoderUtilTest_copado</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>PolylineDecoderUtil_copado</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>RouteCalculationQueueableTest_copado</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>RouteCalculationQueueable_copado</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>RouteCalculationServiceTest_copado</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>RouteCalculationService_copado</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ShipmentAssignmentService</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ShipmentAssignmentServiceTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SimpleGreeting</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SimpleGreetingTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>StateBoundaryServiceTest_copado</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>StateBoundaryService_copado</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>WeatherQueueable</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>WeatherQueueableTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>WeatherService</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>WeatherServiceTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
     <custom>false</custom>
-    <description n1:nil="true" />
     <fieldPermissions>
         <editable>false</editable>
         <field>API_Endpoint__mdt.Endpoint_URL__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Business_Segment__c.Account__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Business_Segment__c.Annual_Revenue__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Business_Segment__c.Go_Live_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Business_Segment__c.Key_Business_Objectives__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Business_Segment__c.Notes__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Business_Segment__c.Number_of_Users__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Business_Segment__c.Secondary_Use_Cases__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Business_Segment__c.Success_Metrics__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -319,6 +453,41 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Grid_Infrastructure_Asset__c.Account__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Grid_Infrastructure_Asset__c.Asset_Type__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Grid_Infrastructure_Asset__c.Installation_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Grid_Infrastructure_Asset__c.Operational_Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Grid_Infrastructure_Asset__c.Region__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Grid_Infrastructure_Asset__c.Regulatory_Inspection_Due__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Grid_Infrastructure_Asset__c.Voltage_Rating_kV__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Health_Plan__c.Active__c</field>
         <readable>true</readable>
@@ -327,6 +496,41 @@
         <editable>true</editable>
         <field>Lead.Lead_Source_Detail__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Maintenance_Log__c.Cost__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Maintenance_Log__c.Notes__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Maintenance_Log__c.Odometer_At_Service__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Maintenance_Log__c.Performed_By__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Maintenance_Log__c.Service_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Maintenance_Log__c.Service_Type__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Maintenance_Log__c.Vehicle__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -417,6 +621,116 @@
         <editable>true</editable>
         <field>Medical_Device_Complaint__c.Severity_Classification__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.Annual_Deductible__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.Authorization_Limit__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.Authorization_Number__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.Authorization_Remaining__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.Authorization_Used__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.Authorized_Services__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.Benefit_Category__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.Coverage_Termination_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.Deductible_Met__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.Deductible_Percentage_Met__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.Eligibility_Verified_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.Emergency_Room_Copay__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.External_System_ID__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.HIPAA_Compliance_Notes__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.Out_of_Pocket_Maximum__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.Out_of_Pocket_Met__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.Pre_Authorization_Required__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.Prescription_Tier_Structure__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.Primary_Care_Copay__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.Provider_Network__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.Specialist_Copay__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Member_Benefits_Eligibility__c.Verified_By__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -864,6 +1178,41 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Supply_Chain_Engagement__c.Account__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Supply_Chain_Engagement__c.Annual_Contract_Value__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Supply_Chain_Engagement__c.Engagement_Type__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Supply_Chain_Engagement__c.Go_Live_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Supply_Chain_Engagement__c.Implementation_Phase__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Supply_Chain_Engagement__c.Integration_Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Supply_Chain_Engagement__c.Primary_Contact__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>SutterHealth__c.Active__c</field>
         <readable>true</readable>
@@ -960,13 +1309,25 @@
         <layout>Account-Formato de cuentas</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>CPE_Credit__c-CPE Credit Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>Case-Formato de casos</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>CaseClose-Formato de Cerrar caso</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Completed_Shipment__c-Completed Shipment Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Completed_Shipment__c-Completed Shipment Layout</layout>
+        <recordType>Completed_Shipment__c.HazmatShipment</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Completed_Shipment__c-Completed Shipment Layout</layout>
+        <recordType>Completed_Shipment__c.RefrigeratedShipment</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Completed_Shipment__c-Completed Shipment Layout</layout>
+        <recordType>Completed_Shipment__c.StandardShipment</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Deal_Review__c-Deal Review Layout</layout>
@@ -975,12 +1336,44 @@
         <layout>Delivery__c-Delivery Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Driver__c-Driver Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Driver__c-Driver Layout</layout>
+        <recordType>Driver__c.Company_Driver</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Driver__c-Driver Layout</layout>
+        <recordType>Driver__c.Owner_Operator</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Equipment_Certification__c-Equipment Certification Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Equipment_Certification__c-Equipment Certification Layout</layout>
         <recordType>Equipment_Certification__c.Custom</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Equipment_Certification__c-Equipment Certification Layout</layout>
         <recordType>Equipment_Certification__c.Standard</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Equipment__c-Equipment Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Equipment__c-Equipment Layout</layout>
+        <recordType>Equipment__c.StraightTruck</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Equipment__c-Equipment Layout</layout>
+        <recordType>Equipment__c.Tractor</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Equipment__c-Equipment Layout</layout>
+        <recordType>Equipment__c.Trailer</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Finance__c-Finance Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Finance__c-Finance Layout</layout>
@@ -997,7 +1390,18 @@
         <layout>Lead-Formato de candidatos</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Medical_Device_Complaint__c-Medical Device Complaint Layout</layout>
+        <layout>Maintenance_Log__c-Maintenance Log Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Maintenance_Log__c-Maintenance Log Layout</layout>
+        <recordType>Maintenance_Log__c.Scheduled_Maintenance</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Maintenance_Log__c-Maintenance Log Layout</layout>
+        <recordType>Maintenance_Log__c.Unscheduled_Repair</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Member_Benefits_Eligibility__c-Member Benefits Eligibility Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Movie__c-Movie Layout</layout>
@@ -1012,25 +1416,6 @@
         <layout>Package_Tracking__c-Package Tracking Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Product_Shipment__c-Product Shipment Layout</layout>
-        <recordType>Product_Shipment__c.Asphalt_Products_Shipment</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Product_Shipment__c-Product Shipment Layout</layout>
-        <recordType>Product_Shipment__c.Chemical_Products_Shipment</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Product_Shipment__c-Product Shipment Layout</layout>
-        <recordType>Product_Shipment__c.Fuel_Products_Shipment</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Product_Shipment__c-Product Shipment Layout</layout>
-        <recordType>Product_Shipment__c.Specialty_Oils_Shipment</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Professional_Certification__c-Professional Certification Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>Railway_Component__c-Railway Component Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -1040,7 +1425,26 @@
         <layout>Route__c-Route Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Route__c-Route Layout</layout>
+        <recordType>Route__c.Standard_Route</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Service_Outage_Tracker__c-Service Outage Tracker Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Shipment__c-Shipment Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Shipment__c-Shipment Layout</layout>
+        <recordType>Shipment__c.HazmatShipment</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Shipment__c-Shipment Layout</layout>
+        <recordType>Shipment__c.RefrigeratedShipment</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Shipment__c-Shipment Layout</layout>
+        <recordType>Shipment__c.StandardShipment</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>SutterHealth__c-SutterHealth Layout</layout>
@@ -1051,12 +1455,34 @@
     <layoutAssignments>
         <layout>Threat_Intelligence_Report__c-Threat Intelligence Report Layout</layout>
     </layoutAssignments>
-    <loginHours n1:nil="true" />
+    <layoutAssignments>
+        <layout>Trip_Expense__c-Trip Expense Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Vehicle__c-Vehicle Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Vehicle__c-Vehicle Layout</layout>
+        <recordType>Vehicle__c.Company_Owned</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Vehicle__c-Vehicle Layout</layout>
+        <recordType>Vehicle__c.Leased</recordType>
+    </layoutAssignments>
     <loginIpRanges>
         <description>All</description>
         <endAddress>255.255.255.255</endAddress>
         <startAddress>0.0.0.0</startAddress>
     </loginIpRanges>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Business_Segment__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
@@ -1135,6 +1561,15 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
+        <object>Grid_Infrastructure_Asset__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
         <object>Health_Plan__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
@@ -1144,7 +1579,25 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
+        <object>Maintenance_Log__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
         <object>Medical_Device_Complaint__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Member_Benefits_Eligibility__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -1243,6 +1696,15 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
+        <object>Supply_Chain_Engagement__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
         <object>SutterHealth__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
@@ -1284,6 +1746,31 @@
     </objectPermissions>
     <recordTypeVisibilities>
         <default>false</default>
+        <recordType>Completed_Shipment__c.HazmatShipment</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Completed_Shipment__c.RefrigeratedShipment</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Completed_Shipment__c.StandardShipment</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Driver__c.Company_Driver</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Driver__c.Owner_Operator</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
         <recordType>Equipment_Certification__c.Custom</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
@@ -1291,6 +1778,21 @@
         <default>true</default>
         <recordType>Equipment_Certification__c.Standard</recordType>
         <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Equipment__c.StraightTruck</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Equipment__c.Tractor</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Equipment__c.Trailer</recordType>
+        <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
@@ -1303,8 +1805,27 @@
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Grid_Infrastructure_Asset__c.Electric_Asset</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Grid_Infrastructure_Asset__c.Gas_Asset</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Maintenance_Log__c.Scheduled_Maintenance</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Maintenance_Log__c.Unscheduled_Repair</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
         <default>true</default>
-        <personAccountDefault>true</personAccountDefault>
         <recordType>Product_Shipment__c.Asphalt_Products_Shipment</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
@@ -1322,6 +1843,51 @@
         <default>false</default>
         <recordType>Product_Shipment__c.Specialty_Oils_Shipment</recordType>
         <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Route__c.Standard_Route</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Shipment__c.HazmatShipment</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Shipment__c.RefrigeratedShipment</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Shipment__c.StandardShipment</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Supply_Chain_Engagement__c.Implementation</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Supply_Chain_Engagement__c.Pre_Sales</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Vehicle__c.Company_Owned</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Vehicle__c.Leased</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>copado__Compliance_Rule__c.copado__Other</recordType>
+        <visible>false</visible>
     </recordTypeVisibilities>
     <tabVisibilities>
         <tab>Completed_Shipment__c</tab>
@@ -1342,6 +1908,10 @@
     <tabVisibilities>
         <tab>Equipment__c</tab>
         <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>Grid_Infrastructure_Asset__c</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>Medical_Device_Complaint__c</tab>
