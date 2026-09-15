@@ -14,6 +14,11 @@
         <field>Route__c.States_Traversed__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Route__c.Waypoints_JSON__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
     <label>US-0000486 Access</label>
     <objectPermissions>
