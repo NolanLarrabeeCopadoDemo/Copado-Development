@@ -1,11 +1,11 @@
 /**
- * @description Unit tests for WeatherQueueable (US-0000489). Verifies single-waypoint
+ * @description Unit tests for WeatherQueueable (US-0000488). Verifies single-waypoint
  *              processing, in-test synchronous chaining to completion, and failure handling,
  *              using LogisticsTestFactory for Route__c setup and HttpCalloutMock for the
  *              Open-Meteo callouts.
  *
  * @author      Nolan Larrabee
- * @date        2026-09-15
+ * @date        2026-09-14
  */
 @IsTest
 private class WeatherQueueableTest {
@@ -49,38 +49,18 @@ private class WeatherQueueableTest {
         return JSON.serialize(body);
     }
 
-    /**
-     * @description Returns a departure DateTime 2 hours from now, always in the future,
-     *              satisfying the Route__c VR_Departure_In_Future validation rule.
-     *
-     * @return Future DateTime safe for test inserts.
-     */
-    private static DateTime futureDeparture() {
-        return DateTime.now().addHours(2);
-    }
-
-    /**
-     * @description Returns a formatted hour string matching futureDeparture() for use in
-     *              mock body construction, e.g. '2026-09-16T12:00'.
-     *
-     * @return Hour string in 'yyyy-MM-dd\'T\'HH:00' format.
-     */
-    private static String futureDepartureHour() {
-        return DateTime.now().addHours(2).formatGmt('yyyy-MM-dd\'T\'HH:00');
-    }
-
     @TestSetup
     static void setup() {
         Route__c route = LogisticsTestFactory.buildRoute(new Map<String, Object>{
-            'Departure_DateTime__c' => futureDeparture(),
-            'Waypoints_JSON__c'     => '[{"latitude":34.05,"longitude":-118.24},{"latitude":36.16,"longitude":-115.15}]'
+            'Departure_DateTime__c' => DateTime.newInstanceGmt(2026, 9, 15, 10, 0, 0),
+            'Waypoints_JSON__c' => '[{"latitude":34.05,"longitude":-118.24},{"latitude":36.16,"longitude":-115.15}]'
         });
         insert route;
     }
 
     @IsTest
     static void testExecuteProcessesAllWaypointsAndFinalizesRoute() {
-        Test.setMock(HttpCalloutMock.class, new OpenMeteoMock(200, buildMockBody(futureDepartureHour(), 61)));
+        Test.setMock(HttpCalloutMock.class, new OpenMeteoMock(200, buildMockBody('2026-09-15T10:00', 61)));
         Route__c route = [SELECT Id, Waypoints_JSON__c, Departure_DateTime__c FROM Route__c LIMIT 1];
         List<WeatherService.Waypoint> waypoints = WeatherService.deserializeWaypoints(route.Waypoints_JSON__c);
 
@@ -113,7 +93,7 @@ private class WeatherQueueableTest {
         Test.stopTest();
 
         Route__c updatedRoute = [SELECT API_Status__c, Weather_Summary__c FROM Route__c WHERE Id = :route.Id];
-        System.assertEquals('Success',                                    updatedRoute.API_Status__c,    'An empty waypoint list should still finalize the route.');
+        System.assertEquals('Success', updatedRoute.API_Status__c, 'An empty waypoint list should still finalize the route.');
         System.assertEquals('No weather data available for this route.', updatedRoute.Weather_Summary__c, 'No waypoints should produce the fallback summary.');
     }
 
@@ -130,20 +110,20 @@ private class WeatherQueueableTest {
         Test.stopTest();
 
         Route__c updatedRoute = [SELECT API_Status__c, Weather_Summary__c FROM Route__c WHERE Id = :route.Id];
-        System.assertEquals('Success',                                    updatedRoute.API_Status__c,    'Individual callout failures are logged, not thrown, so the chain still finalizes.');
+        System.assertEquals('Success', updatedRoute.API_Status__c, 'Individual callout failures are logged, not thrown, so the chain still finalizes.');
         System.assertEquals('No weather data available for this route.', updatedRoute.Weather_Summary__c, 'No codes resolved, so the fallback summary should be used.');
     }
 
     @IsTest
     static void testExecuteInvalidRouteIdLogsAndMarksFailedWithoutThrowing() {
-        Test.setMock(HttpCalloutMock.class, new OpenMeteoMock(200, buildMockBody(futureDepartureHour(), 61)));
+        Test.setMock(HttpCalloutMock.class, new OpenMeteoMock(200, buildMockBody('2026-09-15T10:00', 61)));
         List<WeatherService.Waypoint> waypoint = new List<WeatherService.Waypoint>{ new WeatherService.Waypoint() };
-        waypoint[0].latitude  = 34.05;
+        waypoint[0].latitude = 34.05;
         waypoint[0].longitude = -118.24;
 
         Test.startTest();
         System.enqueueJob(
-            new WeatherQueueable(null, waypoint, 0, new List<WeatherService.WaypointWeatherResult>(), futureDeparture())
+            new WeatherQueueable(null, waypoint, 0, new List<WeatherService.WaypointWeatherResult>(), DateTime.now())
         );
         Test.stopTest();
 
