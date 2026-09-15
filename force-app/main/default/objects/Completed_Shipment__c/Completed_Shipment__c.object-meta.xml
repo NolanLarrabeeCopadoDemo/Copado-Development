@@ -155,9 +155,8 @@
     <externalSharingModel>ControlledByParent</externalSharingModel>
     <label>Completed Shipment</label>
     <nameField>
-        <displayFormat>CS-{0000}</displayFormat>
         <label>Completed Shipment Name</label>
-        <type>AutoNumber</type>
+        <type>Text</type>
     </nameField>
     <pluralLabel>Completed Shipments</pluralLabel>
     <searchLayouts />

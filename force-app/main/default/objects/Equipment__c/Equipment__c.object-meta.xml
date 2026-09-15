@@ -155,9 +155,8 @@
     <externalSharingModel>Private</externalSharingModel>
     <label>Equipment</label>
     <nameField>
-        <displayFormat>EQ-{0000}</displayFormat>
         <label>Equipment Name</label>
-        <type>AutoNumber</type>
+        <type>Text</type>
     </nameField>
     <pluralLabel>Equipment</pluralLabel>
     <searchLayouts />
