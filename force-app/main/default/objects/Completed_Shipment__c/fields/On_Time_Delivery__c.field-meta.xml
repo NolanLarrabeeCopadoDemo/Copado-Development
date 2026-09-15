@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>On_Time_Delivery__c</fullName>
+    <description>Indicates whether the shipment was delivered on or before its expected delivery date (US-0000475).</description>
+    <formula>IF(OR(ISBLANK(Shipment__r.Actual_Delivery_Date__c), ISBLANK(Shipment__r.Expected_Delivery_Date__c)), false, Shipment__r.Actual_Delivery_Date__c &lt;= Shipment__r.Expected_Delivery_Date__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>On Time Delivery</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

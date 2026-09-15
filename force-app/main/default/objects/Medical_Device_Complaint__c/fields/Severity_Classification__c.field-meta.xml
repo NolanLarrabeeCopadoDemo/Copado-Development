@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Severity_Classification__c</fullName>
+    <label>Severity Classification</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Death</fullName>
+                <default>false</default>
+                <label>Death</label>
+            </value>
+            <value>
+                <fullName>Serious Injury</fullName>
+                <default>false</default>
+                <label>Serious Injury</label>
+            </value>
+            <value>
+                <fullName>Malfunction</fullName>
+                <default>false</default>
+                <label>Malfunction</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Inconclusive</fullName>
+                <default>false</default>
+                <label>Inconclusive</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

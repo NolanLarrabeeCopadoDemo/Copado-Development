@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_FDA_Report_Number</fullName>
+    <active>true</active>
+    <description>Requires FDA Report Number if complaint is reportable to FDA and status is Closed</description>
+    <errorConditionFormula>AND(
+    Is_Reportable_to_FDA__c = TRUE,
+    ISPICKVAL(Investigation_Status__c, &quot;Closed&quot;),
+    ISBLANK(FDA_Report_Number__c)
+)</errorConditionFormula>
+    <errorDisplayField>FDA_Report_Number__c</errorDisplayField>
+    <errorMessage>FDA Report Number is required for complaints reportable to FDA before closing.</errorMessage>
+</ValidationRule>

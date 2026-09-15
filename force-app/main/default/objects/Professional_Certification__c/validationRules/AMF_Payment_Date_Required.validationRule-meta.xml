@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AMF_Payment_Date_Required</fullName>
+    <active>true</active>
+    <description>Requires AMF Payment Date when AMF is marked as paid</description>
+    <errorConditionFormula>AND(
+  Annual_Maintenance_Fee_Paid__c = TRUE,
+  ISBLANK(AMF_Payment_Date__c)
+)</errorConditionFormula>
+    <errorDisplayField>AMF_Payment_Date__c</errorDisplayField>
+    <errorMessage>AMF Payment Date is required when Annual Maintenance Fee is marked as paid</errorMessage>
+</ValidationRule>

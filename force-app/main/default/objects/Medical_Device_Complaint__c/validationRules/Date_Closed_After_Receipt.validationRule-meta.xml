@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Date_Closed_After_Receipt</fullName>
+    <active>true</active>
+    <description>Date Closed must be greater than or equal to Complaint Receipt Date</description>
+    <errorConditionFormula>AND(
+    NOT(ISBLANK(Date_Closed__c)),
+    Date_Closed__c &lt; Complaint_Receipt_Date__c
+)</errorConditionFormula>
+    <errorDisplayField>Date_Closed__c</errorDisplayField>
+    <errorMessage>Date Closed must be on or after the Complaint Receipt Date.</errorMessage>
+</ValidationRule>

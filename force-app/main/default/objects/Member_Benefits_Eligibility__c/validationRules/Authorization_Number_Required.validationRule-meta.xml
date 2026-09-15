@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Authorization_Number_Required</fullName>
+    <active>true</active>
+    <description>If Pre-Authorization Required is checked, Authorization Number must be provided</description>
+    <errorConditionFormula>AND(
+    Pre_Authorization_Required__c = TRUE,
+    ISBLANK(Authorization_Number__c)
+)</errorConditionFormula>
+    <errorDisplayField>Authorization_Number__c</errorDisplayField>
+    <errorMessage>Authorization Number is required when Pre-Authorization is marked as required.</errorMessage>
+</ValidationRule>

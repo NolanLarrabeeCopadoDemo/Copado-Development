@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <classAccesses>
+        <apexClass>CompletedShipmentService</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>CompletedShipmentServiceTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>LogisticsTestFactory</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <description>Grants Apex class access for US-0000482 (Automated Completed_Shipment__c Creation on Delivery): CompletedShipmentService, LogisticsTestFactory, CompletedShipmentServiceTest.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>US-0000482_Access</label>
+</PermissionSet>

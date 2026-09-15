@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Out_of_Pocket_Met_Cannot_Exceed_Max</fullName>
+    <active>true</active>
+    <description>Out-of-Pocket Met cannot exceed Out-of-Pocket Maximum</description>
+    <errorConditionFormula>AND(
+    NOT(ISBLANK(Out_of_Pocket_Met__c)),
+    NOT(ISBLANK(Out_of_Pocket_Maximum__c)),
+    Out_of_Pocket_Met__c &gt; Out_of_Pocket_Maximum__c
+)</errorConditionFormula>
+    <errorDisplayField>Out_of_Pocket_Met__c</errorDisplayField>
+    <errorMessage>Out-of-Pocket Met cannot exceed Out-of-Pocket Maximum amount.</errorMessage>
+</ValidationRule>

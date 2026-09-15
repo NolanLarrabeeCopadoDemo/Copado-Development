@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CPE_Credits_Required__c</fullName>
+    <description>Total CPE credits required for renewal (e.g., 120 for CISSP, 60 for SSCP)</description>
+    <externalId>false</externalId>
+    <label>CPE Credits Required</label>
+    <precision>5</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

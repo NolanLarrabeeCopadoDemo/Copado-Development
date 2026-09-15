@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Go_Live_Date_Required_on_Go_Live_Phase</fullName>
+    <active>true</active>
+    <description>Go-Live Date is required when Implementation Phase is set to Go-Live</description>
+    <errorConditionFormula>AND( ISPICKVAL(Implementation_Phase__c, &apos;GoLive&apos;), ISBLANK(Go_Live_Date__c) )</errorConditionFormula>
+    <errorMessage>Go-Live Date is required when Implementation Phase is set to Go-Live.</errorMessage>
+</ValidationRule>
