@@ -8,7 +8,7 @@
         <apexClass>StateBoundaryService_copado</apexClass>
         <enabled>true</enabled>
     </classAccesses>
-    <description>Grants CRUD on Route__c, read on State_Boundary__mdt, FLS on States_Traversed__c, and Apex access to waypoint/state-traversal classes (US-0000486).</description>
+    <description>Grants CRUD on Route__c, read on State_Boundary__mdt, FLS on all Route__c fields used by RouteCalculationQueueable and tests, and Apex access to waypoint/state-traversal classes (US-0000486).</description>
     <fieldPermissions>
         <editable>true</editable>
         <field>Route__c.States_Traversed__c</field>
