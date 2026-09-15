@@ -1,155 +1,178 @@
 /**
- * @description Test coverage for EquipmentAvailabilityController_copado. Runs as a dedicated
- * test user with a dynamically created PermissionSet granting Equipment__c object and field
- * read access, exercising the controller's WITH SECURITY_ENFORCED path realistically.
+ * @description Test coverage for EquipmentAvailabilityController_copado.
+ * Validates happy-path wrapper results, active-shipment name resolution,
+ * empty-result path, and both CRUD/FLS guard paths (object-not-accessible
+ * and field-not-accessible via WITH SECURITY_ENFORCED).
+ * Targets 85-90%+ code coverage per project quality standards.
+ *
+ * Key schema notes for Equipment__c:
+ *  - Active_Shipment__c: self-referencing placeholder lookup (relationshipName:
+ *    Active_Shipment_Placeholder). Name is resolved via a secondary SOQL query
+ *    on Truck_ID__c rather than relationship traversal.
+ *  - VIN__c: must be exactly 17 characters (VR_VIN_Format validation rule).
+ *  - Truck_ID__c: unique text (20 chars max).
  */
 @isTest
 private class EquipmentAvailabilityCtrlTest_copado {
 
+    // ───────────────────────────────────────────────────────────────────
+    // Test Setup
+    // ───────────────────────────────────────────────────────────────────
+
     @TestSetup
     static void setupData() {
-        Equipment__c truck = new Equipment__c(
-            Truck_ID__c = 'TRK-0001',
-            Truck_Size_Class__c = 'Class_8',
-            Operational_Status__c = 'Available',
+        // Base truck — will be self-referenced as active-shipment placeholder
+        Equipment__c baseTruck = new Equipment__c(
+            Truck_ID__c             = 'TRK-0001',
+            Truck_Size_Class__c     = 'Class_8',
+            Operational_Status__c   = 'Available',
             Payload_Capacity_lbs__c = 12000,
-            Cargo_Volume_Cu_Ft__c = 500,
-            VIN__c = '1HGCM82633A123456'
+            Cargo_Volume_Cu_Ft__c   = 500,
+            VIN__c                  = '1HGCM82633A123456'
         );
-        insert truck;
+        insert baseTruck;
 
+        // In-transit truck referencing baseTruck via the self-ref Active_Shipment__c field
         Equipment__c inTransitTruck = new Equipment__c(
-            Truck_ID__c = 'TRK-0002',
-            Truck_Size_Class__c = 'Class_6',
-            Operational_Status__c = 'In_Transit',
+            Truck_ID__c             = 'TRK-0002',
+            Truck_Size_Class__c     = 'Class_6',
+            Operational_Status__c   = 'In_Transit',
             Payload_Capacity_lbs__c = 8000,
-            Cargo_Volume_Cu_Ft__c = 300,
-            Active_Shipment__c = truck.Id,
-            VIN__c = '2HGCM82633A654321'
+            Cargo_Volume_Cu_Ft__c   = 300,
+            Active_Shipment__c      = baseTruck.Id,
+            VIN__c                  = '2HGCM82633A654321'
         );
         insert inTransitTruck;
 
-        Profile standardUserProfile = [SELECT Id FROM Profile WHERE Name = 'Standard User' LIMIT 1];
-        User runAsUser = new User(
-            FirstName = 'Equipment',
-            LastName = 'AvailabilityTestUser',
-            Alias = 'eqavl',
-            Email = 'equipment.availability.test.copado@example.com.invalid',
-            Username = 'equipment.availability.test.copado@example.com.' + Crypto.getRandomLong() + '.invalid',
-            TimeZoneSidKey = 'America/Los_Angeles',
-            LocaleSidKey = 'en_US',
-            EmailEncodingKey = 'UTF-8',
-            LanguageLocaleKey = 'en_US',
-            ProfileId = standardUserProfile.Id
-        );
-        insert runAsUser;
+        // ── Users ──────────────────────────────────────────────────────
+        Profile standardProfile = [SELECT Id FROM Profile WHERE Name = 'Standard User' LIMIT 1];
+        Long rnd = Crypto.getRandomLong();
 
-        PermissionSet permissionSet = new PermissionSet(
-            Name = 'EquipmentAvailabilityCtrlTest_copado_PS',
-            Label = 'Equipment Availability Ctrl Test PS'
+        // Full-access user: object read + all queried fields
+        User fullAccessUser = new User(
+            FirstName           = 'EqAvl',
+            LastName            = 'FullAccess',
+            Alias               = 'eqful',
+            Email               = 'eqavl.full@example.com.invalid',
+            Username            = 'eqavl.full.' + rnd + '@example.com.invalid',
+            TimeZoneSidKey      = 'America/Los_Angeles',
+            LocaleSidKey        = 'en_US',
+            EmailEncodingKey    = 'UTF-8',
+            LanguageLocaleKey   = 'en_US',
+            ProfileId           = standardProfile.Id
         );
-        insert permissionSet;
+
+        // No-access user: no Equipment__c permissions whatsoever
+        User noAccessUser = new User(
+            FirstName           = 'EqAvl',
+            LastName            = 'NoAccess',
+            Alias               = 'eqnoa',
+            Email               = 'eqavl.noaccess@example.com.invalid',
+            Username            = 'eqavl.noaccess.' + rnd + '@example.com.invalid',
+            TimeZoneSidKey      = 'America/Los_Angeles',
+            LocaleSidKey        = 'en_US',
+            EmailEncodingKey    = 'UTF-8',
+            LanguageLocaleKey   = 'en_US',
+            ProfileId           = standardProfile.Id
+        );
+
+        // Partial-access user: object read only, no field-level access
+        User partialAccessUser = new User(
+            FirstName           = 'EqAvl',
+            LastName            = 'PartialAccess',
+            Alias               = 'eqpar',
+            Email               = 'eqavl.partial@example.com.invalid',
+            Username            = 'eqavl.partial.' + rnd + '@example.com.invalid',
+            TimeZoneSidKey      = 'America/Los_Angeles',
+            LocaleSidKey        = 'en_US',
+            EmailEncodingKey    = 'UTF-8',
+            LanguageLocaleKey   = 'en_US',
+            ProfileId           = standardProfile.Id
+        );
+
+        insert new List<User>{ fullAccessUser, noAccessUser, partialAccessUser };
+
+        // ── Full-access Permission Set ─────────────────────────────────
+        PermissionSet fullPS = new PermissionSet(
+            Name  = 'EqAvlCtrlTest_Full_copado',
+            Label = 'Eq Avl Ctrl Test Full'
+        );
+        insert fullPS;
 
         insert new ObjectPermissions(
-            ParentId = permissionSet.Id,
-            SobjectType = 'Equipment__c',
-            PermissionsRead = true,
+            ParentId                  = fullPS.Id,
+            SobjectType               = 'Equipment__c',
+            PermissionsRead           = true,
             PermissionsViewAllRecords = true
         );
 
-        List<FieldPermissions> fieldPermissionsList = new List<FieldPermissions>();
+        List<FieldPermissions> fullFieldPerms = new List<FieldPermissions>();
         for (String fieldName : new List<String>{
             'Truck_ID__c', 'Truck_Size_Class__c', 'Operational_Status__c',
             'Payload_Capacity_lbs__c', 'Cargo_Volume_Cu_Ft__c', 'Active_Shipment__c'
         }) {
-            fieldPermissionsList.add(new FieldPermissions(
-                ParentId = permissionSet.Id,
-                SobjectType = 'Equipment__c',
-                Field = 'Equipment__c.' + fieldName,
+            fullFieldPerms.add(new FieldPermissions(
+                ParentId        = fullPS.Id,
+                SobjectType     = 'Equipment__c',
+                Field           = 'Equipment__c.' + fieldName,
                 PermissionsRead = true
             ));
         }
-        insert fieldPermissionsList;
+        insert fullFieldPerms;
 
         insert new PermissionSetAssignment(
-            AssigneeId = runAsUser.Id,
-            PermissionSetId = permissionSet.Id
+            AssigneeId      = fullAccessUser.Id,
+            PermissionSetId = fullPS.Id
         );
 
-        User noAccessUser = new User(
-            FirstName = 'Equipment',
-            LastName = 'AvailabilityNoAccessUser',
-            Alias = 'eqnoa',
-            Email = 'equipment.availability.noaccess.copado@example.com.invalid',
-            Username = 'equipment.availability.noaccess.copado@example.com.' + Crypto.getRandomLong() + '.invalid',
-            TimeZoneSidKey = 'America/Los_Angeles',
-            LocaleSidKey = 'en_US',
-            EmailEncodingKey = 'UTF-8',
-            LanguageLocaleKey = 'en_US',
-            ProfileId = standardUserProfile.Id
+        // ── Object-only Permission Set (partial user) ──────────────────
+        PermissionSet objectOnlyPS = new PermissionSet(
+            Name  = 'EqAvlCtrlTest_ObjOnly_copado',
+            Label = 'Eq Avl Ctrl Test Obj Only'
         );
-        insert noAccessUser;
-
-        User partialAccessUser = new User(
-            FirstName = 'Equipment',
-            LastName = 'AvailabilityPartialAccessUser',
-            Alias = 'eqpar',
-            Email = 'equipment.availability.partial.copado@example.com.invalid',
-            Username = 'equipment.availability.partial.copado@example.com.' + Crypto.getRandomLong() + '.invalid',
-            TimeZoneSidKey = 'America/Los_Angeles',
-            LocaleSidKey = 'en_US',
-            EmailEncodingKey = 'UTF-8',
-            LanguageLocaleKey = 'en_US',
-            ProfileId = standardUserProfile.Id
-        );
-        insert partialAccessUser;
-
-        PermissionSet objectOnlyPermissionSet = new PermissionSet(
-            Name = 'EquipmentAvailabilityCtrlTest_copado_ObjOnlyPS',
-            Label = 'Equipment Availability Ctrl Test Object Only PS'
-        );
-        insert objectOnlyPermissionSet;
+        insert objectOnlyPS;
 
         insert new ObjectPermissions(
-            ParentId = objectOnlyPermissionSet.Id,
-            SobjectType = 'Equipment__c',
-            PermissionsRead = true,
+            ParentId                  = objectOnlyPS.Id,
+            SobjectType               = 'Equipment__c',
+            PermissionsRead           = true,
             PermissionsViewAllRecords = true
         );
 
         insert new PermissionSetAssignment(
-            AssigneeId = partialAccessUser.Id,
-            PermissionSetId = objectOnlyPermissionSet.Id
+            AssigneeId      = partialAccessUser.Id,
+            PermissionSetId = objectOnlyPS.Id
         );
     }
 
+    // ───────────────────────────────────────────────────────────────────
+    // Happy-Path: correct wrapper count for fully-permissioned user
+    // ───────────────────────────────────────────────────────────────────
+
     @isTest
     static void testGetEquipmentAvailabilityReturnsRecords() {
-        User runAsUser = [
-            SELECT Id FROM User
-            WHERE LastName = 'AvailabilityTestUser'
-            LIMIT 1
-        ];
+        User runAsUser = [SELECT Id FROM User WHERE LastName = 'FullAccess' AND Alias = 'eqful' LIMIT 1];
 
-        List<Equipment__c> results;
+        List<EquipmentAvailabilityController_copado.EquipmentWrapper> results;
         System.runAs(runAsUser) {
             Test.startTest();
             results = EquipmentAvailabilityController_copado.getEquipmentAvailability();
             Test.stopTest();
         }
 
-        System.assertEquals(2, results.size(), 'Expected two Equipment__c records to be returned.');
+        System.assertEquals(2, results.size(),
+            'Expected two EquipmentWrapper records for a fully-permissioned user.');
     }
+
+    // ───────────────────────────────────────────────────────────────────
+    // Happy-Path: active-shipment name resolved via secondary SOQL
+    // ───────────────────────────────────────────────────────────────────
 
     @isTest
     static void testGetEquipmentAvailabilityIncludesActiveShipmentName() {
-        User runAsUser = [
-            SELECT Id FROM User
-            WHERE LastName = 'AvailabilityTestUser'
-            LIMIT 1
-        ];
+        User runAsUser = [SELECT Id FROM User WHERE LastName = 'FullAccess' AND Alias = 'eqful' LIMIT 1];
 
-        List<Equipment__c> results;
+        List<EquipmentAvailabilityController_copado.EquipmentWrapper> results;
         System.runAs(runAsUser) {
             Test.startTest();
             results = EquipmentAvailabilityController_copado.getEquipmentAvailability();
@@ -157,59 +180,62 @@ private class EquipmentAvailabilityCtrlTest_copado {
         }
 
         Boolean foundActiveShipment = false;
-        for (Equipment__c record : results) {
-            if (record.Active_Shipment__c != null) {
-                System.assertNotEquals(null, record.Active_Shipment__r.Name,
-                    'Active_Shipment__r.Name should be populated when Active_Shipment__c is set.');
+        for (EquipmentAvailabilityController_copado.EquipmentWrapper wrapper : results) {
+            if (wrapper.equipment.Active_Shipment__c != null) {
+                System.assertNotEquals(null, wrapper.activeShipmentName,
+                    'activeShipmentName should be populated when Active_Shipment__c is set.');
+                System.assertEquals('TRK-0001', wrapper.activeShipmentName,
+                    'activeShipmentName should match the Truck_ID__c of the referenced equipment.');
                 foundActiveShipment = true;
             }
         }
-        System.assertEquals(true, foundActiveShipment, 'Expected at least one record with an active shipment.');
+        System.assertEquals(true, foundActiveShipment,
+            'Expected at least one record with a populated Active_Shipment__c reference.');
     }
+
+    // ───────────────────────────────────────────────────────────────────
+    // Guard: AuraHandledException when object is not accessible
+    // ───────────────────────────────────────────────────────────────────
 
     @isTest
     static void testGetEquipmentAvailabilityThrowsWhenObjectNotAccessible() {
-        User noAccessUser = [
-            SELECT Id FROM User
-            WHERE LastName = 'AvailabilityNoAccessUser'
-            LIMIT 1
-        ];
+        User noAccessUser = [SELECT Id FROM User WHERE LastName = 'NoAccess' AND Alias = 'eqnoa' LIMIT 1];
 
         Boolean exceptionThrown = false;
         System.runAs(noAccessUser) {
             Test.startTest();
             try {
                 EquipmentAvailabilityController_copado.getEquipmentAvailability();
-            } catch (AuraHandledException auraException) {
+            } catch (AuraHandledException auraEx) {
                 exceptionThrown = true;
             }
             Test.stopTest();
         }
 
         System.assertEquals(true, exceptionThrown,
-            'Expected an AuraHandledException when the object is not accessible.');
+            'Expected an AuraHandledException when Equipment__c is not accessible to the user.');
     }
+
+    // ───────────────────────────────────────────────────────────────────
+    // Guard: AuraHandledException when fields are not accessible (QueryException path)
+    // ───────────────────────────────────────────────────────────────────
 
     @isTest
     static void testGetEquipmentAvailabilityThrowsWhenFieldNotAccessible() {
-        User partialAccessUser = [
-            SELECT Id FROM User
-            WHERE LastName = 'AvailabilityPartialAccessUser'
-            LIMIT 1
-        ];
+        User partialAccessUser = [SELECT Id FROM User WHERE LastName = 'PartialAccess' AND Alias = 'eqpar' LIMIT 1];
 
         Boolean exceptionThrown = false;
         System.runAs(partialAccessUser) {
             Test.startTest();
             try {
                 EquipmentAvailabilityController_copado.getEquipmentAvailability();
-            } catch (AuraHandledException auraException) {
+            } catch (AuraHandledException auraEx) {
                 exceptionThrown = true;
             }
             Test.stopTest();
         }
 
         System.assertEquals(true, exceptionThrown,
-            'Expected an AuraHandledException when a queried field is not accessible.');
+            'Expected an AuraHandledException when queried fields are not accessible via WITH SECURITY_ENFORCED.');
     }
 }
