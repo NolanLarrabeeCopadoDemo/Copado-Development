@@ -1,11 +1,11 @@
 /**
  * Queueable job that requeries a set of Route__c Ids, delegates distance/duration/
- * polyline calculation to RouteCalculationService_copado, and performs a single
- * bulkified DML update with the results.
+ * polyline/waypoint/state-traversal calculation to RouteCalculationService_copado,
+ * and performs a single bulkified DML update with the results.
  *
- * NOTE (US-0000485 known gap): Nebula Logger is not installed in this org, so the
- * INFO/ERROR logging calls specified in the technical spec are intentionally
- * omitted here. TODO: wire up Nebula Logger once the package is installed.
+ * NOTE: Nebula Logger is not installed in this org (documented gap from
+ * US-0000485). Waypoint extraction logging is handled inside
+ * RouteCalculationService_copado using the org's existing Logger utility.
  */
 public with sharing class RouteCalculationQueueable_copado implements Queueable, Database.AllowsCallouts {
 
@@ -44,7 +44,8 @@ public with sharing class RouteCalculationQueueable_copado implements Queueable,
             SELECT Id, Origin_Latitude__c, Origin_Longitude__c,
                    Destination_Latitude__c, Destination_Longitude__c,
                    Total_Mileage__c, Estimated_Duration_Hours__c,
-                   Encoded_Polyline__c, API_Status__c, API_Last_Error__c
+                   Encoded_Polyline__c, API_Status__c, API_Last_Error__c,
+                   Waypoints_JSON__c, States_Traversed__c, Map_Embed_URL__c
             FROM Route__c
             WHERE Id IN :currentBatchIds
         ];
