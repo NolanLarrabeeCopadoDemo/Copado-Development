@@ -155,9 +155,8 @@
     <externalSharingModel>Private</externalSharingModel>
     <label>Shipment</label>
     <nameField>
-        <displayFormat>SH-{0000}</displayFormat>
         <label>Shipment Name</label>
-        <type>AutoNumber</type>
+        <type>Text</type>
     </nameField>
     <pluralLabel>Shipments</pluralLabel>
     <searchLayouts />
