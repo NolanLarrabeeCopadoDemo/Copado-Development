@@ -12,7 +12,7 @@
  *              record, and return the persisted instance.
  *
  * @author      Nolan Larrabee
- * @date        2026-09-13
+ * @date        2026-09-14
  */
 @IsTest
 public class LogisticsTestFactory {
@@ -83,6 +83,106 @@ public class LogisticsTestFactory {
             Destination_Longitude__c   = -100.0
         );
         return (Route__c) applyOverrides(record, overrides);
+    }
+
+    /**
+=================================================================
+    // Builder methods - return unsaved records with default values
+    // =========================================================================
+
+    /**
+     * @description Builds an unsaved Shipment__c with required field defaults.
+     *              Pass overrides to customise specific fields, e.g.
+     *              new Map<String,Object>{'Status__c' => 'Delivered'}.
+     *
+     * @param  overrides Optional map of field API name to value.
+     * @return           Unsaved Shipment__c.
+     */
+    public static Shipment__c buildShipment(Map<String, Object> overrides) {
+        Shipment__c record = new Shipment__c(
+            Cargo_Type__c          = 'General Freight',
+            Cargo_Weight_lbs__c    = 1000,
+            Cargo_Volume_Cu_Ft__c  = 100,
+            Status__c              = 'Draft',
+            Origin_State__c        = 'California',
+            Destination_State__c   = 'Nevada'
+        );
+        return (Shipment__c) applyOverrides(record, overrides);
+    }
+
+    /**
+     * @description Builds an unsaved Equipment__c with required field defaults.
+     *
+     * @param  overrides Optional map of field API name to value.
+     * @return           Unsaved Equipment__c.
+     */
+    public static Equipment__c buildEquipment(Map<String, Object> overrides) {
+        Equipment__c record = new Equipment__c(
+            Truck_ID__c              = 'TRK-' + generateUniqueSuffix(),
+            VIN__c                   = generateVin(),
+            Year__c                  = 2020,
+            Payload_Capacity_lbs__c  = 20000,
+            Cargo_Capacity_Lbs__c    = 2000,
+            Cargo_Volume_Cu_Ft__c    = 1500,
+            Truck_Size_Class__c      = 'Class_8',
+            Operational_Status__c    = 'Available',
+            Refrigeration_Capable__c = false,
+            Hazmat_Certified__c      = false
+        );
+        return (Equipment__c) applyOverrides(record, overrides);
+    }
+
+    /**
+     * @description Builds an unsaved Route__c with required field defaults.
+     *              Total_Mileage__c defaults to 250.5 unless overridden.
+     *
+     * @param  overrides Optional map of field API name to value.
+     * @return           Unsaved Route__c.
+     */
+    public static Route__c buildRoute(Map<String, Object> overrides) {
+        Route__c record = new Route__c(
+            Name                       = 'Test Route ' + generateUniqueSuffix(),
+            Status__c                  = 'Planned',
+            Total_Mileage__c           = 250.5,
+            Estimated_Duration_Hours__c = 5,
+            Departure_DateTime__c      = DateTime.now().addDays(1),
+            Origin_Latitude__c         = 30.0,
+            Origin_Longitude__c        = -90.0,
+            Destination_Latitude__c    = 40.0,
+            Destination_Longitude__c   = -100.0
+        );
+        return (Route__c) applyOverrides(record, overrides);
+    }
+
+    /**
+<<<<<<< HEAD
+=======
+     * @description Builds an unsaved Route__c pre-populated with a Waypoints_JSON__c
+     *              array of the requested size, suitable for WeatherService tests.
+     *              Each generated waypoint has a latitude/longitude pair; overrides
+     *              are applied after the waypoints are set, so callers can still
+     *              replace Waypoints_JSON__c entirely if needed.
+     *
+     * @param  waypointCount Number of waypoint entries to generate.
+     * @param  overrides     Optional map of field API name to value.
+     * @return               Unsaved Route__c with Waypoints_JSON__c populated.
+     */
+    public static Route__c buildRouteWithWaypointWeather(Integer waypointCount, Map<String, Object> overrides) {
+        List<Map<String, Object>> waypoints = new List<Map<String, Object>>();
+        Integer count = waypointCount == null ? 0 : waypointCount;
+        for (Integer i = 0; i < count; i++) {
+            waypoints.add(new Map<String, Object>{
+                'latitude' => 30.0 + i,
+                'longitude' => -90.0 - i
+            });
+        }
+        Map<String, Object> combinedOverrides = new Map<String, Object>{
+            'Waypoints_JSON__c' => JSON.serialize(waypoints)
+        };
+        if (overrides != null) {
+            combinedOverrides.putAll(overrides);
+        }
+        return buildRoute(combinedOverrides);
     }
 
     /**
