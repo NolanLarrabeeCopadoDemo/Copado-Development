@@ -12,7 +12,7 @@
  *              record, and return the persisted instance.
  *
  * @author      Nolan Larrabee
- * @date        2026-09-13
+ * @date        2026-09-14
  */
 @IsTest
 public class LogisticsTestFactory {
@@ -83,6 +83,35 @@ public class LogisticsTestFactory {
             Destination_Longitude__c   = -100.0
         );
         return (Route__c) applyOverrides(record, overrides);
+    }
+
+    /**
+     * @description Builds an unsaved Route__c pre-populated with a Waypoints_JSON__c
+     *              array of the requested size, suitable for WeatherService tests.
+     *              Each generated waypoint has a latitude/longitude pair; overrides
+     *              are applied after the waypoints are set, so callers can still
+     *              replace Waypoints_JSON__c entirely if needed.
+     *
+     * @param  waypointCount Number of waypoint entries to generate.
+     * @param  overrides     Optional map of field API name to value.
+     * @return               Unsaved Route__c with Waypoints_JSON__c populated.
+     */
+    public static Route__c buildRouteWithWaypointWeather(Integer waypointCount, Map<String, Object> overrides) {
+        List<Map<String, Object>> waypoints = new List<Map<String, Object>>();
+        Integer count = waypointCount == null ? 0 : waypointCount;
+        for (Integer i = 0; i < count; i++) {
+            waypoints.add(new Map<String, Object>{
+                'latitude' => 30.0 + i,
+                'longitude' => -90.0 - i
+            });
+        }
+        Map<String, Object> combinedOverrides = new Map<String, Object>{
+            'Waypoints_JSON__c' => JSON.serialize(waypoints)
+        };
+        if (overrides != null) {
+            combinedOverrides.putAll(overrides);
+        }
+        return buildRoute(combinedOverrides);
     }
 
     /**
