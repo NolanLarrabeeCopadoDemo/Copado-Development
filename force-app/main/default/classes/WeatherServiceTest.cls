@@ -1,10 +1,10 @@
 /**
- * @description Unit tests for WeatherService (US-0000488). Uses LogisticsTestFactory for
+ * @description Unit tests for WeatherService (US-0000489). Uses LogisticsTestFactory for
  *              Route__c test data and HttpCalloutMock to simulate Open-Meteo responses,
  *              covering the happy path, callout failure handling, and aggregation helpers.
  *
  * @author      Nolan Larrabee
- * @date        2026-09-14
+ * @date        2026-09-15
  */
 @IsTest
 private class WeatherServiceTest {
@@ -36,7 +36,7 @@ private class WeatherServiceTest {
      * @description Builds a minimal, well-formed Open-Meteo hourly forecast JSON body whose
      *              single hour matches targetHour and carries weatherCode.
      *
-     * @param  targetHour  Hour string, e.g. '2026-09-15T10:00', that should match the lookup.
+     * @param  targetHour  Hour string, e.g. '2026-09-16T10:00', that should match the lookup.
      * @param  weatherCode WMO weather code to place at that hour.
      * @return             Serialized JSON response body.
      */
@@ -49,11 +49,31 @@ private class WeatherServiceTest {
         return JSON.serialize(body);
     }
 
+    /**
+     * @description Returns a departure DateTime 2 hours from now, always in the future,
+     *              satisfying the Route__c VR_Departure_In_Future validation rule.
+     *
+     * @return Future DateTime safe for test inserts.
+     */
+    private static DateTime futureDeparture() {
+        return DateTime.now().addHours(2);
+    }
+
+    /**
+     * @description Returns a formatted hour string matching futureDeparture() for use in
+     *              mock body construction, e.g. '2026-09-16T12:00'.
+     *
+     * @return Hour string in 'yyyy-MM-dd\'T\'HH:00' format.
+     */
+    private static String futureDepartureHour() {
+        return DateTime.now().addHours(2).formatGmt('yyyy-MM-dd\'T\'HH:00');
+    }
+
     @TestSetup
     static void setup() {
         Route__c route = LogisticsTestFactory.buildRoute(new Map<String, Object>{
-            'Departure_DateTime__c' => DateTime.newInstanceGmt(2026, 9, 15, 10, 0, 0),
-            'Waypoints_JSON__c' => '[{"latitude":34.05,"longitude":-118.24},{"latitude":36.16,"longitude":-115.15}]'
+            'Departure_DateTime__c' => futureDeparture(),
+            'Waypoints_JSON__c'     => '[{"latitude":34.05,"longitude":-118.24},{"latitude":36.16,"longitude":-115.15}]'
         });
         insert route;
     }
@@ -87,7 +107,7 @@ private class WeatherServiceTest {
     @IsTest
     static void testBuildWaypointRequestSetsEndpointAndMethod() {
         WeatherService.Waypoint waypoint = new WeatherService.Waypoint();
-        waypoint.latitude = 34.05;
+        waypoint.latitude  = 34.05;
         waypoint.longitude = -118.24;
 
         HttpRequest request = WeatherService.buildWaypointRequest(waypoint);
@@ -98,19 +118,20 @@ private class WeatherServiceTest {
 
     @IsTest
     static void testProcessWaypointHappyPathParsesMatchingHour() {
-        Test.setMock(HttpCalloutMock.class, new OpenMeteoMock(200, buildMockBody('2026-09-15T10:00', 61)));
+        String targetHour = futureDepartureHour();
+        Test.setMock(HttpCalloutMock.class, new OpenMeteoMock(200, buildMockBody(targetHour, 61)));
 
         WeatherService.Waypoint waypoint = new WeatherService.Waypoint();
-        waypoint.latitude = 34.05;
+        waypoint.latitude  = 34.05;
         waypoint.longitude = -118.24;
-        DateTime departure = DateTime.newInstanceGmt(2026, 9, 15, 10, 0, 0);
+        DateTime departure = futureDeparture();
 
         Test.startTest();
         WeatherService.WaypointWeatherResult resultData = WeatherService.processWaypoint(waypoint, departure);
         Test.stopTest();
 
         System.assertEquals(61, resultData.weatherCode, 'Weather code should be parsed from the matching hour.');
-        System.assertEquals('2026-09-15T10:00', resultData.matchedHour, 'Matched hour should equal the target hour.');
+        System.assertEquals(targetHour, resultData.matchedHour, 'Matched hour should equal the target hour.');
     }
 
     @IsTest
@@ -118,11 +139,11 @@ private class WeatherServiceTest {
         Test.setMock(HttpCalloutMock.class, new OpenMeteoMock(500, 'Server Error'));
 
         WeatherService.Waypoint waypoint = new WeatherService.Waypoint();
-        waypoint.latitude = 34.05;
+        waypoint.latitude  = 34.05;
         waypoint.longitude = -118.24;
 
         Test.startTest();
-        WeatherService.WaypointWeatherResult resultData = WeatherService.processWaypoint(waypoint, DateTime.now());
+        WeatherService.WaypointWeatherResult resultData = WeatherService.processWaypoint(waypoint, futureDeparture());
         Test.stopTest();
 
         System.assertEquals(null, resultData.weatherCode, 'A failed callout should not set a weather code.');
@@ -133,11 +154,11 @@ private class WeatherServiceTest {
         Test.setMock(HttpCalloutMock.class, new OpenMeteoMock(200, '{"latitude":34.05}'));
 
         WeatherService.Waypoint waypoint = new WeatherService.Waypoint();
-        waypoint.latitude = 34.05;
+        waypoint.latitude  = 34.05;
         waypoint.longitude = -118.24;
 
         Test.startTest();
-        WeatherService.WaypointWeatherResult resultData = WeatherService.processWaypoint(waypoint, DateTime.now());
+        WeatherService.WaypointWeatherResult resultData = WeatherService.processWaypoint(waypoint, futureDeparture());
         Test.stopTest();
 
         System.assertEquals(null, resultData.weatherCode, 'Missing hourly data should not set a weather code.');
@@ -146,11 +167,11 @@ private class WeatherServiceTest {
     @IsTest
     static void testAggregateSummaryAndSeverityAcrossCodes() {
         List<Integer> codes = new List<Integer>{ 0, 61, 96 };
-        String summary = WeatherService.aggregateSummary(codes);
+        String summary  = WeatherService.aggregateSummary(codes);
         String severity = WeatherService.aggregateSeverity(codes);
 
         System.assertEquals(true, summary.contains('Clear sky'), 'Summary should include clear sky description.');
-        System.assertEquals(true, summary.contains('Rain'), 'Summary should include rain description.');
+        System.assertEquals(true, summary.contains('Rain'),      'Summary should include rain description.');
         System.assertEquals('Extreme', severity, 'Highest-ranked code (96) should drive severity to Extreme.');
     }
 
@@ -171,10 +192,10 @@ private class WeatherServiceTest {
         Route__c route = [SELECT Id FROM Route__c LIMIT 1];
 
         WeatherService.WaypointWeatherResult resultData = new WeatherService.WaypointWeatherResult();
-        resultData.latitude = 34.05;
-        resultData.longitude = -118.24;
+        resultData.latitude    = 34.05;
+        resultData.longitude   = -118.24;
         resultData.weatherCode = 61;
-        resultData.matchedHour = '2026-09-15T10:00';
+        resultData.matchedHour = futureDepartureHour();
 
         Test.startTest();
         WeatherService.finalizeRoute(route.Id, new List<WeatherService.WaypointWeatherResult>{ resultData });
@@ -185,10 +206,10 @@ private class WeatherServiceTest {
             FROM Route__c
             WHERE Id = :route.Id
         ];
-        System.assertEquals('Success', updatedRoute.API_Status__c, 'Route should be marked Success after finalize.');
-        System.assertEquals(true, updatedRoute.Weather_Summary__c.contains('Rain'), 'Summary should reflect the rain code.');
-        System.assertNotEquals(null, updatedRoute.Weather_Alerts_JSON__c, 'Alerts JSON should be populated.');
-        System.assertNotEquals(null, updatedRoute.Weather_Checked_DateTime__c, 'Checked timestamp should be populated.');
+        System.assertEquals('Success', updatedRoute.API_Status__c,                       'Route should be marked Success after finalize.');
+        System.assertEquals(true,      updatedRoute.Weather_Summary__c.contains('Rain'), 'Summary should reflect the rain code.');
+        System.assertNotEquals(null,   updatedRoute.Weather_Alerts_JSON__c,              'Alerts JSON should be populated.');
+        System.assertNotEquals(null,   updatedRoute.Weather_Checked_DateTime__c,         'Checked timestamp should be populated.');
     }
 
     @IsTest
@@ -201,13 +222,13 @@ private class WeatherServiceTest {
         Test.stopTest();
 
         Route__c updatedRoute = [SELECT API_Status__c, API_Last_Error__c FROM Route__c WHERE Id = :route.Id];
-        System.assertEquals('Failed', updatedRoute.API_Status__c, 'Route should be marked Failed.');
+        System.assertEquals('Failed',            updatedRoute.API_Status__c,   'Route should be marked Failed.');
         System.assertEquals('Simulated failure', updatedRoute.API_Last_Error__c, 'Error message should be persisted.');
     }
 
     @IsTest
     static void testStartProcessingHappyPathEnqueuesJob() {
-        Test.setMock(HttpCalloutMock.class, new OpenMeteoMock(200, buildMockBody('2026-09-15T10:00', 61)));
+        Test.setMock(HttpCalloutMock.class, new OpenMeteoMock(200, buildMockBody(futureDepartureHour(), 61)));
         Route__c route = [SELECT Id FROM Route__c LIMIT 1];
 
         Test.startTest();
@@ -233,7 +254,8 @@ private class WeatherServiceTest {
     @IsTest
     static void testStartProcessingNoWaypointsMarksFailed() {
         Route__c route = LogisticsTestFactory.buildRoute(new Map<String, Object>{
-            'Waypoints_JSON__c' => '[]'
+            'Departure_DateTime__c' => futureDeparture(),
+            'Waypoints_JSON__c'     => '[]'
         });
         insert route;
 
