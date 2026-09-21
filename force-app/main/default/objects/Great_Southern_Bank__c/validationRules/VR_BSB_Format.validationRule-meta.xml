@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_BSB_Format</fullName>
+    <active>true</active>
+    <description>Enforces BSB Number must be exactly 6 numeric digits.</description>
+    <errorConditionFormula>NOT(REGEX(BSB_Number__c, &apos;[0-9]{6}&apos;))</errorConditionFormula>
+    <errorDisplayField>BSB_Number__c</errorDisplayField>
+    <errorMessage>BSB Number must be exactly 6 numeric digits.</errorMessage>
+</ValidationRule>
