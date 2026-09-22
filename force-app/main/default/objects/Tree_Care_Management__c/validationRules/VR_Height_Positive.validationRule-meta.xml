@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_Height_Positive</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(NOT(ISBLANK(Tree_Height_Ft__c)), Tree_Height_Ft__c &lt;= 0)</errorConditionFormula>
+    <errorMessage>Tree Height must be greater than 0 when specified.</errorMessage>
+</ValidationRule>
