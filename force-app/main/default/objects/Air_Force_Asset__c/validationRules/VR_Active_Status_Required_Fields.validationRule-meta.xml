@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_Active_Status_Required_Fields</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISPICKVAL(Operational_Status__c, &apos;Active&apos;) &amp;&amp; (ISBLANK(Squadron__c) || ISBLANK(Base_Location__c))</errorConditionFormula>
+    <errorMessage>Squadron and Base Location are required when Operational Status is Active.</errorMessage>
+</ValidationRule>

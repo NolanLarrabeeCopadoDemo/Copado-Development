@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Aircraft_Type__c</fullName>
+    <label>Aircraft Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Fighter Jet</fullName>
+                <default>false</default>
+                <label>Fighter Jet</label>
+            </value>
+            <value>
+                <fullName>Bomber</fullName>
+                <default>false</default>
+                <label>Bomber</label>
+            </value>
+            <value>
+                <fullName>Transport</fullName>
+                <default>false</default>
+                <label>Transport</label>
+            </value>
+            <value>
+                <fullName>Helicopter</fullName>
+                <default>false</default>
+                <label>Helicopter</label>
+            </value>
+            <value>
+                <fullName>Drone</fullName>
+                <default>false</default>
+                <label>Drone</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
