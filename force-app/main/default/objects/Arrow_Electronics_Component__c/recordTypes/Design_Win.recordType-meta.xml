@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Design_Win</fullName>
+    <active>true</active>
+    <description>Components selected and confirmed for a customer&apos;s product design</description>
+    <label>Design Win</label>
+    <picklistValues>
+        <picklist>Component_Category__c</picklist>
+        <values>
+            <fullName>Connector</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Electromechanical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Passive Component</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Power Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Semiconductor</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>
