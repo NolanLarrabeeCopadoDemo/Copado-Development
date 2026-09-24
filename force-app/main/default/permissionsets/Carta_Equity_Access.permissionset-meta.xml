@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Grants read and write access to the Carta Equity Management object and all associated custom fields.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Carta Equity Access</label>
+    <license>Salesforce</license>
+</PermissionSet>
