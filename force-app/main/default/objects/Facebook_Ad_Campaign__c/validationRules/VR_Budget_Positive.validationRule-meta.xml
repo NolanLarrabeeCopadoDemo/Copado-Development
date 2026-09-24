@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_Budget_Positive</fullName>
+    <active>true</active>
+    <description>Ensures Daily Budget is greater than zero when populated.</description>
+    <errorConditionFormula>AND(NOT(ISBLANK(Daily_Budget__c)), Daily_Budget__c &lt;= 0)</errorConditionFormula>
+    <errorDisplayField>Daily_Budget__c</errorDisplayField>
+    <errorMessage>Daily Budget must be greater than zero.</errorMessage>
+</ValidationRule>
