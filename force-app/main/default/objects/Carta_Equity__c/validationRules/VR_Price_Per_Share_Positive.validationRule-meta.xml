@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_Price_Per_Share_Positive</fullName>
+    <active>true</active>
+    <description>Price Per Share must be greater than zero when populated</description>
+    <errorConditionFormula>AND(NOT(ISNULL(Price_Per_Share__c)), Price_Per_Share__c &lt;= 0)</errorConditionFormula>
+    <errorMessage>Price Per Share must be greater than zero when a value is provided.</errorMessage>
+</ValidationRule>

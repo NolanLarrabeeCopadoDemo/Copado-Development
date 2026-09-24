@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_Issue_Date_Not_Future</fullName>
+    <active>true</active>
+    <description>Issue Date cannot be set to a future date</description>
+    <errorConditionFormula>Issue_Date__c &gt; TODAY()</errorConditionFormula>
+    <errorMessage>Issue Date cannot be in the future. Please enter a date on or before today.</errorMessage>
+</ValidationRule>

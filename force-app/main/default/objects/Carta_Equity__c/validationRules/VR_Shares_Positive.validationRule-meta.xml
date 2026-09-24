@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_Shares_Positive</fullName>
+    <active>true</active>
+    <description>Number of Shares must be greater than zero</description>
+    <errorConditionFormula>AND(NOT(ISNULL(Number_of_Shares__c)), Number_of_Shares__c &lt;= 0)</errorConditionFormula>
+    <errorMessage>Number of Shares must be greater than zero.</errorMessage>
+</ValidationRule>
