@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_Tail_Number_Required</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISBLANK(Tail_Number__c)</errorConditionFormula>
+    <errorDisplayField>Tail_Number__c</errorDisplayField>
+    <errorMessage>Tail Number is required.</errorMessage>
+</ValidationRule>

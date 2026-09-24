@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Support_Aircraft</fullName>
+    <active>true</active>
+    <description>For transport, logistics, and support assets</description>
+    <label>Support Aircraft</label>
+    <picklistValues>
+        <picklist>Aircraft_Type__c</picklist>
+        <values>
+            <fullName>Bomber</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Drone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fighter Jet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Helicopter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transport</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Operational_Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Decommissioned</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maintenance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standby</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>
