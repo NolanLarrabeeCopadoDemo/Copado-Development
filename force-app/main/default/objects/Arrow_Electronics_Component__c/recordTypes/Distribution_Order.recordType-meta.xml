@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Distribution_Order</fullName>
+    <active>true</active>
+    <description>Standard component orders fulfilled through the distribution channel</description>
+    <label>Distribution Order</label>
+    <picklistValues>
+        <picklist>Component_Category__c</picklist>
+        <values>
+            <fullName>Connector</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Electromechanical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Passive Component</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Power Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Semiconductor</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>
