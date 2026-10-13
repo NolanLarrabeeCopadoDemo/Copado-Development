@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Suborbital_Mission</fullName>
+    <active>true</active>
+    <description>Missions that do not reach orbit.</description>
+    <label>Suborbital Mission</label>
+    <picklistValues>
+        <picklist>Launch_Vehicle__c</picklist>
+        <values>
+            <fullName>Electron</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Neutron</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Photon</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Mission_Status__c</picklist>
+        <values>
+            <fullName>Failed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scheduled</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Scrubbed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Successful</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

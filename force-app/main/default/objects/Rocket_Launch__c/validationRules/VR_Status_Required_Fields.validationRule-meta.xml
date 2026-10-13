@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_Status_Required_Fields</fullName>
+    <active>true</active>
+    <description>Launch Site and Launch Vehicle are required when Mission Status is Scheduled.</description>
+    <errorConditionFormula>AND(
+ISPICKVAL(Mission_Status__c, &quot;Scheduled&quot;),
+OR(
+ISBLANK(TEXT(Launch_Vehicle__c)),
+ISBLANK(Launch_Site__c)
+)
+)</errorConditionFormula>
+    <errorMessage>Launch Site and Launch Vehicle are required when Mission Status is Scheduled.</errorMessage>
+</ValidationRule>
