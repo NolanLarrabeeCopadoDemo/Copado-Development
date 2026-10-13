@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_Launch_Date_Required</fullName>
+    <active>true</active>
+    <description>Launch Date cannot be blank.</description>
+    <errorConditionFormula>ISBLANK(Launch_Date__c)</errorConditionFormula>
+    <errorDisplayField>Launch_Date__c</errorDisplayField>
+    <errorMessage>Launch Date is required.</errorMessage>
+</ValidationRule>

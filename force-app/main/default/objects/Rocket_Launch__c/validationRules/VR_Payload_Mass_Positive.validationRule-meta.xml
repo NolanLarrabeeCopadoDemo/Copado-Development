@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_Payload_Mass_Positive</fullName>
+    <active>true</active>
+    <description>Payload Mass must be greater than zero when populated.</description>
+    <errorConditionFormula>AND(
+NOT(ISBLANK(Payload_Mass_kg__c)),
+Payload_Mass_kg__c &lt;= 0
+)</errorConditionFormula>
+    <errorDisplayField>Payload_Mass_kg__c</errorDisplayField>
+    <errorMessage>Payload Mass (kg) must be greater than zero.</errorMessage>
+</ValidationRule>
