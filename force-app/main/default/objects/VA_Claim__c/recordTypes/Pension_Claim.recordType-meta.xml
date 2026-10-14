@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata"
+      xmlns:n1="http://www.w3.org/2001/XMLSchema-instance">
+    <fullName>Pension_Claim</fullName>
+    <active>true</active>
+    <businessProcess n1:nil="true" />
+    <compactLayoutAssignment n1:nil="true" />
+    <description>Used for pension benefit claims</description>
+    <label>Pension Claim</label>
+    <picklistValues>
+        <picklist>Claim_Status__c</picklist>
+        <values>
+            <fullName>Appealed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Denied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Submitted</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Under Review</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Claim_Type__c</picklist>
+        <values>
+            <fullName>Disability</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Education</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Healthcare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Housing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pension</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>
