@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_Sweetness_Rating_Range</fullName>
+    <active>true</active>
+    <description>Sweetness Rating must be between 1 and 10 when populated.</description>
+    <errorConditionFormula>AND(
+NOT(ISBLANK(Sweetness_Rating__c)),
+OR(Sweetness_Rating__c &lt; 1, Sweetness_Rating__c &gt; 10)
+)</errorConditionFormula>
+    <errorDisplayField>Sweetness_Rating__c</errorDisplayField>
+    <errorMessage>Sweetness Rating must be between 1 and 10.</errorMessage>
+</ValidationRule>

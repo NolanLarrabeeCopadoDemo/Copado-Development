@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_Price_Per_Pound_Positive</fullName>
+    <active>true</active>
+    <description>Price Per Pound must be greater than zero when populated.</description>
+    <errorConditionFormula>AND(
+NOT(ISBLANK(Price_Per_Pound__c)),
+Price_Per_Pound__c &lt;= 0
+)</errorConditionFormula>
+    <errorDisplayField>Price_Per_Pound__c</errorDisplayField>
+    <errorMessage>Price Per Pound must be greater than zero.</errorMessage>
+</ValidationRule>
