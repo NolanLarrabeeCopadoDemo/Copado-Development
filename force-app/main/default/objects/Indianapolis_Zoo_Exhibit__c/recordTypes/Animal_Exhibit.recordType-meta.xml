@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Animal_Exhibit</fullName>
+    <active>true</active>
+    <description>Habitats that house animals.</description>
+    <label>Animal Exhibit</label>
+    <picklistValues>
+        <picklist>Exhibit_Status__c</picklist>
+        <values>
+            <fullName>Closed for Maintenance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Seasonal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Under Construction</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Exhibit_Zone__c</picklist>
+        <values>
+            <fullName>Deserts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Encounters</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Forests</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oceans</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Plains</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>
