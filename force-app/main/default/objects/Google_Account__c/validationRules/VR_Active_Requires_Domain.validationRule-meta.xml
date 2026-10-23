@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_Active_Requires_Domain</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISPICKVAL(Account_Status__c, &quot;Active&quot;), ISBLANK(Organization_Domain__c))</errorConditionFormula>
+    <errorDisplayField>Organization_Domain__c</errorDisplayField>
+    <errorMessage>Organization domain is required when status is Active.</errorMessage>
+</ValidationRule>
