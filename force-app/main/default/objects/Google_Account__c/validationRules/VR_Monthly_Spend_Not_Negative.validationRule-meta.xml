@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_Monthly_Spend_Not_Negative</fullName>
+    <active>true</active>
+    <errorConditionFormula>Monthly_Spend__c &lt; 0</errorConditionFormula>
+    <errorDisplayField>Monthly_Spend__c</errorDisplayField>
+    <errorMessage>Monthly spend cannot be negative.</errorMessage>
+</ValidationRule>
