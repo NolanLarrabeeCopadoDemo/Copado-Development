@@ -1,8 +1,215 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Log_Create_Task_Fault</name>
+        <label>Log Create Task Fault</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>FlowFaultLogger</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>flowName</name>
+            <value>
+                <stringValue>Outage_Tracker_Flow</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>elementName</name>
+            <value>
+                <stringValue>Create_Followup_Task</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>errorMessage</name>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>FlowFaultLogger</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Log_Get_Task_Fault</name>
+        <label>Log Get Task Fault</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>FlowFaultLogger</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>flowName</name>
+            <value>
+                <stringValue>Outage_Tracker_Flow</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>elementName</name>
+            <value>
+                <stringValue>Get_Open_Followup_Task</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>errorMessage</name>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>FlowFaultLogger</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Log_Update_Fault</name>
+        <label>Log Update Fault</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>FlowFaultLogger</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>flowName</name>
+            <value>
+                <stringValue>Outage_Tracker_Flow</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>elementName</name>
+            <value>
+                <stringValue>Update_Outage_Tracker</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>errorMessage</name>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>FlowFaultLogger</nameSegment>
+    </actionCalls>
     <apiVersion>65.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Is_Severe_Signal</name>
+        <label>Is Severe Signal</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Not Severe</defaultConnectorLabel>
+        <rules>
+            <name>Poor_Or_No_Signal</name>
+            <conditionLogic>(1 OR 2) AND 3</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Signal_Strength_Level__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Poor</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Signal_Strength_Level__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No Signal</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Case__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Open_Followup_Task</targetReference>
+            </connector>
+            <label>Poor Or No Signal</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Needs_Backfill</name>
+        <label>Needs Backfill</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Is_Severe_Signal</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Backfill</defaultConnectorLabel>
+        <rules>
+            <name>Start_Or_Account_Blank</name>
+            <conditionLogic>1 OR 2</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Outage_Start__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Account__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Outage_Tracker</targetReference>
+            </connector>
+            <label>Start Or Account Blank</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Task_Does_Not_Exist</name>
+        <label>Task Does Not Exist</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Task Exists</defaultConnectorLabel>
+        <rules>
+            <name>No_Open_Task</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Existing_Task</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Followup_Task</targetReference>
+            </connector>
+            <label>No Open Task</label>
+        </rules>
+    </decisions>
     <environments>Default</environments>
+    <formulas>
+        <name>NewAccountId</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!$Record.Account__c}), {!$Record.Case__r.AccountId}, {!$Record.Account__c})</expression>
+    </formulas>
+    <formulas>
+        <name>NewOutageStart</name>
+        <dataType>DateTime</dataType>
+        <expression>IF(ISBLANK({!$Record.Outage_Start__c}), {!$Flow.CurrentDateTime}, {!$Record.Outage_Start__c})</expression>
+    </formulas>
+    <formulas>
+        <name>TaskDueDate</name>
+        <dataType>Date</dataType>
+        <expression>{!$Flow.CurrentDate} + 1</expression>
+    </formulas>
     <interviewLabel>Outage Tracker Flow {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Outage Tracker Flow</label>
     <processMetadataValues>
@@ -24,20 +231,99 @@
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
-    <recordUpdates>
-        <name>Update_with_Date_if_Case_exists</name>
-        <label>Update with Date if Case exists</label>
+    <recordCreates>
+        <name>Create_Followup_Task</name>
+        <label>Create Followup Task</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
+        <faultConnector>
+            <targetReference>Log_Create_Task_Fault</targetReference>
+        </faultConnector>
+        <inputAssignments>
+            <field>ActivityDate</field>
+            <value>
+                <elementReference>TaskDueDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <stringValue>Outage follow-up required</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WhatId</field>
+            <value>
+                <elementReference>$Record.Case__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Task</object>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_Open_Followup_Task</name>
+        <label>Get Open Followup Task</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Task_Does_Not_Exist</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Log_Get_Task_Fault</targetReference>
+        </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Case__c</field>
-            <operator>NotEqualTo</operator>
+            <field>WhatId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Case__c</elementReference>
+            </value>
         </filters>
+        <filters>
+            <field>Subject</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Outage follow-up required</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>IsClosed</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>Task</object>
+        <outputReference>Existing_Task</outputReference>
+        <queriedFields>Id</queriedFields>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Outage_Tracker</name>
+        <label>Update Outage Tracker</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Is_Severe_Signal</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Log_Update_Fault</targetReference>
+        </faultConnector>
+        <inputAssignments>
+            <field>Account__c</field>
+            <value>
+                <elementReference>NewAccountId</elementReference>
+            </value>
+        </inputAssignments>
         <inputAssignments>
             <field>Outage_Start__c</field>
             <value>
-                <elementReference>$Flow.CurrentDateTime</elementReference>
+                <elementReference>NewOutageStart</elementReference>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
@@ -46,11 +332,20 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Update_with_Date_if_Case_exists</targetReference>
+            <targetReference>Needs_Backfill</targetReference>
         </connector>
+        <filterFormula>OR(ISNEW(), ISCHANGED({!$Record.Case__c}), ISCHANGED({!$Record.Signal_Strength_Level__c}))</filterFormula>
         <object>Service_Outage_Tracker__c</object>
-        <recordTriggerType>Create</recordTriggerType>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
+    <variables>
+        <name>Existing_Task</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Task</objectType>
+    </variables>
 </Flow>
