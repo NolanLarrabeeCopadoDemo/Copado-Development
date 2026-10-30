@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_Fiscal_Year_Range</fullName>
+    <active>true</active>
+    <description>Fiscal Year must be between 2000 and 2100 when populated.</description>
+    <errorConditionFormula>AND(NOT(ISBLANK(Fiscal_Year__c)), OR(Fiscal_Year__c &lt; 2000, Fiscal_Year__c &gt; 2100))</errorConditionFormula>
+    <errorDisplayField>Fiscal_Year__c</errorDisplayField>
+    <errorMessage>Fiscal Year must be greater than or equal to 2000 and less than or equal to 2100.</errorMessage>
+</ValidationRule>

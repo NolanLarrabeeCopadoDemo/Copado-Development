@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_Obligation_Amount_Positive</fullName>
+    <active>true</active>
+    <description>Obligation Amount must be greater than zero when populated.</description>
+    <errorConditionFormula>AND(NOT(ISBLANK(Obligation_Amount__c)), Obligation_Amount__c &lt;= 0)</errorConditionFormula>
+    <errorDisplayField>Obligation_Amount__c</errorDisplayField>
+    <errorMessage>Obligation Amount must be greater than zero.</errorMessage>
+</ValidationRule>
