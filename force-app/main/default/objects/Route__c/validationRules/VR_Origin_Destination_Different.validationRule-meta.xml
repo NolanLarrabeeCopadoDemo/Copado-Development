@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_Origin_Destination_Different</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+Origin_Latitude__c = Destination_Latitude__c,
+Origin_Longitude__c = Destination_Longitude__c
+)</errorConditionFormula>
+    <errorMessage>Origin and Destination coordinates cannot be identical.</errorMessage>
+</ValidationRule>

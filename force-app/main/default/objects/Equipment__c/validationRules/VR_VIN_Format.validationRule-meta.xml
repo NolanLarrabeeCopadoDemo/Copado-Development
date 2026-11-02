@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_VIN_Format</fullName>
+    <active>true</active>
+    <description>Ensures VIN__c is exactly 17 characters long.</description>
+    <errorConditionFormula>LEN(VIN__c) != 17</errorConditionFormula>
+    <errorMessage>VIN must be exactly 17 characters.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Profit_Margin_Pct__c</fullName>
+    <description>Net Revenue as a percentage of Gross Revenue.</description>
+    <formula>IF(Gross_Revenue__c = 0, 0, (Gross_Revenue__c - Total_Cost__c) / Gross_Revenue__c * 100)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Profit Margin %</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

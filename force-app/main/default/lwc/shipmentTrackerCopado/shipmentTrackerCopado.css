@@ -1,0 +1,15 @@
+.shipment-tracker-copado .slds-progress__item_content {
+    margin-top: 0.5rem;
+}
+
+.shipment-tracker-copado .stage-date {
+    min-height: 1rem;
+}
+
+.shipment-tracker-copado .slds-is-cancelled .slds-progress__marker {
+    background-color: #c23934;
+}
+
+.shipment-tracker-copado .delayed-badge {
+    align-self: flex-start;
+}

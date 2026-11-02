@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_Active_Status_Required_Fields</fullName>
+    <active>true</active>
+    <description>Ensures Campaign Objective and Daily Budget are populated when Campaign Status is Active.</description>
+    <errorConditionFormula>AND(ISPICKVAL(Campaign_Status__c, &quot;Active&quot;), OR(ISBLANK(TEXT(Campaign_Objective__c)), ISBLANK(Daily_Budget__c)))</errorConditionFormula>
+    <errorMessage>Campaign Objective and Daily Budget are required when Campaign Status is Active.</errorMessage>
+</ValidationRule>
