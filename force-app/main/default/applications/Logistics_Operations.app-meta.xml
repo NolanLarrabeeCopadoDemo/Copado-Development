@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
+    <label>Logistics Operations</label>
+    <navType>Standard</navType>
+    <tabs>Driver__c</tabs>
+    <tabs>Shipment__c</tabs>
+    <tabs>Equipment__c</tabs>
+    <tabs>Route__c</tabs>
+    <tabs>Completed_Shipment__c</tabs>
+    <tabs>Trip_Expense__c</tabs>
+    <tabs>Delivery__c</tabs>
+    <tabs>Equipment_Certification__c</tabs>
+    <tabs>Package_Tracking__c</tabs>
+    <tabs>Product_Shipment__c</tabs>
+    <uiType>Lightning</uiType>
+</CustomApplication>

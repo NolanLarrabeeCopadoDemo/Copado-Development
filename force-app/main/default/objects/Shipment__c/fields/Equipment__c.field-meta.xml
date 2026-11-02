@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Equipment__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Equipment assigned to fulfill this shipment. Required when Status__c = &apos;In Transit&apos; (VR_Equipment_Required_In_Transit); payload capacity checked by VR_Cargo_Fits_Truck (US-0000472).</description>
+    <label>Equipment</label>
+    <referenceTo>Equipment__c</referenceTo>
+    <relationshipLabel>Shipments</relationshipLabel>
+    <relationshipName>Shipments</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_Maintenance_Date_Logic</fullName>
+    <active>true</active>
+    <description>Ensures Next Maintenance Date is not earlier than Last Maintenance Date when both are populated.</description>
+    <errorConditionFormula>AND(NOT(ISBLANK(Last_Maintenance_Date__c)), NOT(ISBLANK(Next_Maintenance_Date__c)), Next_Maintenance_Date__c &lt; Last_Maintenance_Date__c)</errorConditionFormula>
+    <errorMessage>Next Maintenance Date cannot be earlier than Last Maintenance Date.</errorMessage>
+</ValidationRule>

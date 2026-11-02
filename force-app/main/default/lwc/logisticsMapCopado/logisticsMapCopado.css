@@ -1,0 +1,27 @@
+.map-container {
+    width: 100%;
+    height: 420px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.fallback-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.severity-badge {
+    font-size: 0.85rem;
+    padding: 0.25rem 0.65rem;
+}
+
+.severity-badge--severe {
+    animation: pulse 1.4s infinite;
+}
+
+@keyframes pulse {
+    0%   { opacity: 1; }
+    50%  { opacity: 0.55; }
+    100% { opacity: 1; }
+}

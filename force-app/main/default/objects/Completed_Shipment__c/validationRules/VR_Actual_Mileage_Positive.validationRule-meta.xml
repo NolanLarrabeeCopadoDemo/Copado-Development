@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_Actual_Mileage_Positive</fullName>
+    <active>true</active>
+    <errorConditionFormula>Actual_Mileage__c &lt;= 0</errorConditionFormula>
+    <errorDisplayField>Actual_Mileage__c</errorDisplayField>
+    <errorMessage>Actual mileage must be a positive value.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_Animal_Count_Not_Negative</fullName>
+    <active>true</active>
+    <description>Animal Count must not be negative when populated.</description>
+    <errorConditionFormula>AND(
+NOT(ISBLANK(Animal_Count__c)),
+Animal_Count__c &lt; 0
+)</errorConditionFormula>
+    <errorDisplayField>Animal_Count__c</errorDisplayField>
+    <errorMessage>Animal Count cannot be less than zero.</errorMessage>
+</ValidationRule>
