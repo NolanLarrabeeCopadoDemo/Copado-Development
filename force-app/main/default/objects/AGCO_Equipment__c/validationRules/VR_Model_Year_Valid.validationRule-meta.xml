@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_Model_Year_Valid</fullName>
+    <active>true</active>
+    <description>Model Year must be between 1950 and next calendar year when populated.</description>
+    <errorConditionFormula>AND(NOT(ISBLANK(Model_Year__c)), OR(Model_Year__c &lt; 1950, Model_Year__c &gt; YEAR(TODAY()) + 1))</errorConditionFormula>
+    <errorDisplayField>Model_Year__c</errorDisplayField>
+    <errorMessage>Model Year must be 1950 or later and no later than next year.</errorMessage>
+</ValidationRule>
