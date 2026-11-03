@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Equipment_Type__c</fullName>
+    <label>Equipment Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Tractor</fullName>
+                <default>false</default>
+                <label>Tractor</label>
+            </value>
+            <value>
+                <fullName>Combine Harvester</fullName>
+                <default>false</default>
+                <label>Combine Harvester</label>
+            </value>
+            <value>
+                <fullName>Sprayer</fullName>
+                <default>false</default>
+                <label>Sprayer</label>
+            </value>
+            <value>
+                <fullName>Baler</fullName>
+                <default>false</default>
+                <label>Baler</label>
+            </value>
+            <value>
+                <fullName>Planter</fullName>
+                <default>false</default>
+                <label>Planter</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
