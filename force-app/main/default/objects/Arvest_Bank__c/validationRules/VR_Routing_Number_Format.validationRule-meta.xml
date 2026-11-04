@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_Routing_Number_Format</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(NOT(ISBLANK(Routing_Number__c)), NOT(REGEX(Routing_Number__c, &quot;[0-9]{9}&quot;)))</errorConditionFormula>
+    <errorDisplayField>Routing_Number__c</errorDisplayField>
+    <errorMessage>Routing Number must be exactly 9 numeric digits.</errorMessage>
+</ValidationRule>
