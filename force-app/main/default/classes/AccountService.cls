@@ -1,7 +1,20 @@
 public with sharing class AccountService {
 
     // ─────────────────────────────────────────────────────────────────
-    // UNCHANGED — Lines 1-8 (original)
+    // NEW — Line 3 (incremental change)
+    //
+    // Violation introduced on this line only:
+    //   • Line 3 → AvoidHardcodingId
+    //              A hardcoded Salesforce record ID is assigned to a
+    //              constant. Hardcoded IDs are environment-specific and
+    //              will break across sandboxes and production orgs.
+    //              Use Custom Labels, Custom Metadata, or dynamic queries
+    //              instead.
+    // ─────────────────────────────────────────────────────────────────
+    private static final String DEFAULT_ACCOUNT_ID = '001000000000001AAA'; // VIOLATION — AvoidHardcodingId
+
+    // ─────────────────────────────────────────────────────────────────
+    // UNCHANGED — original block
     // No violations here. A full-file scan and a partial scan both
     // produce zero findings for this block.
     // ─────────────────────────────────────────────────────────────────
