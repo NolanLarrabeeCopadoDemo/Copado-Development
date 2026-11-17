@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_Contract_Value_Positive</fullName>
+    <active>true</active>
+    <description>Contract Value must be greater than zero when populated.</description>
+    <errorConditionFormula>AND(NOT(ISBLANK(Contract_Value__c)), Contract_Value__c &lt;= 0)</errorConditionFormula>
+    <errorDisplayField>Contract_Value__c</errorDisplayField>
+    <errorMessage>Contract Value must be greater than zero.</errorMessage>
+</ValidationRule>
