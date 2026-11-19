@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_Purchase_Date_Not_Future</fullName>
+    <active>true</active>
+    <description>Purchase Date cannot be in the future.</description>
+    <errorConditionFormula>AND(NOT(ISBLANK(Purchase_Date__c)), Purchase_Date__c &gt; TODAY())</errorConditionFormula>
+    <errorDisplayField>Purchase_Date__c</errorDisplayField>
+    <errorMessage>Purchase Date must be today or earlier. It cannot be in the future.</errorMessage>
+</ValidationRule>
