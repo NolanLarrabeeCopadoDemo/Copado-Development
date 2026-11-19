@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cordless_Tool</fullName>
+    <active>true</active>
+    <description>Battery-powered tools.</description>
+    <label>Cordless Tool</label>
+    <picklistValues>
+        <picklist>Tool_Category__c</picklist>
+        <values>
+            <fullName>Drill%2FDriver</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grinder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Impact Driver</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sander</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Saw</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

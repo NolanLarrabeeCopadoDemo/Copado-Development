@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tool_Category__c</fullName>
+    <label>Tool Category</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Drill/Driver</fullName>
+                <default>false</default>
+                <label>Drill/Driver</label>
+            </value>
+            <value>
+                <fullName>Impact Driver</fullName>
+                <default>false</default>
+                <label>Impact Driver</label>
+            </value>
+            <value>
+                <fullName>Saw</fullName>
+                <default>false</default>
+                <label>Saw</label>
+            </value>
+            <value>
+                <fullName>Grinder</fullName>
+                <default>false</default>
+                <label>Grinder</label>
+            </value>
+            <value>
+                <fullName>Sander</fullName>
+                <default>false</default>
+                <label>Sander</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

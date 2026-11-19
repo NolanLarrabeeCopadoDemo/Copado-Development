@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_Warranty_After_Purchase</fullName>
+    <active>true</active>
+    <description>Warranty Expiration Date must be after Purchase Date when both are populated.</description>
+    <errorConditionFormula>AND(NOT(ISBLANK(Purchase_Date__c)), NOT(ISBLANK(Warranty_Expiration_Date__c)), Warranty_Expiration_Date__c &lt;= Purchase_Date__c)</errorConditionFormula>
+    <errorDisplayField>Warranty_Expiration_Date__c</errorDisplayField>
+    <errorMessage>Warranty Expiration Date must be after the Purchase Date.</errorMessage>
+</ValidationRule>
